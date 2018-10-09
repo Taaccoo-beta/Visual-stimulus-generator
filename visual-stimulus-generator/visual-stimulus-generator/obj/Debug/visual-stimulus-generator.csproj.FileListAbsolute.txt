@@ -1,0 +1,11 @@
+E:\github\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.exe.config
+E:\github\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.exe
+E:\github\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.pdb
+E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Form1.resources
+E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Properties.Resources.resources
+E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.csproj.GenerateResource.Cache
+E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.exe
+E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.pdb
+E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex0.resources
+E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Display.resources
+E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Form2.resources
