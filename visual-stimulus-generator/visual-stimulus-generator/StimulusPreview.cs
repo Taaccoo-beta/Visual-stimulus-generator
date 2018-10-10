@@ -38,10 +38,37 @@ namespace visual_stimulus_generator
         }
 
 
+        private float DegreeToPosition(float degree)
+        {
+            return degree / 360 * width + width / 2;
+
+            //-180 to 180   ---> 0 to width
+        }
+
         //id = 0, show a single bar
         public Bitmap singleBar()
         {
+            g1.Clear(Color.White);
             g1.FillRectangle(new SolidBrush(Color.Black), widthCenter - 20, 0, 40, height);
+            return image1;
+        }
+
+
+
+        public Bitmap singleSwingBar(float degree)
+        {
+            g1.Clear(Color.White);
+            float position = DegreeToPosition(degree);
+            g1.FillRectangle(new SolidBrush(Color.Black), position - 20, 0, 40, height);
+            return image1;
+        }
+
+
+        public Bitmap singleCyclicBar(float degree)
+        {
+            g1.Clear(Color.White);
+            float position = DegreeToPosition(degree);
+            g1.FillRectangle(new SolidBrush(Color.Black), position - 20, 0, 40, height);
             return image1;
         }
     }

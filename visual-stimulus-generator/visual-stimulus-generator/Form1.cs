@@ -33,6 +33,7 @@ namespace visual_stimulus_generator
                 switch (stimulusNumber)
                 {
                     case 0:
+                        this.timer1.Stop();
                         FormIndex0 f0 = new FormIndex0();
                         f0.Show();
                         break;
@@ -68,8 +69,19 @@ namespace visual_stimulus_generator
             this.lblDescription.Text = vsd.getDescribtion(selectIndex);
             ifSelectIndex = true;
             
-        }
+            degreeForSingleSwingBar = -45;
 
+            degreeForCyclicBar = -180;
+
+            timer1.Start();
+
+    }
+
+
+        private float degreeForSingleSwingBar = -45;
+        private float orientation = 1;
+
+        private float degreeForCyclicBar = -180;
         private bool ifSelectIndex = false;
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -79,6 +91,27 @@ namespace visual_stimulus_generator
                 {
                     case 0:
                         this.pbPreView.CreateGraphics().DrawImage(sp.singleBar(), 0, 0);
+                        break;
+                    case 1:
+                        degreeForSingleSwingBar += 3*orientation;
+                        if (degreeForSingleSwingBar > 45)
+                        {
+                            orientation = -1;
+
+                        }
+                        if (degreeForSingleSwingBar < -45)
+                        {
+                            orientation = 1;
+                        }
+                        this.pbPreView.CreateGraphics().DrawImage(sp.singleSwingBar(degreeForSingleSwingBar), 0, 0);
+                        break;
+                    case 2:
+                        degreeForCyclicBar += 3;
+                        if (degreeForCyclicBar > 180)
+                        {
+                            degreeForCyclicBar = -180;
+                        }
+                        this.pbPreView.CreateGraphics().DrawImage(sp.singleCyclicBar(degreeForCyclicBar), 0, 0);
                         break;
                 }
             }

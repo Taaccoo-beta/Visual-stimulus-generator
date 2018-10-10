@@ -46,7 +46,9 @@
             this.lbVisualStimulusType.FormattingEnabled = true;
             this.lbVisualStimulusType.ItemHeight = 15;
             this.lbVisualStimulusType.Items.AddRange(new object[] {
-            "Single Bar"});
+            "Single Static Bar",
+            "Single Swing Bar",
+            "Single Cyclic Bar"});
             this.lbVisualStimulusType.Location = new System.Drawing.Point(27, 58);
             this.lbVisualStimulusType.Name = "lbVisualStimulusType";
             this.lbVisualStimulusType.Size = new System.Drawing.Size(177, 259);

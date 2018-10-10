@@ -16,5 +16,10 @@ namespace visual_stimulus_generator
         {
             InitializeComponent();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

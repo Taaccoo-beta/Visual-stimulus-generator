@@ -31,62 +31,139 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIndex0));
             this.gbBasicSetting = new System.Windows.Forms.GroupBox();
-            this.lblWidth = new System.Windows.Forms.Label();
-            this.tbWidthValue = new System.Windows.Forms.TextBox();
+            this.lblPixelSymHeight = new System.Windows.Forms.Label();
+            this.lblPixelSymWidth = new System.Windows.Forms.Label();
+            this.lblBarSizeSym = new System.Windows.Forms.Label();
+            this.lbltimeSym = new System.Windows.Forms.Label();
+            this.lblFrameRate = new System.Windows.Forms.Label();
+            this.tbFrameRate = new System.Windows.Forms.TextBox();
+            this.tbBarSize = new System.Windows.Forms.TextBox();
+            this.lblBarSize = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.tbTime = new System.Windows.Forms.TextBox();
             this.lblHeight = new System.Windows.Forms.Label();
             this.tbHeightValue = new System.Windows.Forms.TextBox();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.tbFigureSetting = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.lblWidth = new System.Windows.Forms.Label();
+            this.tbWidthValue = new System.Windows.Forms.TextBox();
             this.btnStartDisplay = new System.Windows.Forms.Button();
-            this.rbStatic = new System.Windows.Forms.RadioButton();
-            this.rbMotion = new System.Windows.Forms.RadioButton();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.lblStartPosition = new System.Windows.Forms.Label();
-            this.tbStartPosition = new System.Windows.Forms.TextBox();
-            this.lblEndPos = new System.Windows.Forms.Label();
-            this.tbEndPosition = new System.Windows.Forms.TextBox();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.lblPositionDegree = new System.Windows.Forms.Label();
+            this.tbPosition = new System.Windows.Forms.TextBox();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.gbBasicSetting.SuspendLayout();
-            this.tbFigureSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbBasicSetting
             // 
-            this.gbBasicSetting.Controls.Add(this.label3);
-            this.gbBasicSetting.Controls.Add(this.textBox3);
+            this.gbBasicSetting.Controls.Add(this.lblPositionDegree);
+            this.gbBasicSetting.Controls.Add(this.tbPosition);
+            this.gbBasicSetting.Controls.Add(this.lblPosition);
+            this.gbBasicSetting.Controls.Add(this.lblPixelSymHeight);
+            this.gbBasicSetting.Controls.Add(this.lblPixelSymWidth);
+            this.gbBasicSetting.Controls.Add(this.lblBarSizeSym);
+            this.gbBasicSetting.Controls.Add(this.lbltimeSym);
+            this.gbBasicSetting.Controls.Add(this.lblFrameRate);
+            this.gbBasicSetting.Controls.Add(this.tbFrameRate);
+            this.gbBasicSetting.Controls.Add(this.tbBarSize);
+            this.gbBasicSetting.Controls.Add(this.lblBarSize);
             this.gbBasicSetting.Controls.Add(this.lblTime);
-            this.gbBasicSetting.Controls.Add(this.textBox2);
+            this.gbBasicSetting.Controls.Add(this.tbTime);
             this.gbBasicSetting.Controls.Add(this.lblHeight);
             this.gbBasicSetting.Controls.Add(this.tbHeightValue);
             this.gbBasicSetting.Controls.Add(this.lblWidth);
             this.gbBasicSetting.Controls.Add(this.tbWidthValue);
             this.gbBasicSetting.Location = new System.Drawing.Point(30, 21);
             this.gbBasicSetting.Name = "gbBasicSetting";
-            this.gbBasicSetting.Size = new System.Drawing.Size(328, 264);
+            this.gbBasicSetting.Size = new System.Drawing.Size(326, 323);
             this.gbBasicSetting.TabIndex = 0;
             this.gbBasicSetting.TabStop = false;
             this.gbBasicSetting.Text = "Basic-Setting";
             // 
-            // lblWidth
+            // lblPixelSymHeight
             // 
-            this.lblWidth.AutoSize = true;
-            this.lblWidth.Location = new System.Drawing.Point(50, 51);
-            this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Size = new System.Drawing.Size(55, 15);
-            this.lblWidth.TabIndex = 1;
-            this.lblWidth.Text = "Width:";
+            this.lblPixelSymHeight.AutoSize = true;
+            this.lblPixelSymHeight.Location = new System.Drawing.Point(245, 98);
+            this.lblPixelSymHeight.Name = "lblPixelSymHeight";
+            this.lblPixelSymHeight.Size = new System.Drawing.Size(47, 15);
+            this.lblPixelSymHeight.TabIndex = 14;
+            this.lblPixelSymHeight.Text = "Pixel";
             // 
-            // tbWidthValue
+            // lblPixelSymWidth
             // 
-            this.tbWidthValue.Location = new System.Drawing.Point(112, 48);
-            this.tbWidthValue.Name = "tbWidthValue";
-            this.tbWidthValue.Size = new System.Drawing.Size(127, 25);
-            this.tbWidthValue.TabIndex = 2;
+            this.lblPixelSymWidth.AutoSize = true;
+            this.lblPixelSymWidth.Location = new System.Drawing.Point(245, 51);
+            this.lblPixelSymWidth.Name = "lblPixelSymWidth";
+            this.lblPixelSymWidth.Size = new System.Drawing.Size(47, 15);
+            this.lblPixelSymWidth.TabIndex = 13;
+            this.lblPixelSymWidth.Text = "Pixel";
+            // 
+            // lblBarSizeSym
+            // 
+            this.lblBarSizeSym.AutoSize = true;
+            this.lblBarSizeSym.Location = new System.Drawing.Point(245, 148);
+            this.lblBarSizeSym.Name = "lblBarSizeSym";
+            this.lblBarSizeSym.Size = new System.Drawing.Size(55, 15);
+            this.lblBarSizeSym.TabIndex = 12;
+            this.lblBarSizeSym.Text = "Degree";
+            // 
+            // lbltimeSym
+            // 
+            this.lbltimeSym.AutoSize = true;
+            this.lbltimeSym.Location = new System.Drawing.Point(245, 239);
+            this.lbltimeSym.Name = "lbltimeSym";
+            this.lbltimeSym.Size = new System.Drawing.Size(15, 15);
+            this.lbltimeSym.TabIndex = 11;
+            this.lbltimeSym.Text = "S";
+            // 
+            // lblFrameRate
+            // 
+            this.lblFrameRate.AutoSize = true;
+            this.lblFrameRate.Location = new System.Drawing.Point(11, 285);
+            this.lblFrameRate.Name = "lblFrameRate";
+            this.lblFrameRate.Size = new System.Drawing.Size(94, 15);
+            this.lblFrameRate.TabIndex = 9;
+            this.lblFrameRate.Text = "FrameRate：";
+            // 
+            // tbFrameRate
+            // 
+            this.tbFrameRate.Location = new System.Drawing.Point(112, 282);
+            this.tbFrameRate.Name = "tbFrameRate";
+            this.tbFrameRate.Size = new System.Drawing.Size(127, 25);
+            this.tbFrameRate.TabIndex = 10;
+            // 
+            // tbBarSize
+            // 
+            this.tbBarSize.Location = new System.Drawing.Point(112, 145);
+            this.tbBarSize.Name = "tbBarSize";
+            this.tbBarSize.Size = new System.Drawing.Size(127, 25);
+            this.tbBarSize.TabIndex = 2;
+            // 
+            // lblBarSize
+            // 
+            this.lblBarSize.AutoSize = true;
+            this.lblBarSize.Location = new System.Drawing.Point(34, 148);
+            this.lblBarSize.Name = "lblBarSize";
+            this.lblBarSize.Size = new System.Drawing.Size(71, 15);
+            this.lblBarSize.TabIndex = 1;
+            this.lblBarSize.Text = "BarSize:";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(58, 239);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(47, 15);
+            this.lblTime.TabIndex = 5;
+            this.lblTime.Text = "Time:";
+            // 
+            // tbTime
+            // 
+            this.tbTime.Location = new System.Drawing.Point(112, 236);
+            this.tbTime.Name = "tbTime";
+            this.tbTime.Size = new System.Drawing.Size(127, 25);
+            this.tbTime.TabIndex = 6;
             // 
             // lblHeight
             // 
@@ -104,74 +181,25 @@
             this.tbHeightValue.Size = new System.Drawing.Size(127, 25);
             this.tbHeightValue.TabIndex = 4;
             // 
-            // lblTime
+            // lblWidth
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(58, 144);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(47, 15);
-            this.lblTime.TabIndex = 5;
-            this.lblTime.Text = "Time:";
+            this.lblWidth.AutoSize = true;
+            this.lblWidth.Location = new System.Drawing.Point(50, 51);
+            this.lblWidth.Name = "lblWidth";
+            this.lblWidth.Size = new System.Drawing.Size(55, 15);
+            this.lblWidth.TabIndex = 1;
+            this.lblWidth.Text = "Width:";
             // 
-            // textBox2
+            // tbWidthValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(112, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(127, 25);
-            this.textBox2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 191);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Circle:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(112, 188);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(127, 25);
-            this.textBox3.TabIndex = 8;
-            // 
-            // tbFigureSetting
-            // 
-            this.tbFigureSetting.Controls.Add(this.lblEndPos);
-            this.tbFigureSetting.Controls.Add(this.tbEndPosition);
-            this.tbFigureSetting.Controls.Add(this.lblStartPosition);
-            this.tbFigureSetting.Controls.Add(this.tbStartPosition);
-            this.tbFigureSetting.Controls.Add(this.rbMotion);
-            this.tbFigureSetting.Controls.Add(this.rbStatic);
-            this.tbFigureSetting.Controls.Add(this.label5);
-            this.tbFigureSetting.Controls.Add(this.textBox6);
-            this.tbFigureSetting.Location = new System.Drawing.Point(376, 21);
-            this.tbFigureSetting.Name = "tbFigureSetting";
-            this.tbFigureSetting.Size = new System.Drawing.Size(328, 264);
-            this.tbFigureSetting.TabIndex = 1;
-            this.tbFigureSetting.TabStop = false;
-            this.tbFigureSetting.Text = "FeatureSetting";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 15);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "BarSize:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(115, 34);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(115, 25);
-            this.textBox6.TabIndex = 2;
+            this.tbWidthValue.Location = new System.Drawing.Point(112, 48);
+            this.tbWidthValue.Name = "tbWidthValue";
+            this.tbWidthValue.Size = new System.Drawing.Size(127, 25);
+            this.tbWidthValue.TabIndex = 2;
             // 
             // btnStartDisplay
             // 
-            this.btnStartDisplay.Location = new System.Drawing.Point(569, 306);
+            this.btnStartDisplay.Location = new System.Drawing.Point(30, 369);
             this.btnStartDisplay.Name = "btnStartDisplay";
             this.btnStartDisplay.Size = new System.Drawing.Size(135, 54);
             this.btnStartDisplay.TabIndex = 2;
@@ -179,68 +207,47 @@
             this.btnStartDisplay.UseVisualStyleBackColor = true;
             this.btnStartDisplay.Click += new System.EventHandler(this.btnStartDisplay_Click);
             // 
-            // rbStatic
+            // btnGenerate
             // 
-            this.rbStatic.AutoSize = true;
-            this.rbStatic.Checked = true;
-            this.rbStatic.Location = new System.Drawing.Point(29, 94);
-            this.rbStatic.Name = "rbStatic";
-            this.rbStatic.Size = new System.Drawing.Size(76, 19);
-            this.rbStatic.TabIndex = 3;
-            this.rbStatic.TabStop = true;
-            this.rbStatic.Text = "Static";
-            this.rbStatic.UseVisualStyleBackColor = true;
+            this.btnGenerate.Location = new System.Drawing.Point(221, 369);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(135, 54);
+            this.btnGenerate.TabIndex = 3;
+            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.UseVisualStyleBackColor = true;
             // 
-            // rbMotion
+            // lblPositionDegree
             // 
-            this.rbMotion.AutoSize = true;
-            this.rbMotion.Location = new System.Drawing.Point(115, 96);
-            this.rbMotion.Name = "rbMotion";
-            this.rbMotion.Size = new System.Drawing.Size(76, 19);
-            this.rbMotion.TabIndex = 4;
-            this.rbMotion.Text = "Motion";
-            this.rbMotion.UseVisualStyleBackColor = true;
-            this.rbMotion.CheckedChanged += new System.EventHandler(this.rbMotion_CheckedChanged);
+            this.lblPositionDegree.AutoSize = true;
+            this.lblPositionDegree.Location = new System.Drawing.Point(245, 195);
+            this.lblPositionDegree.Name = "lblPositionDegree";
+            this.lblPositionDegree.Size = new System.Drawing.Size(55, 15);
+            this.lblPositionDegree.TabIndex = 17;
+            this.lblPositionDegree.Text = "Degree";
             // 
-            // lblStartPosition
+            // tbPosition
             // 
-            this.lblStartPosition.AutoSize = true;
-            this.lblStartPosition.Location = new System.Drawing.Point(18, 134);
-            this.lblStartPosition.Name = "lblStartPosition";
-            this.lblStartPosition.Size = new System.Drawing.Size(79, 15);
-            this.lblStartPosition.TabIndex = 5;
-            this.lblStartPosition.Text = "StartPos:";
+            this.tbPosition.Location = new System.Drawing.Point(112, 192);
+            this.tbPosition.Name = "tbPosition";
+            this.tbPosition.Size = new System.Drawing.Size(127, 25);
+            this.tbPosition.TabIndex = 16;
             // 
-            // tbStartPosition
+            // lblPosition
             // 
-            this.tbStartPosition.Location = new System.Drawing.Point(115, 131);
-            this.tbStartPosition.Name = "tbStartPosition";
-            this.tbStartPosition.Size = new System.Drawing.Size(127, 25);
-            this.tbStartPosition.TabIndex = 6;
-            // 
-            // lblEndPos
-            // 
-            this.lblEndPos.AutoSize = true;
-            this.lblEndPos.Location = new System.Drawing.Point(34, 166);
-            this.lblEndPos.Name = "lblEndPos";
-            this.lblEndPos.Size = new System.Drawing.Size(63, 15);
-            this.lblEndPos.TabIndex = 7;
-            this.lblEndPos.Text = "EndPos:";
-            // 
-            // tbEndPosition
-            // 
-            this.tbEndPosition.Location = new System.Drawing.Point(115, 163);
-            this.tbEndPosition.Name = "tbEndPosition";
-            this.tbEndPosition.Size = new System.Drawing.Size(127, 25);
-            this.tbEndPosition.TabIndex = 8;
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Location = new System.Drawing.Point(27, 195);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(79, 15);
+            this.lblPosition.TabIndex = 15;
+            this.lblPosition.Text = "Position:";
             // 
             // FormIndex0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 406);
+            this.ClientSize = new System.Drawing.Size(391, 469);
+            this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnStartDisplay);
-            this.Controls.Add(this.tbFigureSetting);
             this.Controls.Add(this.gbBasicSetting);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormIndex0";
@@ -248,8 +255,6 @@
             this.Load += new System.EventHandler(this.FormIndex0_Load);
             this.gbBasicSetting.ResumeLayout(false);
             this.gbBasicSetting.PerformLayout();
-            this.tbFigureSetting.ResumeLayout(false);
-            this.tbFigureSetting.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -258,24 +263,25 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbBasicSetting;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbTime;
         private System.Windows.Forms.Label lblHeight;
         private System.Windows.Forms.TextBox tbHeightValue;
         private System.Windows.Forms.Label lblWidth;
         private System.Windows.Forms.TextBox tbWidthValue;
-        private System.Windows.Forms.GroupBox tbFigureSetting;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label lblBarSize;
+        private System.Windows.Forms.TextBox tbBarSize;
         private System.Windows.Forms.Button btnStartDisplay;
-        private System.Windows.Forms.Label lblEndPos;
-        private System.Windows.Forms.TextBox tbEndPosition;
-        private System.Windows.Forms.Label lblStartPosition;
-        private System.Windows.Forms.TextBox tbStartPosition;
-        private System.Windows.Forms.RadioButton rbMotion;
-        private System.Windows.Forms.RadioButton rbStatic;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Label lblFrameRate;
+        private System.Windows.Forms.TextBox tbFrameRate;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Label lblPixelSymHeight;
+        private System.Windows.Forms.Label lblPixelSymWidth;
+        private System.Windows.Forms.Label lblBarSizeSym;
+        private System.Windows.Forms.Label lbltimeSym;
+        private System.Windows.Forms.Label lblPositionDegree;
+        private System.Windows.Forms.TextBox tbPosition;
+        private System.Windows.Forms.Label lblPosition;
     }
 }

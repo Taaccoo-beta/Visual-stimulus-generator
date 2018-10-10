@@ -23,10 +23,47 @@ namespace visual_stimulus_generator
 
         }
 
+        private int width;
+        private int height;
+        private int barSize;
+        private int time;
+        private int frameRate;
+        private int position;
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
-            Display d = new Display(1000,1000);
+            try
+            {
+                width = int.Parse(this.tbWidthValue.Text);
+                height = int.Parse(this.tbHeightValue.Text);
+                barSize = int.Parse(this.tbBarSize.Text);
+                position = int.Parse(this.tbPosition.Text);
+                time = int.Parse(this.tbTime.Text);
+                frameRate = int.Parse(this.tbFrameRate.Text);
+
+            }
+            catch
+            {
+                MessageBox.Show("Wrong with input!!");
+            }
+
+            Display d = new Display(width,height);
             d.Show();
+
+
+            Generator g = new Generator(width, height);
+            int barSize_int = g.DegreeToPosition(barSize);
+
+            for (int i = 0; i != width; i++)
+            {
+                for (int j = 0; j != height; j++)
+                {
+                    
+                }
+            }
+
+            d.pbDisplay.CreateGraphics().DrawImage(new Bitmap(), 0, 0);
+
+
             
         }
 

@@ -16,6 +16,8 @@ namespace visual_stimulus_generator
         {
             stimulusDescribtion = new Dictionary<int, string>();
             stimulusDescribtion.Add(0, "A single bar(static or dynamic) in the screen");
+            stimulusDescribtion.Add(1, "A single swing bar");
+            stimulusDescribtion.Add(2, "A cyclic bar");
         }
 
         public string getDescribtion(int index)
