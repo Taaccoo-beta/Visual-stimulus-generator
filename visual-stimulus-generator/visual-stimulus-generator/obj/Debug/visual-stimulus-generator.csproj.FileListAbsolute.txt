@@ -20,3 +20,15 @@ E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-ge
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.exe.config
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.exe
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.pdb
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.exe.config
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.exe
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.pdb
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.csprojResolveAssemblyReference.cache
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Form1.resources
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Form2.resources
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex0.resources
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Properties.Resources.resources
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Display.resources
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.csproj.GenerateResource.Cache
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.exe
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.pdb

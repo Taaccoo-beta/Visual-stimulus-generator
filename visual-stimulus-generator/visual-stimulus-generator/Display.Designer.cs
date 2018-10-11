@@ -43,19 +43,21 @@
             // 
             this.pbCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbCanvas.Location = new System.Drawing.Point(0, 0);
+            this.pbCanvas.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pbCanvas.Name = "pbCanvas";
-            this.pbCanvas.Size = new System.Drawing.Size(1039, 411);
+            this.pbCanvas.Size = new System.Drawing.Size(779, 356);
             this.pbCanvas.TabIndex = 0;
             this.pbCanvas.TabStop = false;
             // 
             // Display
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 411);
+            this.ClientSize = new System.Drawing.Size(779, 356);
             this.Controls.Add(this.pbCanvas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Display";
             this.Text = "SingleBar";
             this.Load += new System.EventHandler(this.Display_Load);

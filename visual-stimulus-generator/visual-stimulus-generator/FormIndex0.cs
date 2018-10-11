@@ -23,7 +23,8 @@ namespace visual_stimulus_generator
         Bitmap image1;
         private void FormIndex0_Load(object sender, EventArgs e)
         {
-            
+            display = new Display(400, 400);
+            display.Show();
         }
 
         
@@ -33,7 +34,7 @@ namespace visual_stimulus_generator
         private int time;
         private int frameRate;
         private int position;
-
+        private Display display;
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
             try
@@ -45,6 +46,8 @@ namespace visual_stimulus_generator
                 time = int.Parse(this.tbTime.Text);
                 frameRate = int.Parse(this.tbFrameRate.Text);
 
+                display.Width = width;
+                //display.Height = height;
 
                 image1 = new Bitmap(width, height);
                 g1 = Graphics.FromImage(image1);
@@ -60,8 +63,7 @@ namespace visual_stimulus_generator
                 MessageBox.Show("Wrong with input!!");
             }
 
-            Display d = new Display(width,height);
-            d.Show();
+            
 
 
             Generator g = new Generator(width, height);
@@ -80,19 +82,19 @@ namespace visual_stimulus_generator
 
 
             g.GotoPosition(position);
-            //d.pbDisplay.CreateGraphics().DrawImage(new Bitmap(), 0, 0);
-            //g1.Clear(Color.White);
-            //for (int i = 0; i != width; i++)
-            //{
-            //    if (g.canvas[i][0] == 1)
-            //    {
-            //        g1.DrawLine(Pens.Black, i, 0, i, height);
-            //    }
-            //}
-            g1.DrawRectangle(Pens.Black, 0, 0, width, height);
-
-            d.pbCanvas.CreateGraphics().DrawImage(image1, 0, 0);
             
+            g1.Clear(Color.White);
+            for (int i = 0; i != width; i++)
+            {
+                if (g.canvas[i][0] == 1)
+                {
+                    g1.DrawLine(Pens.Black, i, 0, i, height);
+                }
+            }
+
+
+            display.pbCanvas.CreateGraphics().DrawImage(image1, 0, 0);
+           
         }
 
         private void rbMotion_CheckedChanged(object sender, EventArgs e)
