@@ -20,4 +20,3 @@ E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-ge
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.exe.config
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.exe
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.pdb
-E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.csprojResolveAssemblyReference.cache

@@ -37,8 +37,7 @@ namespace visual_stimulus_generator
 
         private void Display_Load(object sender, EventArgs e)
         {
-            timer1.Interval = 50;
-            timer1.Start();
+           
         }
     }
 }

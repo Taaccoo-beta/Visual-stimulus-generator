@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,23 @@ namespace visual_stimulus_generator
             }
         }
 
-        
+
+        public void GotoPosition(int step)
+        {
+            if (step < 0)
+            {
+                //degree to pixel
+                int stepForReal = DegreeToPosition(0)-DegreeToPosition(step);
+                MoveLeft(stepForReal);
+            }
+            if (step > 0)
+            {
+                //degree to pixel
+                int stepForReal = DegreeToPosition(step) - DegreeToPosition(0);
+                MoveRight(0);
+            }
+        }
+
         public void MoveRight(int step)
         {
             for (int i = 0; i != step; i++)
@@ -55,5 +72,6 @@ namespace visual_stimulus_generator
             //-180 to 180   ---> 0 to width
         }
 
+        
     }
 }

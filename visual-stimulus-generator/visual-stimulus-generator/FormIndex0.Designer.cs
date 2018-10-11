@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIndex0));
             this.gbBasicSetting = new System.Windows.Forms.GroupBox();
+            this.lblPositionDegree = new System.Windows.Forms.Label();
+            this.tbPosition = new System.Windows.Forms.TextBox();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.lblPixelSymHeight = new System.Windows.Forms.Label();
             this.lblPixelSymWidth = new System.Windows.Forms.Label();
             this.lblBarSizeSym = new System.Windows.Forms.Label();
@@ -48,9 +51,6 @@
             this.btnStartDisplay = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.lblPositionDegree = new System.Windows.Forms.Label();
-            this.tbPosition = new System.Windows.Forms.TextBox();
-            this.lblPosition = new System.Windows.Forms.Label();
             this.gbBasicSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,32 @@
             this.gbBasicSetting.TabIndex = 0;
             this.gbBasicSetting.TabStop = false;
             this.gbBasicSetting.Text = "Basic-Setting";
+            // 
+            // lblPositionDegree
+            // 
+            this.lblPositionDegree.AutoSize = true;
+            this.lblPositionDegree.Location = new System.Drawing.Point(245, 195);
+            this.lblPositionDegree.Name = "lblPositionDegree";
+            this.lblPositionDegree.Size = new System.Drawing.Size(55, 15);
+            this.lblPositionDegree.TabIndex = 17;
+            this.lblPositionDegree.Text = "Degree";
+            // 
+            // tbPosition
+            // 
+            this.tbPosition.Location = new System.Drawing.Point(112, 192);
+            this.tbPosition.Name = "tbPosition";
+            this.tbPosition.Size = new System.Drawing.Size(127, 25);
+            this.tbPosition.TabIndex = 16;
+            this.tbPosition.Text = "0";
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Location = new System.Drawing.Point(27, 195);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(79, 15);
+            this.lblPosition.TabIndex = 15;
+            this.lblPosition.Text = "Position:";
             // 
             // lblPixelSymHeight
             // 
@@ -132,6 +158,7 @@
             this.tbFrameRate.Name = "tbFrameRate";
             this.tbFrameRate.Size = new System.Drawing.Size(127, 25);
             this.tbFrameRate.TabIndex = 10;
+            this.tbFrameRate.Text = "25";
             // 
             // tbBarSize
             // 
@@ -139,6 +166,7 @@
             this.tbBarSize.Name = "tbBarSize";
             this.tbBarSize.Size = new System.Drawing.Size(127, 25);
             this.tbBarSize.TabIndex = 2;
+            this.tbBarSize.Text = "20";
             // 
             // lblBarSize
             // 
@@ -164,6 +192,7 @@
             this.tbTime.Name = "tbTime";
             this.tbTime.Size = new System.Drawing.Size(127, 25);
             this.tbTime.TabIndex = 6;
+            this.tbTime.Text = "10";
             // 
             // lblHeight
             // 
@@ -180,6 +209,7 @@
             this.tbHeightValue.Name = "tbHeightValue";
             this.tbHeightValue.Size = new System.Drawing.Size(127, 25);
             this.tbHeightValue.TabIndex = 4;
+            this.tbHeightValue.Text = "600";
             // 
             // lblWidth
             // 
@@ -196,6 +226,7 @@
             this.tbWidthValue.Name = "tbWidthValue";
             this.tbWidthValue.Size = new System.Drawing.Size(127, 25);
             this.tbWidthValue.TabIndex = 2;
+            this.tbWidthValue.Text = "1000";
             // 
             // btnStartDisplay
             // 
@@ -215,31 +246,6 @@
             this.btnGenerate.TabIndex = 3;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
-            // 
-            // lblPositionDegree
-            // 
-            this.lblPositionDegree.AutoSize = true;
-            this.lblPositionDegree.Location = new System.Drawing.Point(245, 195);
-            this.lblPositionDegree.Name = "lblPositionDegree";
-            this.lblPositionDegree.Size = new System.Drawing.Size(55, 15);
-            this.lblPositionDegree.TabIndex = 17;
-            this.lblPositionDegree.Text = "Degree";
-            // 
-            // tbPosition
-            // 
-            this.tbPosition.Location = new System.Drawing.Point(112, 192);
-            this.tbPosition.Name = "tbPosition";
-            this.tbPosition.Size = new System.Drawing.Size(127, 25);
-            this.tbPosition.TabIndex = 16;
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.AutoSize = true;
-            this.lblPosition.Location = new System.Drawing.Point(27, 195);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(79, 15);
-            this.lblPosition.TabIndex = 15;
-            this.lblPosition.Text = "Position:";
             // 
             // FormIndex0
             // 

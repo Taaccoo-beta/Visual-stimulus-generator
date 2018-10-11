@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,17 +19,21 @@ namespace visual_stimulus_generator
             InitializeComponent();
         }
 
+        Graphics g1;
+        Bitmap image1;
         private void FormIndex0_Load(object sender, EventArgs e)
         {
-
+            
         }
 
+        
         private int width;
         private int height;
         private int barSize;
         private int time;
         private int frameRate;
         private int position;
+
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
             try
@@ -39,6 +44,15 @@ namespace visual_stimulus_generator
                 position = int.Parse(this.tbPosition.Text);
                 time = int.Parse(this.tbTime.Text);
                 frameRate = int.Parse(this.tbFrameRate.Text);
+
+
+                image1 = new Bitmap(width, height);
+                g1 = Graphics.FromImage(image1);
+                //使绘图质量最高，即消除锯齿  
+                g1.SmoothingMode = SmoothingMode.AntiAlias;
+                g1.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g1.CompositingQuality = CompositingQuality.HighQuality;
+                g1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
 
             }
             catch
@@ -51,19 +65,33 @@ namespace visual_stimulus_generator
 
 
             Generator g = new Generator(width, height);
-            int barSize_int = g.DegreeToPosition(barSize);
-
+            barSize = g.DegreeToPosition(barSize);
+            int center = g.DegreeToPosition(0);
             for (int i = 0; i != width; i++)
             {
-                for (int j = 0; j != height; j++)
+                if(i>=center-barSize/2 & i<=center+barSize/2)
                 {
-                    
+                    for (int j = 0; j != height; j++)
+                    {
+                        g.canvas[i][j] = 1;
+                    }
                 }
             }
 
-            d.pbDisplay.CreateGraphics().DrawImage(new Bitmap(), 0, 0);
 
+            g.GotoPosition(position);
+            //d.pbDisplay.CreateGraphics().DrawImage(new Bitmap(), 0, 0);
+            //g1.Clear(Color.White);
+            //for (int i = 0; i != width; i++)
+            //{
+            //    if (g.canvas[i][0] == 1)
+            //    {
+            //        g1.DrawLine(Pens.Black, i, 0, i, height);
+            //    }
+            //}
+            g1.DrawRectangle(Pens.Black, 0, 0, width, height);
 
+            d.pbCanvas.CreateGraphics().DrawImage(image1, 0, 0);
             
         }
 
