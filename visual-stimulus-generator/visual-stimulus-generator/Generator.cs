@@ -9,65 +9,73 @@ namespace visual_stimulus_generator
 {
     class Generator
     {
-        public List<List<int>> canvas;
-        private int canvasWidth;
-        private int canvasHeight;
+        public List<List<int>> complexCanvas;
+        public List<int> simpleCanvas;
+        private int width;
+        private int height;
 
         //image rectangle
         public Generator(int width,int height)
         {
-            canvas = new List<List<int>>();
-            this.canvasWidth = width;
-            this.canvasHeight = height;
+            this.width = width;
+            this.height = height;
 
-            for (int i = 0; i != canvasWidth; i++)
-            {
-                canvas.Add(new List<int>());
-                for (int j = 0; j != canvasHeight; j++)
-                {
-                    canvas[i].Add(0);
-                }
-            }
+         
         }
 
-
-        public void GotoPosition(int step)
+        public void SetSimpleCanvas()
         {
-            if (step < 0)
+            simpleCanvas = new List<int>();
+            for (int i = 0; i != width; i++)
             {
-                //degree to pixel
-                int stepForReal = DegreeToPosition(0)-DegreeToPosition(step);
-                MoveLeft(stepForReal);
+                simpleCanvas.Add(0);
             }
-            if (step > 0)
+
+        }
+
+        public void SetSimpleCanvasPosition(float degree)
+        {
+            if (degree <= 0)
             {
                 //degree to pixel
-                int stepForReal = DegreeToPosition(step) - DegreeToPosition(0);
-                MoveRight(0);
+                int stepForReal = DegreeToWidth(-degree);
+                MoveLeftForSimpleCanvas(stepForReal);
+            }
+            if (degree > 0)
+            {
+                //degree to pixel
+                int stepForReal = DegreeToWidth(degree);
+                MoveRightForSimpleCanvas(stepForReal);
             }
         }
 
-        public void MoveRight(int step)
+        public void MoveRightForSimpleCanvas(int step)
         {
             for (int i = 0; i != step; i++)
             {
-                canvas.Insert(0, canvas[canvasWidth-1]);
-                canvas.Remove(canvas[canvasWidth]);
+                simpleCanvas.Insert(0, simpleCanvas[width - 1]);
             }
         }
 
-        public void MoveLeft(int step)
+        public void MoveLeftForSimpleCanvas(int step)
         {
             for (int i = 0; i != step; i++)
             {
-                canvas.Add(canvas[0]);
-                canvas.Remove(canvas[0]);
+                simpleCanvas.Add(simpleCanvas[0]);
+                simpleCanvas.Remove(simpleCanvas[0]);
             }
+        }
+
+
+        
+        public int DegreeToWidth(float degree)
+        {
+            return (int)(degree / 360f * width);
         }
 
         public int DegreeToPosition(float degree)
         {
-            return (int)(degree / 360 * canvasWidth + canvasWidth / 2);
+            return (int)(degree / 360f * width + width / 2f);
 
             //-180 to 180   ---> 0 to width
         }

@@ -31,43 +31,28 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Display));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pbCanvas = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pbCanvas
-            // 
-            this.pbCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCanvas.Location = new System.Drawing.Point(0, 0);
-            this.pbCanvas.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pbCanvas.Name = "pbCanvas";
-            this.pbCanvas.Size = new System.Drawing.Size(779, 356);
-            this.pbCanvas.TabIndex = 0;
-            this.pbCanvas.TabStop = false;
-            // 
             // Display
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 356);
-            this.Controls.Add(this.pbCanvas);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(1039, 411);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Display";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "SingleBar";
             this.Load += new System.EventHandler(this.Display_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
-        public System.Windows.Forms.PictureBox pbCanvas;
+        public System.Windows.Forms.Timer timer1;
     }
 }

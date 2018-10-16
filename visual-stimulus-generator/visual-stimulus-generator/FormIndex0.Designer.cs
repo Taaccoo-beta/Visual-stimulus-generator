@@ -49,10 +49,9 @@
             this.lblWidth = new System.Windows.Forms.Label();
             this.tbWidthValue = new System.Windows.Forms.TextBox();
             this.btnStartDisplay = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnGenerate = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gbBasicSetting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbBasicSetting
@@ -247,6 +246,10 @@
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormIndex0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -258,10 +261,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormIndex0";
             this.Text = "Editor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormIndex0_FormClosed);
             this.Load += new System.EventHandler(this.FormIndex0_Load);
             this.gbBasicSetting.ResumeLayout(false);
             this.gbBasicSetting.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,7 +281,6 @@
         private System.Windows.Forms.Label lblBarSize;
         private System.Windows.Forms.TextBox tbBarSize;
         private System.Windows.Forms.Button btnStartDisplay;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Label lblFrameRate;
         private System.Windows.Forms.TextBox tbFrameRate;
         private System.Windows.Forms.Button btnGenerate;
@@ -289,5 +291,6 @@
         private System.Windows.Forms.Label lblPositionDegree;
         private System.Windows.Forms.TextBox tbPosition;
         private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.Timer timer1;
     }
 }

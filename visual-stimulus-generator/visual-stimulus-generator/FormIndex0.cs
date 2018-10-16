@@ -35,6 +35,7 @@ namespace visual_stimulus_generator
         private int frameRate;
         private int position;
         private Display display;
+        private Generator g;
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
             try
@@ -47,7 +48,7 @@ namespace visual_stimulus_generator
                 frameRate = int.Parse(this.tbFrameRate.Text);
 
                 display.Width = width;
-                //display.Height = height;
+                display.Height = height;
 
                 image1 = new Bitmap(width, height);
                 g1 = Graphics.FromImage(image1);
@@ -63,43 +64,59 @@ namespace visual_stimulus_generator
                 MessageBox.Show("Wrong with input!!");
             }
 
-            
 
 
-            Generator g = new Generator(width, height);
-            barSize = g.DegreeToPosition(barSize);
+
+            g = new Generator(width, height);
+            g.SetSimpleCanvas();
+
+            barSize = g.DegreeToWidth(barSize);
             int center = g.DegreeToPosition(0);
             for (int i = 0; i != width; i++)
             {
-                if(i>=center-barSize/2 & i<=center+barSize/2)
+                
+                if (i >= center - barSize / 2 & i <= center + barSize / 2)
                 {
-                    for (int j = 0; j != height; j++)
-                    {
-                        g.canvas[i][j] = 1;
-                    }
+                    g.simpleCanvas[i] = 1;
                 }
+                Console.Write(g.simpleCanvas[i]+" ");
             }
 
-
-            g.GotoPosition(position);
             
-            g1.Clear(Color.White);
-            for (int i = 0; i != width; i++)
-            {
-                if (g.canvas[i][0] == 1)
-                {
-                    g1.DrawLine(Pens.Black, i, 0, i, height);
-                }
-            }
+            g.SetSimpleCanvasPosition(position);
+            //g.MoveLeftForSimpleCanvas(position);
 
+            timer1.Interval = 50;
+            timer1.Start();
 
-            display.pbCanvas.CreateGraphics().DrawImage(image1, 0, 0);
-           
+            
+            
+
         }
 
         private void rbMotion_CheckedChanged(object sender, EventArgs e)
         {
+           
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            g1.Clear(Color.White);
+            for (int i = 0; i != width; i++)
+            {
+                if (g.simpleCanvas[i] == 1)
+                {
+                    g1.DrawLine(Pens.Black, i, 0, i, height);
+                }
+            }
+            display.CreateGraphics().DrawImage(image1, 0, 0);
+           
+        }
+
+        private void FormIndex0_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.display.Close();
+            this.timer1.Stop();
         }
     }
 }
