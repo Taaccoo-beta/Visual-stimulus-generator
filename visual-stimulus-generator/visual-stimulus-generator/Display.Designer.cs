@@ -42,12 +42,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 411);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Display";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "SingleBar";
             this.Load += new System.EventHandler(this.Display_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Display_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Display_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Display_MouseUp);
             this.ResumeLayout(false);
 
         }

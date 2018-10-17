@@ -32,3 +32,9 @@ H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-ge
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.csproj.GenerateResource.Cache
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.exe
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.pdb
+E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.dll
+E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.dll
+E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.FFMPEG.dll
+E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.xml
+E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.xml
+E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.FFMPEG.xml

@@ -23,8 +23,9 @@ namespace visual_stimulus_generator
         Bitmap image1;
         private void FormIndex0_Load(object sender, EventArgs e)
         {
-            display = new Display(400, 400);
+            display = new Display();
             display.Show();
+            display.Location = new System.Drawing.Point(this.Location.X + this.Width, this.Location.Y+this.Height);
         }
 
         
@@ -36,6 +37,8 @@ namespace visual_stimulus_generator
         private int position;
         private Display display;
         private Generator g;
+        private string path;
+        private string name;
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
             try
@@ -49,7 +52,7 @@ namespace visual_stimulus_generator
 
                 display.Width = width;
                 display.Height = height;
-
+                
                 image1 = new Bitmap(width, height);
                 g1 = Graphics.FromImage(image1);
                 //使绘图质量最高，即消除锯齿  
@@ -117,6 +120,49 @@ namespace visual_stimulus_generator
         {
             this.display.Close();
             this.timer1.Stop();
+        }
+
+        
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            NameDetection nd = new NameDetection(path, this.tbVideoName.Text);
+            if (nd.NameSearch())
+            {
+                System.Windows.Forms.DialogResult dr = MessageBox.Show("实验名重复，是否重设？", "是", MessageBoxButtons.OKCancel);
+                if (dr == DialogResult.OK)
+                {
+                    ;
+                }
+                else
+                {
+                    ;
+                }
+            }
+
+            
+
+
+            g1.Clear(Color.White);
+            for (int i = 0; i != width; i++)
+            {
+                if (g.simpleCanvas[i] == 1)
+                {
+                    g1.DrawLine(Pens.Black, i, 0, i, height);
+                }
+            }
+
+            //VedioGenerator vg  = new VedioGenerator()
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog BrowDialog = new FolderBrowserDialog();
+            BrowDialog.ShowNewFolderButton = true;
+            BrowDialog.Description = "请选择数据保存位置";
+            BrowDialog.ShowDialog();
+            path = BrowDialog.SelectedPath;
+            lblPathValue.Text = path;
         }
     }
 }

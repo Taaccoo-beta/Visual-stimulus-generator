@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AForge;
+using AForge.Video;
+using AForge.Video.FFMPEG;
+
 
 namespace visual_stimulus_generator
 {
@@ -36,6 +40,7 @@ namespace visual_stimulus_generator
                         this.timer1.Stop();
                         FormIndex0 f0 = new FormIndex0();
                         f0.Show();
+                        f0.Location = new System.Drawing.Point(this.Location.X + this.Width , this.Location.Y);
                         break;
 
                     default:

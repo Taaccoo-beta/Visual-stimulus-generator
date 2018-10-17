@@ -13,24 +13,16 @@ namespace visual_stimulus_generator
     public partial class Display : Form
     {
 
-        private int width, height;
-        private Graphics g1;
-        private Bitmap image1;
+        
+      
 
 
-        public Display(int width,int height)
+        public Display()
         {
             InitializeComponent();
-            this.Width = width;
-            this.Height = height;
-
-            this.width = width;
-            this.height = height;
-
-            image1 = new Bitmap(width, height);
-            g1 = Graphics.FromImage(image1);
-            g1.DrawRectangle(Pens.White, 0, 0, 100, 100);
-            this.CreateGraphics().DrawImage(image1, 0, 0);
+            this.Width = 200;
+            this.Height = 80;
+           
         }
 
         private void pbDisplay_Click(object sender, EventArgs e)
@@ -48,6 +40,35 @@ namespace visual_stimulus_generator
         private void Display_Load(object sender, EventArgs e)
         {
             this.timer1.Interval = 20;
+            
+        }
+
+        private Point mouseOff;
+        private bool leftFlag;
+        private void Display_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                mouseOff = new Point(-e.X, -e.Y); //得到变量的值
+                leftFlag = true;                  //点击左键按下时标注为true;
+            }
+           
+        }
+
+        private void Display_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (leftFlag)
+            {
+                Point mouseSet = Control.MousePosition;
+                mouseSet.Offset(mouseOff.X, mouseOff.Y);  //设置移动后的位置
+                Location = mouseSet;
+            }
+            
+        }
+
+        private void Display_MouseUp(object sender, MouseEventArgs e)
+        {
+            leftFlag = false;
         }
     }
 }
