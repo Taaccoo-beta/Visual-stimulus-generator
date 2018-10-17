@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lbVisualStimulusType = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pbPreView = new System.Windows.Forms.PictureBox();
             this.btnChoose = new System.Windows.Forms.Button();
             this.gbDescribe = new System.Windows.Forms.GroupBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreView)).BeginInit();
             this.gbDescribe.SuspendLayout();
             this.SuspendLayout();
@@ -44,18 +44,13 @@
             // lbVisualStimulusType
             // 
             this.lbVisualStimulusType.FormattingEnabled = true;
-            resources.ApplyResources(this.lbVisualStimulusType, "lbVisualStimulusType");
             this.lbVisualStimulusType.Items.AddRange(new object[] {
             resources.GetString("lbVisualStimulusType.Items"),
             resources.GetString("lbVisualStimulusType.Items1"),
             resources.GetString("lbVisualStimulusType.Items2")});
+            resources.ApplyResources(this.lbVisualStimulusType, "lbVisualStimulusType");
             this.lbVisualStimulusType.Name = "lbVisualStimulusType";
             this.lbVisualStimulusType.SelectedIndexChanged += new System.EventHandler(this.lbVisualStimulusType_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
             // 
             // pbPreView
             // 
@@ -87,15 +82,20 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblType
+            // 
+            resources.ApplyResources(this.lblType, "lblType");
+            this.lblType.Name = "lblType";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.lblType);
             this.Controls.Add(this.gbDescribe);
             this.Controls.Add(this.btnChoose);
             this.Controls.Add(this.pbPreView);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbVisualStimulusType);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -109,12 +109,12 @@
         #endregion
 
         private System.Windows.Forms.ListBox lbVisualStimulusType;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbPreView;
         private System.Windows.Forms.Button btnChoose;
         private System.Windows.Forms.GroupBox gbDescribe;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblType;
     }
 }
 

@@ -13,31 +13,24 @@ namespace visual_stimulus_generator
     {
 
         private VideoFileWriter writer;
-        private string VideoName;
-        private string Path;
-        private int FrameRate;
+        
 
-        public VedioGenerator(string videoName,string path,int frameRate,int width,int height)
+        public VedioGenerator(string savePath,int frameRate,int width,int height)
         {
             VideoFileWriter writer = new VideoFileWriter();
-            this.VideoName = videoName;
-            this.Path = path;
-            this.FrameRate = frameRate;
-            try
-            {
-                writer.Open(@path, width, height, frameRate, VideoCodec.MPEG4);
-            }
-            catch
-            {
-                ;
-            }
+            writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
+            
         }
-        public void Generator(Bitmap image)
+
+
+        public void WriteSingleFrame(Bitmap image)
         {
         
             writer.WriteVideoFrame(image);
            
         }
+
+        
 
 
 

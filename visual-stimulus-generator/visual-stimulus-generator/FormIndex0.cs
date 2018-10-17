@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AForge.Video.FFMPEG;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,30 @@ namespace visual_stimulus_generator
 {
     public partial class FormIndex0 : Form
     {
-        
+        private int width;
+        private int height;
+        private int time;
+        private int frameRate;
+        private string name;
+        private string path;
+        private string savePath;
+
         public FormIndex0()
         {
             InitializeComponent();
+            
         }
+
+        //public void SetGeneralParameter(int width, int height, int frameRate, int time, string name, string path)
+        //{
+        //    this.width = width;
+        //    this.height = height;
+        //    this.frameRate = frameRate;
+        //    this.time = time;
+        //    this.name = name;
+        //    this.path = path;
+        //}
+
 
         Graphics g1;
         Bitmap image1;
@@ -29,27 +49,18 @@ namespace visual_stimulus_generator
         }
 
         
-        private int width;
-        private int height;
+        
         private int barSize;
-        private int time;
-        private int frameRate;
+       
         private int position;
         private Display display;
         private Generator g;
-        private string path;
-        private string name;
+        
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
             try
             {
-                width = int.Parse(this.tbWidthValue.Text);
-                height = int.Parse(this.tbHeightValue.Text);
-                barSize = int.Parse(this.tbBarSize.Text);
-                position = int.Parse(this.tbPosition.Text);
-                time = int.Parse(this.tbTime.Text);
-                frameRate = int.Parse(this.tbFrameRate.Text);
-
+               
                 display.Width = width;
                 display.Height = height;
                 
@@ -65,11 +76,13 @@ namespace visual_stimulus_generator
             catch
             {
                 MessageBox.Show("Wrong with input!!");
+               
             }
 
 
 
-
+            barSize = int.Parse(this.tbBarSize.Text);
+            position = int.Parse(this.tbPosition.Text);
             g = new Generator(width, height);
             g.SetSimpleCanvas();
 
@@ -82,7 +95,7 @@ namespace visual_stimulus_generator
                 {
                     g.simpleCanvas[i] = 1;
                 }
-                Console.Write(g.simpleCanvas[i]+" ");
+                
             }
 
             
@@ -96,7 +109,10 @@ namespace visual_stimulus_generator
             
 
         }
-
+        public void shouMe()
+        {
+            MessageBox.Show("hh");
+        }
         private void rbMotion_CheckedChanged(object sender, EventArgs e)
         {
            
@@ -122,47 +138,69 @@ namespace visual_stimulus_generator
             this.timer1.Stop();
         }
 
-        
 
+       
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            
+                g1.Clear(Color.White);
+                for (int i = 0; i != width; i++)
+                {
+                    if (g.simpleCanvas[i] == 1)
+                    {
+                        g1.DrawLine(Pens.Black, i, 0, i, height);
+                    }
+                }
+            VideoFileWriter writer = new VideoFileWriter();
+            writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
+            for (int i = 0; i != frameRate * time; i++)
+                {
+                writer.WriteVideoFrame(image1);
+            }
+            MessageBox.Show("Saved!!");
+
+           
+            
+        }
+
+        private void btnChoicePath_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog BrowDialog = new FolderBrowserDialog();
+            BrowDialog.ShowNewFolderButton = true;
+            BrowDialog.Description = "请选择数据保存位置";
+            BrowDialog.ShowDialog();
+            string path = BrowDialog.SelectedPath;
+            lblPathValue.Text = path;
+        }
+
+        private void lblSet_Click(object sender, EventArgs e)
+        {
+            width = int.Parse(this.tbWidthValue.Text);
+            height = int.Parse(this.tbHeightValue.Text);
+            time = int.Parse(this.tbTime.Text);
+            frameRate = int.Parse(this.tbFrameRate.Text);
+            path = this.lblPathValue.Text;
+            name = this.tbVideoName.Text;
+
             NameDetection nd = new NameDetection(path, this.tbVideoName.Text);
             if (nd.NameSearch())
             {
                 System.Windows.Forms.DialogResult dr = MessageBox.Show("实验名重复，是否重设？", "是", MessageBoxButtons.OKCancel);
                 if (dr == DialogResult.OK)
                 {
-                    ;
+                    this.tbVideoName.Focus();
                 }
                 else
                 {
-                    ;
+                    name = this.tbVideoName.Text;
+
                 }
             }
 
-            
+            savePath = path + "\\" + name + ".avi";
 
-
-            g1.Clear(Color.White);
-            for (int i = 0; i != width; i++)
-            {
-                if (g.simpleCanvas[i] == 1)
-                {
-                    g1.DrawLine(Pens.Black, i, 0, i, height);
-                }
-            }
-
-            //VedioGenerator vg  = new VedioGenerator()
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog BrowDialog = new FolderBrowserDialog();
-            BrowDialog.ShowNewFolderButton = true;
-            BrowDialog.Description = "请选择数据保存位置";
-            BrowDialog.ShowDialog();
-            path = BrowDialog.SelectedPath;
-            lblPathValue.Text = path;
+            this.btnStartDisplay.Enabled = true;
+            this.btnGenerate.Enabled = true;
         }
     }
 }

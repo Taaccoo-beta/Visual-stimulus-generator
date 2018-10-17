@@ -16,20 +16,21 @@ namespace visual_stimulus_generator
         public NameDetection(string path,string name)
         {
             this.path = path;
+            this.name = name;
         }
 
         public bool NameSearch()
         {
             
             DirectoryInfo folder = new DirectoryInfo(path);
-            string expFileName = this.name+ ".mp4";
-            if (folder.GetFiles("*.mp4").Length == 0)
+            string expFileName = this.name+ ".avi";
+            if (folder.GetFiles("*.avi").Length == 0)
             {
                 return false;
             }
             else
             {
-                foreach (FileInfo file in folder.GetFiles("*.mp4"))
+                foreach (FileInfo file in folder.GetFiles("*.avi"))
                 {
                     if (expFileName.Equals(file.Name, StringComparison.OrdinalIgnoreCase))
                     {
