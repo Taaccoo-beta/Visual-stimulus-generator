@@ -10,7 +10,6 @@ E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_s
 E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Display.resources
 E:\github\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Form2.resources
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Form1.resources
-E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Form2.resources
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex0.resources
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Properties.Resources.resources
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Display.resources
@@ -37,3 +36,4 @@ E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-ge
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.xml
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.xml
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.FFMPEG.xml
+E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex1.resources

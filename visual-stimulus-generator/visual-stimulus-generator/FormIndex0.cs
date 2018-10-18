@@ -22,21 +22,16 @@ namespace visual_stimulus_generator
         private string path;
         private string savePath;
 
+
+
+
         public FormIndex0()
         {
             InitializeComponent();
             
         }
 
-        //public void SetGeneralParameter(int width, int height, int frameRate, int time, string name, string path)
-        //{
-        //    this.width = width;
-        //    this.height = height;
-        //    this.frameRate = frameRate;
-        //    this.time = time;
-        //    this.name = name;
-        //    this.path = path;
-        //}
+        
 
 
         Graphics g1;
@@ -201,6 +196,11 @@ namespace visual_stimulus_generator
 
             this.btnStartDisplay.Enabled = true;
             this.btnGenerate.Enabled = true;
+        }
+
+        private void gbGeneralSetting_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
