@@ -1,6 +1,6 @@
 ﻿namespace visual_stimulus_generator
 {
-    partial class FormIndex1
+    partial class FormIndex2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIndex1));
             this.gbGeneralSetting = new System.Windows.Forms.GroupBox();
             this.lblSet = new System.Windows.Forms.Button();
             this.btnChoicePath = new System.Windows.Forms.Button();
@@ -48,25 +47,20 @@
             this.tbFrameRate = new System.Windows.Forms.TextBox();
             this.tbTime = new System.Windows.Forms.TextBox();
             this.lblTime = new System.Windows.Forms.Label();
-            this.btnGenerate = new System.Windows.Forms.Button();
-            this.btnStartDisplay = new System.Windows.Forms.Button();
             this.gbBasicSetting = new System.Windows.Forms.GroupBox();
+            this.btnSpeedSwitch = new System.Windows.Forms.Button();
+            this.btnBarSizeSwitch = new System.Windows.Forms.Button();
             this.lblCircleTime = new System.Windows.Forms.Label();
             this.lblCircleTimeLabel = new System.Windows.Forms.Label();
             this.rbLeftToRight = new System.Windows.Forms.RadioButton();
-            this.rbCenterToRight = new System.Windows.Forms.RadioButton();
-            this.rbCenterToLeft = new System.Windows.Forms.RadioButton();
             this.tbSpeed = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbBarSize = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblWidthDegree = new System.Windows.Forms.Label();
-            this.tbPosition = new System.Windows.Forms.TextBox();
-            this.lblPositionLabel = new System.Windows.Forms.Label();
             this.rbRightToLeft = new System.Windows.Forms.RadioButton();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnStartDisplay = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnBarSizeSwitch = new System.Windows.Forms.Button();
-            this.btnSpeedSwitch = new System.Windows.Forms.Button();
             this.gbGeneralSetting.SuspendLayout();
             this.gbBasicSetting.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +87,7 @@
             this.gbGeneralSetting.Location = new System.Drawing.Point(12, 12);
             this.gbGeneralSetting.Name = "gbGeneralSetting";
             this.gbGeneralSetting.Size = new System.Drawing.Size(307, 427);
-            this.gbGeneralSetting.TabIndex = 7;
+            this.gbGeneralSetting.TabIndex = 8;
             this.gbGeneralSetting.TabStop = false;
             this.gbGeneralSetting.Text = "General-Setting";
             // 
@@ -259,28 +253,6 @@
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "Time:";
             // 
-            // btnGenerate
-            // 
-            this.btnGenerate.Enabled = false;
-            this.btnGenerate.Location = new System.Drawing.Point(543, 372);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(135, 54);
-            this.btnGenerate.TabIndex = 9;
-            this.btnGenerate.Text = "Generate";
-            this.btnGenerate.UseVisualStyleBackColor = true;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // btnStartDisplay
-            // 
-            this.btnStartDisplay.Enabled = false;
-            this.btnStartDisplay.Location = new System.Drawing.Point(343, 372);
-            this.btnStartDisplay.Name = "btnStartDisplay";
-            this.btnStartDisplay.Size = new System.Drawing.Size(135, 54);
-            this.btnStartDisplay.TabIndex = 8;
-            this.btnStartDisplay.Text = "Preview";
-            this.btnStartDisplay.UseVisualStyleBackColor = true;
-            this.btnStartDisplay.Click += new System.EventHandler(this.btnStartDisplay_Click);
-            // 
             // gbBasicSetting
             // 
             this.gbBasicSetting.Controls.Add(this.btnSpeedSwitch);
@@ -288,28 +260,43 @@
             this.gbBasicSetting.Controls.Add(this.lblCircleTime);
             this.gbBasicSetting.Controls.Add(this.lblCircleTimeLabel);
             this.gbBasicSetting.Controls.Add(this.rbLeftToRight);
-            this.gbBasicSetting.Controls.Add(this.rbCenterToRight);
-            this.gbBasicSetting.Controls.Add(this.rbCenterToLeft);
             this.gbBasicSetting.Controls.Add(this.tbSpeed);
             this.gbBasicSetting.Controls.Add(this.label4);
             this.gbBasicSetting.Controls.Add(this.tbBarSize);
             this.gbBasicSetting.Controls.Add(this.label2);
-            this.gbBasicSetting.Controls.Add(this.lblWidthDegree);
-            this.gbBasicSetting.Controls.Add(this.tbPosition);
-            this.gbBasicSetting.Controls.Add(this.lblPositionLabel);
             this.gbBasicSetting.Controls.Add(this.rbRightToLeft);
-            this.gbBasicSetting.Location = new System.Drawing.Point(343, 12);
+            this.gbBasicSetting.Location = new System.Drawing.Point(355, 12);
             this.gbBasicSetting.Name = "gbBasicSetting";
-            this.gbBasicSetting.Size = new System.Drawing.Size(335, 318);
-            this.gbBasicSetting.TabIndex = 10;
+            this.gbBasicSetting.Size = new System.Drawing.Size(335, 294);
+            this.gbBasicSetting.TabIndex = 13;
             this.gbBasicSetting.TabStop = false;
             this.gbBasicSetting.Text = "Basic-Setting";
+            // 
+            // btnSpeedSwitch
+            // 
+            this.btnSpeedSwitch.Location = new System.Drawing.Point(247, 87);
+            this.btnSpeedSwitch.Name = "btnSpeedSwitch";
+            this.btnSpeedSwitch.Size = new System.Drawing.Size(69, 23);
+            this.btnSpeedSwitch.TabIndex = 27;
+            this.btnSpeedSwitch.Text = "Degree";
+            this.btnSpeedSwitch.UseVisualStyleBackColor = true;
+            this.btnSpeedSwitch.Click += new System.EventHandler(this.btnSpeedSwitch_Click);
+            // 
+            // btnBarSizeSwitch
+            // 
+            this.btnBarSizeSwitch.Location = new System.Drawing.Point(247, 40);
+            this.btnBarSizeSwitch.Name = "btnBarSizeSwitch";
+            this.btnBarSizeSwitch.Size = new System.Drawing.Size(69, 23);
+            this.btnBarSizeSwitch.TabIndex = 26;
+            this.btnBarSizeSwitch.Text = "Degree";
+            this.btnBarSizeSwitch.UseVisualStyleBackColor = true;
+            this.btnBarSizeSwitch.Click += new System.EventHandler(this.btnBarSizeSwitch_Click);
             // 
             // lblCircleTime
             // 
             this.lblCircleTime.AutoSize = true;
             this.lblCircleTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCircleTime.Location = new System.Drawing.Point(124, 177);
+            this.lblCircleTime.Location = new System.Drawing.Point(107, 148);
             this.lblCircleTime.Name = "lblCircleTime";
             this.lblCircleTime.Size = new System.Drawing.Size(39, 15);
             this.lblCircleTime.TabIndex = 25;
@@ -319,7 +306,7 @@
             // 
             this.lblCircleTimeLabel.AutoSize = true;
             this.lblCircleTimeLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCircleTimeLabel.Location = new System.Drawing.Point(13, 177);
+            this.lblCircleTimeLabel.Location = new System.Drawing.Point(6, 148);
             this.lblCircleTimeLabel.Name = "lblCircleTimeLabel";
             this.lblCircleTimeLabel.Size = new System.Drawing.Size(95, 15);
             this.lblCircleTimeLabel.TabIndex = 24;
@@ -328,36 +315,16 @@
             // rbLeftToRight
             // 
             this.rbLeftToRight.AutoSize = true;
-            this.rbLeftToRight.Location = new System.Drawing.Point(171, 246);
+            this.rbLeftToRight.Location = new System.Drawing.Point(169, 208);
             this.rbLeftToRight.Name = "rbLeftToRight";
             this.rbLeftToRight.Size = new System.Drawing.Size(116, 19);
             this.rbLeftToRight.TabIndex = 23;
             this.rbLeftToRight.Text = "LeftToRight";
             this.rbLeftToRight.UseVisualStyleBackColor = true;
             // 
-            // rbCenterToRight
-            // 
-            this.rbCenterToRight.AutoSize = true;
-            this.rbCenterToRight.Location = new System.Drawing.Point(171, 279);
-            this.rbCenterToRight.Name = "rbCenterToRight";
-            this.rbCenterToRight.Size = new System.Drawing.Size(132, 19);
-            this.rbCenterToRight.TabIndex = 22;
-            this.rbCenterToRight.Text = "CenterToRight";
-            this.rbCenterToRight.UseVisualStyleBackColor = true;
-            // 
-            // rbCenterToLeft
-            // 
-            this.rbCenterToLeft.AutoSize = true;
-            this.rbCenterToLeft.Location = new System.Drawing.Point(35, 279);
-            this.rbCenterToLeft.Name = "rbCenterToLeft";
-            this.rbCenterToLeft.Size = new System.Drawing.Size(124, 19);
-            this.rbCenterToLeft.TabIndex = 21;
-            this.rbCenterToLeft.Text = "CenterToLeft";
-            this.rbCenterToLeft.UseVisualStyleBackColor = true;
-            // 
             // tbSpeed
             // 
-            this.tbSpeed.Location = new System.Drawing.Point(127, 121);
+            this.tbSpeed.Location = new System.Drawing.Point(114, 85);
             this.tbSpeed.Name = "tbSpeed";
             this.tbSpeed.Size = new System.Drawing.Size(127, 25);
             this.tbSpeed.TabIndex = 19;
@@ -367,7 +334,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(59, 123);
+            this.label4.Location = new System.Drawing.Point(46, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 15);
             this.label4.TabIndex = 18;
@@ -375,7 +342,7 @@
             // 
             // tbBarSize
             // 
-            this.tbBarSize.Location = new System.Drawing.Point(127, 76);
+            this.tbBarSize.Location = new System.Drawing.Point(114, 40);
             this.tbBarSize.Name = "tbBarSize";
             this.tbBarSize.Size = new System.Drawing.Size(127, 25);
             this.tbBarSize.TabIndex = 16;
@@ -385,91 +352,63 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(43, 78);
+            this.label2.Location = new System.Drawing.Point(30, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 15);
             this.label2.TabIndex = 15;
             this.label2.Text = "BarSize:";
             // 
-            // lblWidthDegree
-            // 
-            this.lblWidthDegree.AutoSize = true;
-            this.lblWidthDegree.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblWidthDegree.Location = new System.Drawing.Point(261, 31);
-            this.lblWidthDegree.Name = "lblWidthDegree";
-            this.lblWidthDegree.Size = new System.Drawing.Size(55, 15);
-            this.lblWidthDegree.TabIndex = 14;
-            this.lblWidthDegree.Text = "Degree";
-            // 
-            // tbPosition
-            // 
-            this.tbPosition.Location = new System.Drawing.Point(127, 28);
-            this.tbPosition.Name = "tbPosition";
-            this.tbPosition.Size = new System.Drawing.Size(127, 25);
-            this.tbPosition.TabIndex = 13;
-            this.tbPosition.Text = "45";
-            // 
-            // lblPositionLabel
-            // 
-            this.lblPositionLabel.AutoSize = true;
-            this.lblPositionLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPositionLabel.Location = new System.Drawing.Point(43, 31);
-            this.lblPositionLabel.Name = "lblPositionLabel";
-            this.lblPositionLabel.Size = new System.Drawing.Size(79, 15);
-            this.lblPositionLabel.TabIndex = 12;
-            this.lblPositionLabel.Text = "Position:";
-            // 
             // rbRightToLeft
             // 
             this.rbRightToLeft.AutoSize = true;
             this.rbRightToLeft.Checked = true;
-            this.rbRightToLeft.Location = new System.Drawing.Point(35, 246);
+            this.rbRightToLeft.Location = new System.Drawing.Point(33, 208);
             this.rbRightToLeft.Name = "rbRightToLeft";
             this.rbRightToLeft.Size = new System.Drawing.Size(116, 19);
             this.rbRightToLeft.TabIndex = 11;
             this.rbRightToLeft.TabStop = true;
             this.rbRightToLeft.Text = "RightToLeft";
             this.rbRightToLeft.UseVisualStyleBackColor = true;
-            this.rbRightToLeft.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Enabled = false;
+            this.btnGenerate.Location = new System.Drawing.Point(555, 361);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(135, 54);
+            this.btnGenerate.TabIndex = 12;
+            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // btnStartDisplay
+            // 
+            this.btnStartDisplay.Enabled = false;
+            this.btnStartDisplay.Location = new System.Drawing.Point(355, 361);
+            this.btnStartDisplay.Name = "btnStartDisplay";
+            this.btnStartDisplay.Size = new System.Drawing.Size(135, 54);
+            this.btnStartDisplay.TabIndex = 11;
+            this.btnStartDisplay.Text = "Preview";
+            this.btnStartDisplay.UseVisualStyleBackColor = true;
+            this.btnStartDisplay.Click += new System.EventHandler(this.btnStartDisplay_Click);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnBarSizeSwitch
-            // 
-            this.btnBarSizeSwitch.Location = new System.Drawing.Point(260, 76);
-            this.btnBarSizeSwitch.Name = "btnBarSizeSwitch";
-            this.btnBarSizeSwitch.Size = new System.Drawing.Size(69, 23);
-            this.btnBarSizeSwitch.TabIndex = 26;
-            this.btnBarSizeSwitch.Text = "Degree";
-            this.btnBarSizeSwitch.UseVisualStyleBackColor = true;
-            this.btnBarSizeSwitch.Click += new System.EventHandler(this.btnBarSizeSwitch_Click);
-            // 
-            // btnSpeedSwitch
-            // 
-            this.btnSpeedSwitch.Location = new System.Drawing.Point(260, 123);
-            this.btnSpeedSwitch.Name = "btnSpeedSwitch";
-            this.btnSpeedSwitch.Size = new System.Drawing.Size(69, 23);
-            this.btnSpeedSwitch.TabIndex = 27;
-            this.btnSpeedSwitch.Text = "Degree";
-            this.btnSpeedSwitch.UseVisualStyleBackColor = true;
-            this.btnSpeedSwitch.Click += new System.EventHandler(this.btnSpeedSwitch_Click);
-            // 
-            // FormIndex1
+            // FormIndex2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 475);
+            this.ClientSize = new System.Drawing.Size(818, 493);
             this.Controls.Add(this.gbBasicSetting);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnStartDisplay);
             this.Controls.Add(this.gbGeneralSetting);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormIndex1";
-            this.Text = "Editor";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormIndex1_FormClosed);
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Name = "FormIndex2";
+            this.Text = "FormIndex2";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormIndex2_FormClosed);
+            this.Load += new System.EventHandler(this.FormIndex2_Load);
             this.gbGeneralSetting.ResumeLayout(false);
             this.gbGeneralSetting.PerformLayout();
             this.gbBasicSetting.ResumeLayout(false);
@@ -498,24 +437,19 @@
         private System.Windows.Forms.TextBox tbFrameRate;
         private System.Windows.Forms.TextBox tbTime;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Button btnStartDisplay;
         private System.Windows.Forms.GroupBox gbBasicSetting;
+        private System.Windows.Forms.Button btnSpeedSwitch;
+        private System.Windows.Forms.Button btnBarSizeSwitch;
+        private System.Windows.Forms.Label lblCircleTime;
+        private System.Windows.Forms.Label lblCircleTimeLabel;
+        private System.Windows.Forms.RadioButton rbLeftToRight;
         private System.Windows.Forms.TextBox tbSpeed;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbBarSize;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblWidthDegree;
-        private System.Windows.Forms.TextBox tbPosition;
-        private System.Windows.Forms.Label lblPositionLabel;
         private System.Windows.Forms.RadioButton rbRightToLeft;
-        private System.Windows.Forms.RadioButton rbLeftToRight;
-        private System.Windows.Forms.RadioButton rbCenterToRight;
-        private System.Windows.Forms.RadioButton rbCenterToLeft;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button btnStartDisplay;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label lblCircleTime;
-        private System.Windows.Forms.Label lblCircleTimeLabel;
-        private System.Windows.Forms.Button btnSpeedSwitch;
-        private System.Windows.Forms.Button btnBarSizeSwitch;
     }
 }

@@ -13,12 +13,13 @@ using System.Windows.Forms;
 
 namespace visual_stimulus_generator
 {
-    public partial class FormIndex1 : Form
+    public partial class FormIndex2 : Form
     {
-        public FormIndex1()
+        public FormIndex2()
         {
             InitializeComponent();
         }
+
         private int width;
         private int height;
         private float time;
@@ -31,7 +32,7 @@ namespace visual_stimulus_generator
         Bitmap image1;
 
         private Display display;
-        private void Form2_Load(object sender, EventArgs e)
+        private void FormIndex2_Load(object sender, EventArgs e)
         {
             display = new Display();
             display.Show();
@@ -78,24 +79,42 @@ namespace visual_stimulus_generator
             this.btnGenerate.Enabled = true;
         }
 
-        private void FormIndex1_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnBarSizeSwitch_Click(object sender, EventArgs e)
         {
-            this.display.Close();
-            
+            if (btnBarSizeSwitch.Text == "Degree")
+            {
+                btnBarSizeSwitch.Text = "Pixel";
+            }
+            else
+            {
+                btnBarSizeSwitch.Text = "Degree";
+            }
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void btnSpeedSwitch_Click(object sender, EventArgs e)
         {
-
+            if (btnSpeedSwitch.Text == "Degree")
+            {
+                btnSpeedSwitch.Text = "Pixel";
+            }
+            else
+            {
+                btnSpeedSwitch.Text = "Degree";
+            }
         }
 
 
         private int barSize;
-        private int position;
         private float speed;
         private int step;
         private int center;
         Generator g;
+
+        private int orientation;
+        private int RightPosition, LeftPosition;
+        private int positionNow;
+
+
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
             try
@@ -122,7 +141,7 @@ namespace visual_stimulus_generator
 
 
             barSize = int.Parse(this.tbBarSize.Text);
-            position = int.Parse(this.tbPosition.Text);
+      
             speed = float.Parse(this.tbSpeed.Text);
 
             g = new Generator(width, height);
@@ -132,13 +151,13 @@ namespace visual_stimulus_generator
             {
                 barSize = g.DegreeToWidth(barSize);
             }
-            
-                
-            
+
+
+
             center = g.DegreeToPosition(0);
 
-            realRightPosition = g.DegreeToPosition(position);
-            realLeftPosition = g.DegreeToPosition(-position);
+            RightPosition = g.DegreeToPosition(180);
+            LeftPosition = g.DegreeToPosition(-180);
 
             for (int i = 0; i != width; i++)
             {
@@ -152,29 +171,17 @@ namespace visual_stimulus_generator
 
             if (rbRightToLeft.Checked)
             {
-                g.SetSimpleCanvasPosition(position);
+                g.SetSimpleCanvasPosition(180);
                 orientation = -1;
-                positionNow = realRightPosition ;
+                positionNow = RightPosition;
             }
             else if (rbLeftToRight.Checked)
             {
-                g.SetSimpleCanvasPosition(-position);
+                g.SetSimpleCanvasPosition(-180);
                 orientation = +1;
-                positionNow = realLeftPosition;
+                positionNow = LeftPosition;
             }
-            else if (rbCenterToLeft.Checked)
-            {
-                g.SetSimpleCanvasPosition(0);
-                orientation = -1;
-                positionNow = center;
-            }
-            else if(rbCenterToRight.Checked)
-            {
-                g.SetSimpleCanvasPosition(0);
-                orientation = +1;
-                positionNow = center;
-
-            }
+            
 
             if (btnSpeedSwitch.Text == "Degree")
             {
@@ -185,39 +192,24 @@ namespace visual_stimulus_generator
                 step = (int)speed;
             }
 
-            float recCircleTime = CircleCalc(speed, frameRate, position);
+            float recCircleTime = CircleCalc(speed, frameRate);
             this.lblCircleTime.Text = recCircleTime.ToString();
 
-            timer1.Interval = 1000/frameRate;
+            timer1.Interval = 1000 / frameRate;
             timer1.Start();
-
-            
         }
 
-        private int orientation;
-        private int realRightPosition,realLeftPosition;
-        private int positionNow;
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             if (orientation == +1)
             {
                 g.MoveRightForSimpleCanvas(step);
-                positionNow += step;
-                if (positionNow > realRightPosition)
-                {
-                    orientation = -1;
-                }
-
+               
             }
             if (orientation == -1)
             {
                 g.MoveLeftForSimpleCanvas(step);
-                positionNow -= step;
-                if (positionNow < realLeftPosition)
-                {
-                    orientation = 1;
-                }
+               
             }
 
 
@@ -233,7 +225,12 @@ namespace visual_stimulus_generator
             }
             display.CreateGraphics().DrawImage(image1, 0, 0);
         }
-       
+
+        private void FormIndex2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.display.Close();
+        }
+
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             this.timer1.Stop();
@@ -251,55 +248,35 @@ namespace visual_stimulus_generator
 
             if (rbRightToLeft.Checked)
             {
-                g.SetSimpleCanvasPosition(position);
+                g.SetSimpleCanvasPosition(180);
                 orientation = -1;
-                positionNow = realRightPosition;
+                
             }
             else if (rbLeftToRight.Checked)
             {
-                g.SetSimpleCanvasPosition(-position);
+                g.SetSimpleCanvasPosition(-180);
                 orientation = +1;
-                positionNow = realLeftPosition;
+               
             }
-            else if (rbCenterToLeft.Checked)
-            {
-                g.SetSimpleCanvasPosition(0);
-                orientation = -1;
-                positionNow = center;
-            }
-            else if (rbCenterToRight.Checked)
-            {
-                g.SetSimpleCanvasPosition(0);
-                orientation = +1;
-                positionNow = center;
+           
 
-            }
 
-            
             VideoFileWriter writer = new VideoFileWriter();
             writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
-            
+
             for (int i = 0; i != (int)(frameRate * time); i++)
             {
 
                 if (orientation == +1)
                 {
                     g.MoveRightForSimpleCanvas(step);
-                    positionNow += step;
-                    if (positionNow > realRightPosition)
-                    {
-                        orientation = -1;
-                    }
+                   
 
                 }
                 if (orientation == -1)
                 {
                     g.MoveLeftForSimpleCanvas(step);
-                    positionNow -= step;
-                    if (positionNow < realLeftPosition)
-                    {
-                        orientation = 1;
-                    }
+                   
                 }
 
 
@@ -314,56 +291,25 @@ namespace visual_stimulus_generator
                     }
                 }
 
-                
+
 
                 writer.WriteVideoFrame(image1);
             }
 
             writer.Close();
             MessageBox.Show("Saved!!");
-
-
-
-
-
         }
 
-        private void btnBarSizeSwitch_Click(object sender, EventArgs e)
+        public float CircleCalc(float speed, int frameRate)
         {
-            if (btnBarSizeSwitch.Text == "Degree")
-            {
-                btnBarSizeSwitch.Text = "Pixel";
-            }
-            else
-            {
-                btnBarSizeSwitch.Text = "Degree";
-            }
-                
-
-        }
-
-        private void btnSpeedSwitch_Click(object sender, EventArgs e)
-        {
-            if (btnSpeedSwitch.Text == "Degree")
-            {
-                btnSpeedSwitch.Text = "Pixel";
-            }
-            else
-            {
-                btnSpeedSwitch.Text = "Degree";
-            }
-        }
-
-        public float CircleCalc(float speed,int frameRate,int position)
-        {
+           
             
-            int rightPosition = g.DegreeToPosition(position);
-            int leftPosition = g.DegreeToPosition(-position);
-            float count = (float)(rightPosition - leftPosition) / (float)(step);
-            return count / (float)frameRate*2.0f;
+            float count = width / (float)(step);
+            return count / (float)frameRate ;
 
 
 
         }
+
     }
 }
