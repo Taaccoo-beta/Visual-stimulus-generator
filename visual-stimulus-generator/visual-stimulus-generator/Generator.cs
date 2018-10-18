@@ -33,6 +33,15 @@ namespace visual_stimulus_generator
 
         }
 
+        public void ClearListForSimpleCanvas()
+        {
+            for(int i = 0; i!=width;i++)
+            {
+                simpleCanvas[i] = 0;
+
+            }
+        }
+
         public void SetSimpleCanvasPosition(float degree)
         {
             if (degree <= 0)
@@ -49,13 +58,16 @@ namespace visual_stimulus_generator
             }
         }
 
+
         public void MoveRightForSimpleCanvas(int step)
         {
             for (int i = 0; i != step; i++)
             {
                 simpleCanvas.Insert(0, simpleCanvas[width - 1]);
+                simpleCanvas.RemoveAt(simpleCanvas.Count - 1);
             }
         }
+
 
         public void MoveLeftForSimpleCanvas(int step)
         {

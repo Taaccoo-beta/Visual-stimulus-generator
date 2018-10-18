@@ -23,7 +23,6 @@ H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-ge
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.exe
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\visual-stimulus-generator.pdb
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Form1.resources
-H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Form2.resources
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex0.resources
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Properties.Resources.resources
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.Display.resources
@@ -37,3 +36,10 @@ E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-ge
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.xml
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.FFMPEG.xml
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex1.resources
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.dll
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.dll
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.FFMPEG.dll
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.xml
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.xml
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.FFMPEG.xml
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex1.resources

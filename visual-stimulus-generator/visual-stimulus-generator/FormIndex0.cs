@@ -115,6 +115,7 @@ namespace visual_stimulus_generator
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             g1.Clear(Color.White);
             for (int i = 0; i != width; i++)
             {
@@ -124,6 +125,10 @@ namespace visual_stimulus_generator
                 }
             }
             display.CreateGraphics().DrawImage(image1, 0, 0);
+
+
+           
+
            
         }
 
@@ -152,6 +157,7 @@ namespace visual_stimulus_generator
                 {
                 writer.WriteVideoFrame(image1);
             }
+            writer.Close();
             MessageBox.Show("Saved!!");
 
            

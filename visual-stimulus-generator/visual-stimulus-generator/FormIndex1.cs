@@ -1,9 +1,11 @@
-﻿using System;
+﻿using AForge.Video.FFMPEG;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,7 +94,7 @@ namespace visual_stimulus_generator
         private int position;
         private float speed;
         private int step;
-
+        private int center;
         Generator g;
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
@@ -102,7 +104,7 @@ namespace visual_stimulus_generator
                 display.Width = width;
                 display.Height = height;
 
-                image1 = new Bitmap(width, height);
+                image1 = new Bitmap(width, height, PixelFormat.Format24bppRgb);
                 g1 = Graphics.FromImage(image1);
                 //使绘图质量最高，即消除锯齿  
                 g1.SmoothingMode = SmoothingMode.AntiAlias;
@@ -127,7 +129,7 @@ namespace visual_stimulus_generator
             g.SetSimpleCanvas();
 
             barSize = g.DegreeToWidth(barSize);
-            int center = g.DegreeToPosition(0);
+            center = g.DegreeToPosition(0);
 
             realRightPosition = g.DegreeToPosition(position);
             realLeftPosition = g.DegreeToPosition(-position);
@@ -218,6 +220,100 @@ namespace visual_stimulus_generator
                 }
             }
             display.CreateGraphics().DrawImage(image1, 0, 0);
+        }
+       
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            this.timer1.Stop();
+            g.ClearListForSimpleCanvas();
+            int center = g.DegreeToPosition(0);
+            for (int i = 0; i != width; i++)
+            {
+
+                if (i >= center - barSize / 2 & i <= center + barSize / 2)
+                {
+                    g.simpleCanvas[i] = 1;
+                }
+
+            }
+
+            if (rbRightToLeft.Checked)
+            {
+                g.SetSimpleCanvasPosition(position);
+                orientation = -1;
+                positionNow = realRightPosition;
+            }
+            else if (rbLeftToRight.Checked)
+            {
+                g.SetSimpleCanvasPosition(-position);
+                orientation = +1;
+                positionNow = realLeftPosition;
+            }
+            else if (rbCenterToLeft.Checked)
+            {
+                g.SetSimpleCanvasPosition(0);
+                orientation = -1;
+                positionNow = center;
+            }
+            else if (rbCenterToRight.Checked)
+            {
+                g.SetSimpleCanvasPosition(0);
+                orientation = +1;
+                positionNow = center;
+
+            }
+
+            
+            VideoFileWriter writer = new VideoFileWriter();
+            writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
+            
+            for (int i = 0; i != frameRate * time; i++)
+            {
+
+                if (orientation == +1)
+                {
+                    g.MoveRightForSimpleCanvas(step);
+                    positionNow += step;
+                    if (positionNow > realRightPosition)
+                    {
+                        orientation = -1;
+                    }
+
+                }
+                if (orientation == -1)
+                {
+                    g.MoveLeftForSimpleCanvas(step);
+                    positionNow -= step;
+                    if (positionNow < realLeftPosition)
+                    {
+                        orientation = 1;
+                    }
+                }
+
+
+
+
+                g1.Clear(Color.White);
+                for (int ii = 0; ii != width; ii++)
+                {
+                    if (g.simpleCanvas[ii] == 1)
+                    {
+                        g1.DrawLine(Pens.Black, ii, 0, ii, height);
+                    }
+                }
+
+                
+
+                writer.WriteVideoFrame(image1);
+            }
+
+            writer.Close();
+            MessageBox.Show("Saved!!");
+
+
+
+
+
         }
 
         public float CircleCalc(float speed,int frameRate,int position)
