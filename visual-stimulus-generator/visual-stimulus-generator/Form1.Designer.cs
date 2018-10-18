@@ -44,11 +44,12 @@
             // lbVisualStimulusType
             // 
             this.lbVisualStimulusType.FormattingEnabled = true;
+            resources.ApplyResources(this.lbVisualStimulusType, "lbVisualStimulusType");
             this.lbVisualStimulusType.Items.AddRange(new object[] {
             resources.GetString("lbVisualStimulusType.Items"),
             resources.GetString("lbVisualStimulusType.Items1"),
-            resources.GetString("lbVisualStimulusType.Items2")});
-            resources.ApplyResources(this.lbVisualStimulusType, "lbVisualStimulusType");
+            resources.GetString("lbVisualStimulusType.Items2"),
+            resources.GetString("lbVisualStimulusType.Items3")});
             this.lbVisualStimulusType.Name = "lbVisualStimulusType";
             this.lbVisualStimulusType.SelectedIndexChanged += new System.EventHandler(this.lbVisualStimulusType_SelectedIndexChanged);
             // 
