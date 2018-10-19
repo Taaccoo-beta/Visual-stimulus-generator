@@ -142,7 +142,8 @@ namespace visual_stimulus_generator
                         this.pbPreView.CreateGraphics().DrawImage(sp.singleCyclicBar(degreeForCyclicBar), 0, 0);
                         break;
                     case 3:
-                        this.pbPreView.BackgroundImage = Image.FromFile(@"images/gratingBar.gif");
+                        ;
+
                         break;
                 }
             }
