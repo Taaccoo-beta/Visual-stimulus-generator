@@ -87,6 +87,12 @@
     <Compile Include="FormIndex3.Designer.cs">
       <DependentUpon>FormIndex3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIndex4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIndex4.Designer.cs">
+      <DependentUpon>FormIndex4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generator.cs" />
     <Compile Include="NameDetection.cs" />
     <Compile Include="Program.cs" />
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormIndex3.resx">
       <DependentUpon>FormIndex3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIndex4.resx">
+      <DependentUpon>FormIndex4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

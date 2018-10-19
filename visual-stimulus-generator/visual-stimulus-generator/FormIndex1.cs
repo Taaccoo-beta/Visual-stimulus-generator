@@ -275,7 +275,10 @@ namespace visual_stimulus_generator
 
             }
 
-            
+            progressBar1.Maximum = (int)(frameRate * time);
+            progressBar1.Value = progressBar1.Minimum = 0;//设置范围最小值
+
+
             VideoFileWriter writer = new VideoFileWriter();
             writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
             
@@ -314,12 +317,13 @@ namespace visual_stimulus_generator
                     }
                 }
 
-                
 
+                this.progressBar1.Value = i;
                 writer.WriteVideoFrame(image1);
             }
 
             writer.Close();
+            this.progressBar1.Value = (int)(frameRate * time);
             MessageBox.Show("Saved!!");
 
 

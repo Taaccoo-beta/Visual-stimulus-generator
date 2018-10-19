@@ -151,12 +151,19 @@ namespace visual_stimulus_generator
                         g1.DrawLine(Pens.Black, i, 0, i, height);
                     }
                 }
+
+            progressBar1.Maximum = (int)(frameRate * time);
+            progressBar1.Value = progressBar1.Minimum = 0;//设置范围最小值
+
+
             VideoFileWriter writer = new VideoFileWriter();
             writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
             for (int i = 0; i != frameRate * time; i++)
                 {
                 writer.WriteVideoFrame(image1);
+                this.progressBar1.Value = i;
             }
+            this.progressBar1.Value = (int)(frameRate * time);
             writer.Close();
             MessageBox.Show("Saved!!");
 

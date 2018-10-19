@@ -19,6 +19,7 @@ namespace visual_stimulus_generator
             stimulusDescribtion.Add(1, "A single swing bar");
             stimulusDescribtion.Add(2, "A cyclic bar");
             stimulusDescribtion.Add(3, "Multi moving bars");
+            stimulusDescribtion.Add(4, "NULL");
         }
 
         public string getDescribtion(int index)

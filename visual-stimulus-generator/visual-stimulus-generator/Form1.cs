@@ -60,6 +60,12 @@ namespace visual_stimulus_generator
                         f3.Show();
                         f3.Location = new System.Drawing.Point(this.Location.X + this.Width, this.Location.Y);
                         break;
+                    case 4:
+                        this.timer1.Stop();
+                        FormIndex4 f4 = new FormIndex4();
+                        f4.Show();
+                        f4.Location = new System.Drawing.Point(this.Location.X + this.Width, this.Location.Y);
+                        break;
                     default:
                         break;
 
@@ -134,6 +140,9 @@ namespace visual_stimulus_generator
                             degreeForCyclicBar = -180;
                         }
                         this.pbPreView.CreateGraphics().DrawImage(sp.singleCyclicBar(degreeForCyclicBar), 0, 0);
+                        break;
+                    case 3:
+                        this.pbPreView.BackgroundImage = Image.FromFile(@"images/gratingBar.gif");
                         break;
                 }
             }

@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace visual_stimulus_generator
 {
-    public partial class FormIndex3 : Form
+    public partial class FormIndex4 : Form
     {
-        public FormIndex3()
+        public FormIndex4()
         {
             InitializeComponent();
         }
@@ -34,6 +34,13 @@ namespace visual_stimulus_generator
         private Display display;
 
 
+        private void FormIndex4_Load(object sender, EventArgs e)
+        {
+            display = new Display();
+            display.Show();
+            display.Location = new System.Drawing.Point(this.Location.X + this.Width, this.Location.Y + this.Height);
+        }
+
         private void btnChoicePath_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog BrowDialog = new FolderBrowserDialog();
@@ -43,6 +50,13 @@ namespace visual_stimulus_generator
             string path = BrowDialog.SelectedPath;
             lblPathValue.Text = path;
         }
+
+        private int barSize;
+        private float speed;
+        private int step;
+        private int center;
+        Generator g;
+
 
         private void lblSet_Click(object sender, EventArgs e)
         {
@@ -72,78 +86,9 @@ namespace visual_stimulus_generator
 
             this.btnStartDisplay.Enabled = true;
             this.btnGenerate.Enabled = true;
-        }
-
-        private void FormIndex3_Load(object sender, EventArgs e)
-        {
-            display = new Display();
-            display.Show();
-            display.Location = new System.Drawing.Point(this.Location.X + this.Width, this.Location.Y + this.Height);
-        }
-
-        private void btnBarSizeSwitch_Click(object sender, EventArgs e)
-        {
-            if (btnBarSizeSwitch.Text == "Degree")
-            {
-                btnBarSizeSwitch.Text = "Pixel";
-            }
-            else
-            {
-                btnBarSizeSwitch.Text = "Degree";
-            }
-        }
-
-        private void btnSpeedSwitch_Click(object sender, EventArgs e)
-        {
-            if (btnSpeedSwitch.Text == "Degree")
-            {
-                btnSpeedSwitch.Text = "Pixel";
-            }
-            else
-            {
-                btnSpeedSwitch.Text = "Degree";
-            }
-        }
-
-        private void FormIndex3_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.display.Close();
-        }
-
-
-        private int barSize;
-        private float speed;
-        private int step;
-        private int center;
-        Generator g;
-
-        
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (rbLeftToRight.Checked)
-            {
-                g.MoveRightForSimpleCanvas(step);
-
-            }
-            if (rbRightToLeft.Checked)
-            {
-                g.MoveLeftForSimpleCanvas(step);
-
-            }
-
-
-
-
-            g1.Clear(Color.White);
-            for (int i = 0; i != width; i++)
-            {
-                if (g.simpleCanvas[i] == 1)
-                {
-                    g1.DrawLine(Pens.Black, i, 0, i, height);
-                }
-            }
-            display.CreateGraphics().DrawImage(image1, 0, 0);
+            this.btnSetStaticColor.Enabled = true;
+            this.btnSetRevColor_1.Enabled = true;
+            this.btnSetRevColor_2.Enabled = true;
         }
 
         private void btnStartDisplay_Click(object sender, EventArgs e)
@@ -187,7 +132,7 @@ namespace visual_stimulus_generator
 
 
             bool ifWhite = true;
-            
+
             for (int i = 0; i != width; i++)
             {
                 if (i % barSize == 0)
@@ -202,10 +147,10 @@ namespace visual_stimulus_generator
                 {
                     g.simpleCanvas[i] = 0;
                 }
-                
+
             }
 
-           
+
 
 
             if (btnSpeedSwitch.Text == "Degree")
@@ -219,9 +164,97 @@ namespace visual_stimulus_generator
 
 
             this.lblCircleTime.Text = (width / (float)barSize).ToString();
-
+            switchState = true;
             timer1.Interval = 1000 / frameRate;
             timer1.Start();
+        }
+
+        private bool switchState = true;
+        private Color staticColor = Color.White;
+        private Color revColor_1 = Color.White;
+        private Color revColor_2 = Color.Black;
+
+        private void btnSetStaticColor_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.pbStaticColor.BackColor = colorDialog1.Color;
+                
+                staticColor = colorDialog1.Color;
+                
+                this.pbStaticColor.Invalidate();
+
+            }
+        }
+
+        private void btnSetRevColor_1_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.pbRevColor1.BackColor = colorDialog1.Color;
+
+                revColor_1 = colorDialog1.Color;
+
+                this.pbRevColor1.Invalidate();
+
+            }
+        }
+
+        private void btnSetRevColor_2_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.pbRevColor_2.BackColor = colorDialog1.Color;
+
+                revColor_2 = colorDialog1.Color;
+
+                this.pbRevColor_2.Invalidate();
+
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (rbLeftToRight.Checked)
+            {
+                g.MoveRightForSimpleCanvas(step);
+
+            }
+            if (rbRightToLeft.Checked)
+            {
+                g.MoveLeftForSimpleCanvas(step);
+
+            }
+
+
+
+
+            g1.Clear(Color.White);
+            for (int i = 0; i != width; i++)
+            {
+                if (g.simpleCanvas[i] == 0)
+                {
+                    g1.DrawLine(new Pen(staticColor), i, 0, i, height);
+                }
+                else
+                {
+                    if (switchState)
+                    {
+                        g1.DrawLine(new Pen(revColor_1), i, 0, i, height);
+                    }
+                    else
+                    {
+                        g1.DrawLine(new Pen(revColor_2), i, 0, i, height);
+                    }
+                }
+            }
+            switchState = !switchState;
+            display.CreateGraphics().DrawImage(image1, 0, 0);
+        }
+
+        private void FormIndex4_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.display.Close();
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -248,13 +281,15 @@ namespace visual_stimulus_generator
 
             }
 
-            progressBar1.Maximum = (int)(frameRate * time);
+
+            progressBar1.Maximum = (int)(frameRate*time);
             progressBar1.Value = progressBar1.Minimum = 0;//设置范围最小值
+
 
             VideoFileWriter writer = new VideoFileWriter();
             writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
-
-            for (int i = 0; i != (int)(frameRate * time); i++)
+           
+            for (int ii = 0; ii != (int)(frameRate * time); ii++)
             {
 
                 if (rbLeftToRight.Checked)
@@ -273,17 +308,32 @@ namespace visual_stimulus_generator
 
 
                 g1.Clear(Color.White);
-                for (int ii = 0; ii != width; ii++)
+                for (int i = 0; i != width; i++)
                 {
-                    if (g.simpleCanvas[ii] == 1)
+                    if (g.simpleCanvas[i] == 0)
                     {
-                        g1.DrawLine(Pens.Black, ii, 0, ii, height);
+                        g1.DrawLine(new Pen(staticColor), i, 0, i, height);
+                    }
+                    else
+                    {
+                        if (switchState)
+                        {
+                            g1.DrawLine(new Pen(revColor_1), i, 0, i, height);
+                        }
+                        else
+                        {
+                            g1.DrawLine(new Pen(revColor_2), i, 0, i, height);
+                        }
                     }
                 }
+                switchState = !switchState;
 
 
-                this.progressBar1.Value = i;
                 writer.WriteVideoFrame(image1);
+
+                
+                this.progressBar1.Value = ii;
+                
             }
 
             writer.Close();
@@ -291,6 +341,28 @@ namespace visual_stimulus_generator
             MessageBox.Show("Saved!!");
         }
 
-       
+        private void btnBarSizeSwitch_Click(object sender, EventArgs e)
+        {
+            if (btnBarSizeSwitch.Text == "Degree")
+            {
+                btnBarSizeSwitch.Text = "Pixel";
+            }
+            else
+            {
+                btnBarSizeSwitch.Text = "Degree";
+            }
+        }
+
+        private void btnSpeedSwitch_Click(object sender, EventArgs e)
+        {
+            if (btnSpeedSwitch.Text == "Degree")
+            {
+                btnSpeedSwitch.Text = "Pixel";
+            }
+            else
+            {
+                btnSpeedSwitch.Text = "Degree";
+            }
+        }
     }
 }
