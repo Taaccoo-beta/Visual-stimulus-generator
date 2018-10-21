@@ -93,11 +93,22 @@
     <Compile Include="FormIndex4.Designer.cs">
       <DependentUpon>FormIndex4.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIndex5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIndex5.Designer.cs">
+      <DependentUpon>FormIndex5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generator.cs" />
     <Compile Include="NameDetection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StimulusPreview.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RandomPointGenerator.cs" />
     <Compile Include="Display.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,7 +116,6 @@
       <DependentUpon>Display.cs</DependentUpon>
     </Compile>
     <Compile Include="VedioGenerator.cs" />
-    <Compile Include="VisualStimulusDescribe.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,16 +134,14 @@
     <EmbeddedResource Include="FormIndex4.resx">
       <DependentUpon>FormIndex4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormIndex5.resx">
+      <DependentUpon>FormIndex5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Display.resx">
       <DependentUpon>Display.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,10 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\gratingBar.gif" />
-    <Content Include="Resources\revBar.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

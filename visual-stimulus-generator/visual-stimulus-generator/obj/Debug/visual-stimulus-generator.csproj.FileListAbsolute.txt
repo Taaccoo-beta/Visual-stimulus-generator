@@ -43,10 +43,11 @@ H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-ge
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.xml
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\bin\Debug\AForge.Video.FFMPEG.xml
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex1.resources
-E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.csprojResolveAssemblyReference.cache
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex2.resources
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex3.resources
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex2.resources
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex3.resources
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex4.resources
 H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.csprojResolveAssemblyReference.cache
+E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex4.resources
+E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex5.resources

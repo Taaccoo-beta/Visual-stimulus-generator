@@ -49,6 +49,7 @@ namespace visual_stimulus_generator
         {
             if (e.Button == MouseButtons.Left)
             {
+
                 mouseOff = new Point(-e.X, -e.Y); //得到变量的值
                 leftFlag = true;                  //点击左键按下时标注为true;
             }
