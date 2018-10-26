@@ -82,10 +82,9 @@
             // 
             this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.progressBar1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.progressBar1.Location = new System.Drawing.Point(445, 461);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.progressBar1.Location = new System.Drawing.Point(334, 400);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(377, 27);
+            this.progressBar1.Size = new System.Drawing.Size(283, 23);
             this.progressBar1.TabIndex = 27;
             // 
             // gbBasicSetting
@@ -106,9 +105,11 @@
             this.gbBasicSetting.Controls.Add(this.tbSectorNumber);
             this.gbBasicSetting.Controls.Add(this.lblDivide);
             this.gbBasicSetting.Controls.Add(this.rbRightToLeft);
-            this.gbBasicSetting.Location = new System.Drawing.Point(444, 38);
+            this.gbBasicSetting.Location = new System.Drawing.Point(333, 33);
+            this.gbBasicSetting.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.gbBasicSetting.Name = "gbBasicSetting";
-            this.gbBasicSetting.Size = new System.Drawing.Size(378, 343);
+            this.gbBasicSetting.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.gbBasicSetting.Size = new System.Drawing.Size(284, 297);
             this.gbBasicSetting.TabIndex = 26;
             this.gbBasicSetting.TabStop = false;
             this.gbBasicSetting.Text = "Basic-Setting";
@@ -117,17 +118,19 @@
             // 
             this.panel1.Controls.Add(this.rbOffToOn);
             this.panel1.Controls.Add(this.rbOnToOff);
-            this.panel1.Location = new System.Drawing.Point(19, 213);
+            this.panel1.Location = new System.Drawing.Point(14, 185);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(293, 31);
+            this.panel1.Size = new System.Drawing.Size(220, 27);
             this.panel1.TabIndex = 28;
             // 
             // rbOffToOn
             // 
             this.rbOffToOn.AutoSize = true;
-            this.rbOffToOn.Location = new System.Drawing.Point(155, 6);
+            this.rbOffToOn.Location = new System.Drawing.Point(116, 5);
+            this.rbOffToOn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.rbOffToOn.Name = "rbOffToOn";
-            this.rbOffToOn.Size = new System.Drawing.Size(84, 19);
+            this.rbOffToOn.Size = new System.Drawing.Size(66, 17);
             this.rbOffToOn.TabIndex = 25;
             this.rbOffToOn.Text = "OffToOn";
             this.rbOffToOn.UseVisualStyleBackColor = true;
@@ -136,9 +139,10 @@
             // 
             this.rbOnToOff.AutoSize = true;
             this.rbOnToOff.Checked = true;
-            this.rbOnToOff.Location = new System.Drawing.Point(10, 6);
+            this.rbOnToOff.Location = new System.Drawing.Point(8, 5);
+            this.rbOnToOff.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.rbOnToOff.Name = "rbOnToOff";
-            this.rbOnToOff.Size = new System.Drawing.Size(84, 19);
+            this.rbOnToOff.Size = new System.Drawing.Size(66, 17);
             this.rbOnToOff.TabIndex = 24;
             this.rbOnToOff.TabStop = true;
             this.rbOnToOff.Text = "OnToOff";
@@ -146,10 +150,9 @@
             // 
             // pbRevColor_2
             // 
-            this.pbRevColor_2.Location = new System.Drawing.Point(118, 298);
-            this.pbRevColor_2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pbRevColor_2.Location = new System.Drawing.Point(88, 258);
             this.pbRevColor_2.Name = "pbRevColor_2";
-            this.pbRevColor_2.Size = new System.Drawing.Size(128, 21);
+            this.pbRevColor_2.Size = new System.Drawing.Size(96, 18);
             this.pbRevColor_2.TabIndex = 45;
             this.pbRevColor_2.TabStop = false;
             // 
@@ -157,19 +160,19 @@
             // 
             this.lblOfflabel.AutoSize = true;
             this.lblOfflabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblOfflabel.Location = new System.Drawing.Point(16, 298);
+            this.lblOfflabel.Location = new System.Drawing.Point(19, 258);
+            this.lblOfflabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOfflabel.Name = "lblOfflabel";
-            this.lblOfflabel.Size = new System.Drawing.Size(79, 15);
+            this.lblOfflabel.Size = new System.Drawing.Size(48, 13);
             this.lblOfflabel.TabIndex = 44;
             this.lblOfflabel.Text = "OffColor:";
             // 
             // btnSetRevColor_2
             // 
             this.btnSetRevColor_2.Enabled = false;
-            this.btnSetRevColor_2.Location = new System.Drawing.Point(269, 294);
-            this.btnSetRevColor_2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSetRevColor_2.Location = new System.Drawing.Point(202, 255);
             this.btnSetRevColor_2.Name = "btnSetRevColor_2";
-            this.btnSetRevColor_2.Size = new System.Drawing.Size(69, 27);
+            this.btnSetRevColor_2.Size = new System.Drawing.Size(52, 23);
             this.btnSetRevColor_2.TabIndex = 43;
             this.btnSetRevColor_2.Text = "Set";
             this.btnSetRevColor_2.UseVisualStyleBackColor = true;
@@ -177,10 +180,9 @@
             // 
             // pbRevColor1
             // 
-            this.pbRevColor1.Location = new System.Drawing.Point(118, 267);
-            this.pbRevColor1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pbRevColor1.Location = new System.Drawing.Point(88, 231);
             this.pbRevColor1.Name = "pbRevColor1";
-            this.pbRevColor1.Size = new System.Drawing.Size(128, 21);
+            this.pbRevColor1.Size = new System.Drawing.Size(96, 18);
             this.pbRevColor1.TabIndex = 42;
             this.pbRevColor1.TabStop = false;
             // 
@@ -188,19 +190,19 @@
             // 
             this.lblOnLabel.AutoSize = true;
             this.lblOnLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblOnLabel.Location = new System.Drawing.Point(24, 267);
+            this.lblOnLabel.Location = new System.Drawing.Point(18, 231);
+            this.lblOnLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOnLabel.Name = "lblOnLabel";
-            this.lblOnLabel.Size = new System.Drawing.Size(71, 15);
+            this.lblOnLabel.Size = new System.Drawing.Size(48, 13);
             this.lblOnLabel.TabIndex = 41;
             this.lblOnLabel.Text = "OnColor:";
             // 
             // btnSetRevColor_1
             // 
             this.btnSetRevColor_1.Enabled = false;
-            this.btnSetRevColor_1.Location = new System.Drawing.Point(269, 261);
-            this.btnSetRevColor_1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSetRevColor_1.Location = new System.Drawing.Point(202, 226);
             this.btnSetRevColor_1.Name = "btnSetRevColor_1";
-            this.btnSetRevColor_1.Size = new System.Drawing.Size(69, 27);
+            this.btnSetRevColor_1.Size = new System.Drawing.Size(52, 23);
             this.btnSetRevColor_1.TabIndex = 40;
             this.btnSetRevColor_1.Text = "Set";
             this.btnSetRevColor_1.UseVisualStyleBackColor = true;
@@ -208,9 +210,10 @@
             // 
             // btnSpeedSwitch
             // 
-            this.btnSpeedSwitch.Location = new System.Drawing.Point(269, 87);
+            this.btnSpeedSwitch.Location = new System.Drawing.Point(202, 75);
+            this.btnSpeedSwitch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSpeedSwitch.Name = "btnSpeedSwitch";
-            this.btnSpeedSwitch.Size = new System.Drawing.Size(65, 23);
+            this.btnSpeedSwitch.Size = new System.Drawing.Size(49, 20);
             this.btnSpeedSwitch.TabIndex = 27;
             this.btnSpeedSwitch.Text = "Degree";
             this.btnSpeedSwitch.UseVisualStyleBackColor = true;
@@ -220,9 +223,10 @@
             // 
             this.lblStepSizeLimt.AutoSize = true;
             this.lblStepSizeLimt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblStepSizeLimt.Location = new System.Drawing.Point(153, 140);
+            this.lblStepSizeLimt.Location = new System.Drawing.Point(115, 121);
+            this.lblStepSizeLimt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStepSizeLimt.Name = "lblStepSizeLimt";
-            this.lblStepSizeLimt.Size = new System.Drawing.Size(39, 15);
+            this.lblStepSizeLimt.Size = new System.Drawing.Size(35, 13);
             this.lblStepSizeLimt.TabIndex = 25;
             this.lblStepSizeLimt.Text = "NULL";
             this.lblStepSizeLimt.Click += new System.EventHandler(this.lblCircleTime_Click);
@@ -231,27 +235,30 @@
             // 
             this.lblAverageBarNumber.AutoSize = true;
             this.lblAverageBarNumber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblAverageBarNumber.Location = new System.Drawing.Point(16, 140);
+            this.lblAverageBarNumber.Location = new System.Drawing.Point(12, 121);
+            this.lblAverageBarNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAverageBarNumber.Name = "lblAverageBarNumber";
-            this.lblAverageBarNumber.Size = new System.Drawing.Size(119, 15);
+            this.lblAverageBarNumber.Size = new System.Drawing.Size(73, 13);
             this.lblAverageBarNumber.TabIndex = 24;
             this.lblAverageBarNumber.Text = "StepSizeLimit:";
             // 
             // rbLeftToRight
             // 
             this.rbLeftToRight.AutoSize = true;
-            this.rbLeftToRight.Location = new System.Drawing.Point(174, 171);
+            this.rbLeftToRight.Location = new System.Drawing.Point(130, 148);
+            this.rbLeftToRight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.rbLeftToRight.Name = "rbLeftToRight";
-            this.rbLeftToRight.Size = new System.Drawing.Size(116, 19);
+            this.rbLeftToRight.Size = new System.Drawing.Size(81, 17);
             this.rbLeftToRight.TabIndex = 23;
             this.rbLeftToRight.Text = "LeftToRight";
             this.rbLeftToRight.UseVisualStyleBackColor = true;
             // 
             // tbSpeed
             // 
-            this.tbSpeed.Location = new System.Drawing.Point(156, 85);
+            this.tbSpeed.Location = new System.Drawing.Point(117, 74);
+            this.tbSpeed.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbSpeed.Name = "tbSpeed";
-            this.tbSpeed.Size = new System.Drawing.Size(86, 25);
+            this.tbSpeed.Size = new System.Drawing.Size(66, 20);
             this.tbSpeed.TabIndex = 19;
             this.tbSpeed.Text = "2";
             // 
@@ -259,17 +266,19 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(29, 88);
+            this.label4.Location = new System.Drawing.Point(22, 76);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 15);
+            this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 18;
             this.label4.Text = "StepSize:";
             // 
             // tbSectorNumber
             // 
-            this.tbSectorNumber.Location = new System.Drawing.Point(156, 40);
+            this.tbSectorNumber.Location = new System.Drawing.Point(117, 35);
+            this.tbSectorNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbSectorNumber.Name = "tbSectorNumber";
-            this.tbSectorNumber.Size = new System.Drawing.Size(87, 25);
+            this.tbSectorNumber.Size = new System.Drawing.Size(66, 20);
             this.tbSectorNumber.TabIndex = 16;
             this.tbSectorNumber.Text = "2";
             // 
@@ -277,9 +286,10 @@
             // 
             this.lblDivide.AutoSize = true;
             this.lblDivide.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblDivide.Location = new System.Drawing.Point(29, 42);
+            this.lblDivide.Location = new System.Drawing.Point(22, 36);
+            this.lblDivide.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDivide.Name = "lblDivide";
-            this.lblDivide.Size = new System.Drawing.Size(111, 15);
+            this.lblDivide.Size = new System.Drawing.Size(78, 13);
             this.lblDivide.TabIndex = 15;
             this.lblDivide.Text = "SectorNumber:";
             // 
@@ -287,9 +297,10 @@
             // 
             this.rbRightToLeft.AutoSize = true;
             this.rbRightToLeft.Checked = true;
-            this.rbRightToLeft.Location = new System.Drawing.Point(27, 170);
+            this.rbRightToLeft.Location = new System.Drawing.Point(20, 147);
+            this.rbRightToLeft.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.rbRightToLeft.Name = "rbRightToLeft";
-            this.rbRightToLeft.Size = new System.Drawing.Size(116, 19);
+            this.rbRightToLeft.Size = new System.Drawing.Size(81, 17);
             this.rbRightToLeft.TabIndex = 11;
             this.rbRightToLeft.TabStop = true;
             this.rbRightToLeft.Text = "RightToLeft";
@@ -298,9 +309,10 @@
             // btnGenerate
             // 
             this.btnGenerate.Enabled = false;
-            this.btnGenerate.Location = new System.Drawing.Point(687, 387);
+            this.btnGenerate.Location = new System.Drawing.Point(515, 335);
+            this.btnGenerate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(135, 54);
+            this.btnGenerate.Size = new System.Drawing.Size(101, 47);
             this.btnGenerate.TabIndex = 25;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -309,9 +321,10 @@
             // btnStartDisplay
             // 
             this.btnStartDisplay.Enabled = false;
-            this.btnStartDisplay.Location = new System.Drawing.Point(444, 388);
+            this.btnStartDisplay.Location = new System.Drawing.Point(333, 336);
+            this.btnStartDisplay.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnStartDisplay.Name = "btnStartDisplay";
-            this.btnStartDisplay.Size = new System.Drawing.Size(135, 54);
+            this.btnStartDisplay.Size = new System.Drawing.Size(101, 47);
             this.btnStartDisplay.TabIndex = 24;
             this.btnStartDisplay.Text = "Preview";
             this.btnStartDisplay.UseVisualStyleBackColor = true;
@@ -336,9 +349,11 @@
             this.gbGeneralSetting.Controls.Add(this.tbFrameRate);
             this.gbGeneralSetting.Controls.Add(this.tbTime);
             this.gbGeneralSetting.Controls.Add(this.lblTime);
-            this.gbGeneralSetting.Location = new System.Drawing.Point(77, 38);
+            this.gbGeneralSetting.Location = new System.Drawing.Point(58, 33);
+            this.gbGeneralSetting.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.gbGeneralSetting.Name = "gbGeneralSetting";
-            this.gbGeneralSetting.Size = new System.Drawing.Size(307, 427);
+            this.gbGeneralSetting.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.gbGeneralSetting.Size = new System.Drawing.Size(230, 370);
             this.gbGeneralSetting.TabIndex = 23;
             this.gbGeneralSetting.TabStop = false;
             this.gbGeneralSetting.Text = "General-Setting";
@@ -346,9 +361,10 @@
             // lblSet
             // 
             this.lblSet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSet.Location = new System.Drawing.Point(105, 348);
+            this.lblSet.Location = new System.Drawing.Point(79, 302);
+            this.lblSet.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lblSet.Name = "lblSet";
-            this.lblSet.Size = new System.Drawing.Size(128, 33);
+            this.lblSet.Size = new System.Drawing.Size(96, 29);
             this.lblSet.TabIndex = 19;
             this.lblSet.Text = "Set";
             this.lblSet.UseVisualStyleBackColor = true;
@@ -357,9 +373,10 @@
             // btnChoicePath
             // 
             this.btnChoicePath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnChoicePath.Location = new System.Drawing.Point(105, 298);
+            this.btnChoicePath.Location = new System.Drawing.Point(79, 258);
+            this.btnChoicePath.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnChoicePath.Name = "btnChoicePath";
-            this.btnChoicePath.Size = new System.Drawing.Size(63, 35);
+            this.btnChoicePath.Size = new System.Drawing.Size(47, 30);
             this.btnChoicePath.TabIndex = 5;
             this.btnChoicePath.Text = "Open";
             this.btnChoicePath.UseVisualStyleBackColor = true;
@@ -369,9 +386,10 @@
             // 
             this.lblPathValue.AutoSize = true;
             this.lblPathValue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPathValue.Location = new System.Drawing.Point(101, 267);
+            this.lblPathValue.Location = new System.Drawing.Point(76, 231);
+            this.lblPathValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPathValue.Name = "lblPathValue";
-            this.lblPathValue.Size = new System.Drawing.Size(71, 15);
+            this.lblPathValue.Size = new System.Drawing.Size(50, 13);
             this.lblPathValue.TabIndex = 18;
             this.lblPathValue.Text = "D:/Video";
             // 
@@ -379,9 +397,10 @@
             // 
             this.lblPathLabel.AutoSize = true;
             this.lblPathLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPathLabel.Location = new System.Drawing.Point(43, 267);
+            this.lblPathLabel.Location = new System.Drawing.Point(32, 231);
+            this.lblPathLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPathLabel.Name = "lblPathLabel";
-            this.lblPathLabel.Size = new System.Drawing.Size(47, 15);
+            this.lblPathLabel.Size = new System.Drawing.Size(32, 13);
             this.lblPathLabel.TabIndex = 17;
             this.lblPathLabel.Text = "Path:";
             // 
@@ -389,25 +408,28 @@
             // 
             this.lblVideoName.AutoSize = true;
             this.lblVideoName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblVideoName.Location = new System.Drawing.Point(11, 222);
+            this.lblVideoName.Location = new System.Drawing.Point(8, 192);
+            this.lblVideoName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVideoName.Name = "lblVideoName";
-            this.lblVideoName.Size = new System.Drawing.Size(87, 15);
+            this.lblVideoName.Size = new System.Drawing.Size(65, 13);
             this.lblVideoName.TabIndex = 15;
             this.lblVideoName.Text = "VideoName:";
             // 
             // tbVideoName
             // 
-            this.tbVideoName.Location = new System.Drawing.Point(105, 219);
+            this.tbVideoName.Location = new System.Drawing.Point(79, 190);
+            this.tbVideoName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbVideoName.Name = "tbVideoName";
-            this.tbVideoName.Size = new System.Drawing.Size(127, 25);
+            this.tbVideoName.Size = new System.Drawing.Size(96, 20);
             this.tbVideoName.TabIndex = 16;
             this.tbVideoName.Text = "NULL";
             // 
             // tbWidthValue
             // 
-            this.tbWidthValue.Location = new System.Drawing.Point(105, 36);
+            this.tbWidthValue.Location = new System.Drawing.Point(79, 31);
+            this.tbWidthValue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbWidthValue.Name = "tbWidthValue";
-            this.tbWidthValue.Size = new System.Drawing.Size(127, 25);
+            this.tbWidthValue.Size = new System.Drawing.Size(96, 20);
             this.tbWidthValue.TabIndex = 2;
             this.tbWidthValue.Text = "1024";
             // 
@@ -415,17 +437,19 @@
             // 
             this.lblWidth.AutoSize = true;
             this.lblWidth.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblWidth.Location = new System.Drawing.Point(43, 39);
+            this.lblWidth.Location = new System.Drawing.Point(32, 34);
+            this.lblWidth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWidth.Name = "lblWidth";
-            this.lblWidth.Size = new System.Drawing.Size(55, 15);
+            this.lblWidth.Size = new System.Drawing.Size(38, 13);
             this.lblWidth.TabIndex = 1;
             this.lblWidth.Text = "Width:";
             // 
             // tbHeightValue
             // 
-            this.tbHeightValue.Location = new System.Drawing.Point(105, 83);
+            this.tbHeightValue.Location = new System.Drawing.Point(79, 72);
+            this.tbHeightValue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbHeightValue.Name = "tbHeightValue";
-            this.tbHeightValue.Size = new System.Drawing.Size(127, 25);
+            this.tbHeightValue.Size = new System.Drawing.Size(96, 20);
             this.tbHeightValue.TabIndex = 4;
             this.tbHeightValue.Text = "330";
             // 
@@ -433,9 +457,10 @@
             // 
             this.lblPixelSymHeight.AutoSize = true;
             this.lblPixelSymHeight.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPixelSymHeight.Location = new System.Drawing.Point(237, 87);
+            this.lblPixelSymHeight.Location = new System.Drawing.Point(178, 75);
+            this.lblPixelSymHeight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPixelSymHeight.Name = "lblPixelSymHeight";
-            this.lblPixelSymHeight.Size = new System.Drawing.Size(47, 15);
+            this.lblPixelSymHeight.Size = new System.Drawing.Size(29, 13);
             this.lblPixelSymHeight.TabIndex = 14;
             this.lblPixelSymHeight.Text = "Pixel";
             // 
@@ -443,9 +468,10 @@
             // 
             this.lbltimeSym.AutoSize = true;
             this.lbltimeSym.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbltimeSym.Location = new System.Drawing.Point(237, 123);
+            this.lbltimeSym.Location = new System.Drawing.Point(178, 107);
+            this.lbltimeSym.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbltimeSym.Name = "lbltimeSym";
-            this.lbltimeSym.Size = new System.Drawing.Size(15, 15);
+            this.lbltimeSym.Size = new System.Drawing.Size(14, 13);
             this.lbltimeSym.TabIndex = 11;
             this.lbltimeSym.Text = "S";
             // 
@@ -453,9 +479,10 @@
             // 
             this.lblHeight.AutoSize = true;
             this.lblHeight.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeight.Location = new System.Drawing.Point(35, 87);
+            this.lblHeight.Location = new System.Drawing.Point(26, 75);
+            this.lblHeight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(63, 15);
+            this.lblHeight.Size = new System.Drawing.Size(41, 13);
             this.lblHeight.TabIndex = 3;
             this.lblHeight.Text = "Height:";
             // 
@@ -463,9 +490,10 @@
             // 
             this.lblFrameRate.AutoSize = true;
             this.lblFrameRate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblFrameRate.Location = new System.Drawing.Point(11, 170);
+            this.lblFrameRate.Location = new System.Drawing.Point(8, 147);
+            this.lblFrameRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFrameRate.Name = "lblFrameRate";
-            this.lblFrameRate.Size = new System.Drawing.Size(87, 15);
+            this.lblFrameRate.Size = new System.Drawing.Size(62, 13);
             this.lblFrameRate.TabIndex = 9;
             this.lblFrameRate.Text = "FrameRate:";
             // 
@@ -473,25 +501,28 @@
             // 
             this.lblPixelSymWidth.AutoSize = true;
             this.lblPixelSymWidth.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPixelSymWidth.Location = new System.Drawing.Point(237, 39);
+            this.lblPixelSymWidth.Location = new System.Drawing.Point(178, 34);
+            this.lblPixelSymWidth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPixelSymWidth.Name = "lblPixelSymWidth";
-            this.lblPixelSymWidth.Size = new System.Drawing.Size(47, 15);
+            this.lblPixelSymWidth.Size = new System.Drawing.Size(29, 13);
             this.lblPixelSymWidth.TabIndex = 13;
             this.lblPixelSymWidth.Text = "Pixel";
             // 
             // tbFrameRate
             // 
-            this.tbFrameRate.Location = new System.Drawing.Point(105, 167);
+            this.tbFrameRate.Location = new System.Drawing.Point(79, 145);
+            this.tbFrameRate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbFrameRate.Name = "tbFrameRate";
-            this.tbFrameRate.Size = new System.Drawing.Size(127, 25);
+            this.tbFrameRate.Size = new System.Drawing.Size(96, 20);
             this.tbFrameRate.TabIndex = 10;
             this.tbFrameRate.Text = "25";
             // 
             // tbTime
             // 
-            this.tbTime.Location = new System.Drawing.Point(105, 121);
+            this.tbTime.Location = new System.Drawing.Point(79, 105);
+            this.tbTime.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbTime.Name = "tbTime";
-            this.tbTime.Size = new System.Drawing.Size(127, 25);
+            this.tbTime.Size = new System.Drawing.Size(96, 20);
             this.tbTime.TabIndex = 6;
             this.tbTime.Text = "10";
             // 
@@ -499,9 +530,10 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblTime.Location = new System.Drawing.Point(19, 124);
+            this.lblTime.Location = new System.Drawing.Point(14, 107);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(79, 15);
+            this.lblTime.Size = new System.Drawing.Size(50, 13);
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "Duration:";
             // 
@@ -511,14 +543,15 @@
             // 
             // FormIndex7
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 527);
+            this.ClientSize = new System.Drawing.Size(661, 457);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.gbBasicSetting);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnStartDisplay);
             this.Controls.Add(this.gbGeneralSetting);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FormIndex7";
             this.Text = "Ediotr";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormIndex7_FormClosed);

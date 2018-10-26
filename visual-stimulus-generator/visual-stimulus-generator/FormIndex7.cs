@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AForge.Video.FFMPEG;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -103,6 +104,7 @@ namespace visual_stimulus_generator
 
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
             try
             {
 
@@ -144,12 +146,10 @@ namespace visual_stimulus_generator
 
             sectorWidth = width / sectorNumber;
             this.lblStepSizeLimt.Text = "< " + sectorWidth.ToString();
-
+            
             finishOnePeriodTime = sectorWidth / step ;
             sector = new Dictionary<int, List<int>>();
-
-
-
+            
             for (int i = 0; i != sectorNumber; i++)
             {
                 sector.Add(i, new List<int>());
@@ -165,8 +165,9 @@ namespace visual_stimulus_generator
                     }
                 }
             }
-            
-           
+
+            index = 0;
+            reIndex = sectorWidth - 1;
             
 
             timer1.Interval = 1000 / frameRate;
@@ -201,87 +202,197 @@ namespace visual_stimulus_generator
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            this.timer1.Stop();
 
-            //this.timer1.Stop();
-            //g.ClearListForSimpleCanvas();
+            sector = new Dictionary<int, List<int>>();
 
-            //bool ifWhite = true;
+            for (int i = 0; i != sectorNumber; i++)
+            {
+                sector.Add(i, new List<int>());
+                for (int j = 0; j != sectorWidth; j++)
+                {
+                    if (rbOffToOn.Checked)
+                    {
+                        sector[i].Add(0);
+                    }
+                    else if (rbOnToOff.Checked)
+                    {
+                        sector[i].Add(1);
+                    }
+                }
+            }
 
-            //for (int i = 0; i != width; i++)
-            //{
-            //    if (i % barSize == 0)
-            //    {
-            //        ifWhite = !ifWhite;
-            //    }
-            //    if (ifWhite)
-            //    {
-            //        g.simpleCanvas[i] = 1;
-            //    }
-            //    else
-            //    {
-            //        g.simpleCanvas[i] = 0;
-            //    }
-
-            //}
-
-
-            //progressBar1.Maximum = (int)(frameRate * time);
-            //progressBar1.Value = progressBar1.Minimum = 0;//设置范围最小值
+            progressBar1.Maximum = (int)(frameRate * time);
+            progressBar1.Value = progressBar1.Minimum = 0;//设置范围最小值
 
 
-            //VideoFileWriter writer = new VideoFileWriter();
-            //writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
+            VideoFileWriter writer = new VideoFileWriter();
+            writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
+            int index = 0;
+            int reIndex = sectorWidth - 1;
+            for (int jj = 0; jj != (int)(frameRate * time); jj++)
+            {
 
-            //for (int ii = 0; ii != (int)(frameRate * time); ii++)
-            //{
+                if (rbLeftToRight.Checked)
+                {
+                    if (rbOnToOff.Checked)
+                    {
+                        for (int i = 0; i != step; i++)
+                        {
 
-            //    if (rbLeftToRight.Checked)
-            //    {
-            //        g.MoveRightForSimpleCanvas(step);
+                            for (int ii = 0; ii != sector.Count; ii++)
+                            {
+                                //this.label1.Text = index.ToString();
+                                try
+                                {
+                                    sector[ii][index] = 0;
+                                }
+                                catch
+                                {
+                                    this.timer1.Stop();
+                                    
+                                }
+
+                            }
+                            index++;
+                            if (index == sectorWidth)
+                            {
+                                setOne(sector);
+                                index = 0;
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i != step; i++)
+                        {
+
+                            for (int ii = 0; ii != sector.Count; ii++)
+                            {
+                                //this.label1.Text = index.ToString();
+                                try
+                                {
+                                    sector[ii][index] = 1;
+                                }
+                                catch
+                                {
+                                    this.timer1.Stop();
+                                }
+
+                            }
+                            index++;
+                            if (index == sectorWidth)
+                            {
+                                setZero(sector);
+                                index = 0;
+                            }
+
+                        }
+                    }
+
+                }
+                if (rbRightToLeft.Checked)
+                {
+                    if (rbOnToOff.Checked)
+                    {
+                        for (int i = 0; i != step; i++)
+                        {
+
+                            for (int ii = 0; ii != sector.Count; ii++)
+                            {
+                                //this.label1.Text = index.ToString();
+                                try
+                                {
+                                    sector[ii][reIndex] = 0;
+                                }
+                                catch
+                                {
+                                    this.timer1.Stop();
+                                }
+
+                            }
+
+                            reIndex--;
+                            if (reIndex == 0)
+                            {
+                                setOne(sector);
+                                reIndex = sectorWidth - 1;
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i != step; i++)
+                        {
+
+                            for (int ii = 0; ii != sector.Count; ii++)
+                            {
+                                //this.label1.Text = index.ToString();
+                                try
+                                {
+                                    sector[ii][reIndex] = 1;
+                                }
+                                catch
+                                {
+                                    this.timer1.Stop();
+                                }
+
+                            }
+
+                            reIndex--;
+                            if (reIndex == 0)
+                            {
+                                setZero(sector);
+                                reIndex = sectorWidth - 1;
+                            }
+
+                        }
+                    }
+
+                }
 
 
-            //    }
-            //    if (rbRightToLeft.Checked)
-            //    {
-            //        g.MoveLeftForSimpleCanvas(step);
-
-            //    }
 
 
 
+                g1.Clear(Color.White);
+                for (int i = 0; i != sector.Count; i++)
+                {
+                    for (int j = 0; j != sector[i].Count; j++)
+                    {
+                        if (sector[i][j] == 0)
+                        {
+                            g1.DrawLine(new Pen(Off), sectorWidth * i + j, 0, sectorWidth * i + j, height);
 
-            //    g1.Clear(Color.White);
-            //    for (int i = 0; i != width; i++)
-            //    {
-            //        if (g.simpleCanvas[i] == 0)
-            //        {
-            //            g1.DrawLine(new Pen(staticColor), i, 0, i, height);
-            //        }
-            //        else
-            //        {
-            //            if (switchState)
-            //            {
-            //                g1.DrawLine(new Pen(revColor_1), i, 0, i, height);
-            //            }
-            //            else
-            //            {
-            //                g1.DrawLine(new Pen(revColor_2), i, 0, i, height);
-            //            }
-            //        }
-            //    }
-            //    switchState = !switchState;
+                        }
+                        else
+                        {
+                            g1.DrawLine(new Pen(On), sectorWidth * i + j, 0, sectorWidth * i + j, height);
+                        }
+                    }
+                }
 
 
-            //    writer.WriteVideoFrame(image1);
 
 
-            //    this.progressBar1.Value = ii;
+               
 
-            //}
 
-            //writer.Close();
-            //this.progressBar1.Value = (int)(frameRate * time);
-            //MessageBox.Show("Saved!!");
+                writer.WriteVideoFrame(image1);
+
+
+                this.progressBar1.Value = jj;
+
+            }
+
+            writer.Close();
+            this.progressBar1.Value = (int)(frameRate * time);
+            MessageBox.Show("Saved!!");
+
+
+
         }
 
         private void btnSpeedSwitch_Click(object sender, EventArgs e)
@@ -326,64 +437,136 @@ namespace visual_stimulus_generator
             this.display.Close();
         }
 
-        int sectorCount = 0;
+        int index = 0;
+        int reIndex;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            //if (rbLeftToRight.Checked)
-            //{
-            //    if (rbOnToOff.Checked)
-            //    {
-            //        for (int i = 0; i != step; i++)
-            //        {
+            if (rbLeftToRight.Checked)
+            {
+                if (rbOnToOff.Checked)
+                {
+                    for (int i = 0; i != step; i++)
+                    {
 
-            //            for (int ii = 0; ii != sector.Count; ii++)
-            //            {
-            //                sector[ii][step * sectorCount + i] = 0;
-            //            }
+                        for (int ii = 0; ii != sector.Count; ii++)
+                        {
+                            //this.label1.Text = index.ToString();
+                            try
+                            {
+                                sector[ii][index] = 0;
+                            }
+                            catch
+                            {
+                                this.timer1.Stop();
+                                MessageBox.Show("aa");
+                            }
+                           
+                        }
+                        index++;
+                        if (index == sectorWidth)
+                        {
+                            setOne(sector);
+                            index = 0;
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i != step; i++)
+                    {
+
+                        for (int ii = 0; ii != sector.Count; ii++)
+                        {
+                            //this.label1.Text = index.ToString();
+                            try
+                            {
+                                sector[ii][index] = 1;
+                            }
+                            catch
+                            {
+                                this.timer1.Stop();
+                            }
+
+                        }
+                        index++;
+                        if (index == sectorWidth )
+                        {
+                            setZero(sector);
+                            index = 0;
+                        }
+
+                    }
+                }
+
+            }
+            if (rbRightToLeft.Checked)
+            {
+                if (rbOnToOff.Checked)
+                {
+                    for (int i = 0; i != step; i++)
+                    {
+
+                        for (int ii = 0; ii != sector.Count; ii++)
+                        {
+                            //this.label1.Text = index.ToString();
+                            try
+                            {
+                                sector[ii][reIndex] = 0;
+                            }
+                            catch
+                            {
+                                this.timer1.Stop();
+                            }
+
+                        }
+
+                        reIndex--;
+                        if (reIndex == 0)
+                        {
+                            setOne(sector);
+                            reIndex = sectorWidth-1;
+                        }
+
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i != step; i++)
+                    {
+
+                        for (int ii = 0; ii != sector.Count; ii++)
+                        {
+                            //this.label1.Text = index.ToString();
+                            try
+                            {
+                                sector[ii][reIndex] = 1;
+                            }
+                            catch
+                            {
+                                this.timer1.Stop();
+                            }
+
+                        }
+
+                        reIndex--;
+                        if (reIndex == 0)
+                        {
+                            setZero(sector);
+                            reIndex = sectorWidth - 1;
+                        }
+
+                    }
+                }
+
+            }
+           
+            
 
 
-            //        }
-            //    }
-            //    else
-            //    {
 
-            //    }
-
-            //}
-            //if (rbRightToLeft.Checked)
-            //{
-            //    if (rbOnToOff.Checked)
-            //    {
-
-            //    }
-            //    else
-            //    {
-
-            //    }
-
-            //}
-            //sectorCount++;
-
-
-
-            //if (sectorCount == finishOnePeriodTime)
-            //{
-            //    if (rbOffToOn.Checked)
-            //    {
-            //        for (int i = 0; i != width; i++)
-            //        {
-            //            g.simpleCanvas[i] = 0;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        for (int i = 0; i != width; i++)
-            //        {
-            //            g.simpleCanvas[i] = 1;
-            //        }
-            //    }
-            //}
             g1.Clear(Color.White);
             for (int i = 0; i != sector.Count; i++)
             {
