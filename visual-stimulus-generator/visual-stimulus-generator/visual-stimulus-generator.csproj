@@ -99,6 +99,18 @@
     <Compile Include="FormIndex5.Designer.cs">
       <DependentUpon>FormIndex5.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIndex6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIndex6.Designer.cs">
+      <DependentUpon>FormIndex6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIndex7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIndex7.Designer.cs">
+      <DependentUpon>FormIndex7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generator.cs" />
     <Compile Include="NameDetection.cs" />
     <Compile Include="Program.cs" />
@@ -136,6 +148,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormIndex5.resx">
       <DependentUpon>FormIndex5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIndex6.resx">
+      <DependentUpon>FormIndex6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIndex7.resx">
+      <DependentUpon>FormIndex7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

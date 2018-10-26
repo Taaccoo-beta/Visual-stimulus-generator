@@ -139,6 +139,12 @@
   <data name="lbVisualStimulusType.Items5" xml:space="preserve">
     <value>Random Point</value>
   </data>
+  <data name="lbVisualStimulusType.Items6" xml:space="preserve">
+    <value>PureBackGround</value>
+  </data>
+  <data name="lbVisualStimulusType.Items7" xml:space="preserve">
+    <value>OnOff</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbVisualStimulusType.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 52</value>

@@ -1,6 +1,6 @@
 ﻿namespace visual_stimulus_generator
 {
-    partial class FormIndex5
+    partial class FormIndex7
     {
         /// <summary>
         /// Required designer variable.
@@ -31,18 +31,23 @@
             this.components = new System.ComponentModel.Container();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.gbBasicSetting = new System.Windows.Forms.GroupBox();
-            this.btnPointSizeSwitch = new System.Windows.Forms.Button();
-            this.tbPointSize = new System.Windows.Forms.TextBox();
-            this.lblPointSizeLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rbOffToOn = new System.Windows.Forms.RadioButton();
+            this.rbOnToOff = new System.Windows.Forms.RadioButton();
+            this.pbRevColor_2 = new System.Windows.Forms.PictureBox();
+            this.lblOfflabel = new System.Windows.Forms.Label();
+            this.btnSetRevColor_2 = new System.Windows.Forms.Button();
+            this.pbRevColor1 = new System.Windows.Forms.PictureBox();
+            this.lblOnLabel = new System.Windows.Forms.Label();
+            this.btnSetRevColor_1 = new System.Windows.Forms.Button();
             this.btnSpeedSwitch = new System.Windows.Forms.Button();
-            this.btnBarSizeSwitch = new System.Windows.Forms.Button();
-            this.lblCircleTime = new System.Windows.Forms.Label();
+            this.lblStepSizeLimt = new System.Windows.Forms.Label();
             this.lblAverageBarNumber = new System.Windows.Forms.Label();
+            this.rbLeftToRight = new System.Windows.Forms.RadioButton();
             this.tbSpeed = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbBarSize = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tbSectorNumber = new System.Windows.Forms.TextBox();
+            this.lblDivide = new System.Windows.Forms.Label();
             this.rbRightToLeft = new System.Windows.Forms.RadioButton();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnStartDisplay = new System.Windows.Forms.Button();
@@ -65,7 +70,11 @@
             this.tbTime = new System.Windows.Forms.TextBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.gbBasicSetting.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRevColor_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRevColor1)).BeginInit();
             this.gbGeneralSetting.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,117 +82,176 @@
             // 
             this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.progressBar1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.progressBar1.Location = new System.Drawing.Point(380, 448);
+            this.progressBar1.Location = new System.Drawing.Point(445, 461);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(333, 27);
+            this.progressBar1.Size = new System.Drawing.Size(377, 27);
             this.progressBar1.TabIndex = 27;
             // 
             // gbBasicSetting
             // 
-            this.gbBasicSetting.Controls.Add(this.btnPointSizeSwitch);
-            this.gbBasicSetting.Controls.Add(this.tbPointSize);
-            this.gbBasicSetting.Controls.Add(this.lblPointSizeLabel);
-            this.gbBasicSetting.Controls.Add(this.label6);
+            this.gbBasicSetting.Controls.Add(this.panel1);
+            this.gbBasicSetting.Controls.Add(this.pbRevColor_2);
+            this.gbBasicSetting.Controls.Add(this.lblOfflabel);
+            this.gbBasicSetting.Controls.Add(this.btnSetRevColor_2);
+            this.gbBasicSetting.Controls.Add(this.pbRevColor1);
+            this.gbBasicSetting.Controls.Add(this.lblOnLabel);
+            this.gbBasicSetting.Controls.Add(this.btnSetRevColor_1);
             this.gbBasicSetting.Controls.Add(this.btnSpeedSwitch);
-            this.gbBasicSetting.Controls.Add(this.btnBarSizeSwitch);
-            this.gbBasicSetting.Controls.Add(this.lblCircleTime);
+            this.gbBasicSetting.Controls.Add(this.lblStepSizeLimt);
             this.gbBasicSetting.Controls.Add(this.lblAverageBarNumber);
+            this.gbBasicSetting.Controls.Add(this.rbLeftToRight);
             this.gbBasicSetting.Controls.Add(this.tbSpeed);
             this.gbBasicSetting.Controls.Add(this.label4);
-            this.gbBasicSetting.Controls.Add(this.tbBarSize);
-            this.gbBasicSetting.Controls.Add(this.label2);
+            this.gbBasicSetting.Controls.Add(this.tbSectorNumber);
+            this.gbBasicSetting.Controls.Add(this.lblDivide);
             this.gbBasicSetting.Controls.Add(this.rbRightToLeft);
-            this.gbBasicSetting.Location = new System.Drawing.Point(379, 25);
+            this.gbBasicSetting.Location = new System.Drawing.Point(444, 38);
             this.gbBasicSetting.Name = "gbBasicSetting";
-            this.gbBasicSetting.Size = new System.Drawing.Size(335, 333);
+            this.gbBasicSetting.Size = new System.Drawing.Size(378, 343);
             this.gbBasicSetting.TabIndex = 26;
             this.gbBasicSetting.TabStop = false;
             this.gbBasicSetting.Text = "Basic-Setting";
             // 
-            // btnPointSizeSwitch
+            // panel1
             // 
-            this.btnPointSizeSwitch.Location = new System.Drawing.Point(247, 83);
-            this.btnPointSizeSwitch.Name = "btnPointSizeSwitch";
-            this.btnPointSizeSwitch.Size = new System.Drawing.Size(69, 23);
-            this.btnPointSizeSwitch.TabIndex = 49;
-            this.btnPointSizeSwitch.Text = "Degree";
-            this.btnPointSizeSwitch.UseVisualStyleBackColor = true;
-            this.btnPointSizeSwitch.Click += new System.EventHandler(this.button1_Click);
+            this.panel1.Controls.Add(this.rbOffToOn);
+            this.panel1.Controls.Add(this.rbOnToOff);
+            this.panel1.Location = new System.Drawing.Point(19, 213);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(293, 31);
+            this.panel1.TabIndex = 28;
             // 
-            // tbPointSize
+            // rbOffToOn
             // 
-            this.tbPointSize.Location = new System.Drawing.Point(115, 83);
-            this.tbPointSize.Name = "tbPointSize";
-            this.tbPointSize.Size = new System.Drawing.Size(127, 25);
-            this.tbPointSize.TabIndex = 48;
-            this.tbPointSize.Text = "2";
+            this.rbOffToOn.AutoSize = true;
+            this.rbOffToOn.Location = new System.Drawing.Point(155, 6);
+            this.rbOffToOn.Name = "rbOffToOn";
+            this.rbOffToOn.Size = new System.Drawing.Size(84, 19);
+            this.rbOffToOn.TabIndex = 25;
+            this.rbOffToOn.Text = "OffToOn";
+            this.rbOffToOn.UseVisualStyleBackColor = true;
             // 
-            // lblPointSizeLabel
+            // rbOnToOff
             // 
-            this.lblPointSizeLabel.AutoSize = true;
-            this.lblPointSizeLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPointSizeLabel.Location = new System.Drawing.Point(13, 83);
-            this.lblPointSizeLabel.Name = "lblPointSizeLabel";
-            this.lblPointSizeLabel.Size = new System.Drawing.Size(87, 15);
-            this.lblPointSizeLabel.TabIndex = 47;
-            this.lblPointSizeLabel.Text = "PointSize:";
+            this.rbOnToOff.AutoSize = true;
+            this.rbOnToOff.Checked = true;
+            this.rbOnToOff.Location = new System.Drawing.Point(10, 6);
+            this.rbOnToOff.Name = "rbOnToOff";
+            this.rbOnToOff.Size = new System.Drawing.Size(84, 19);
+            this.rbOnToOff.TabIndex = 24;
+            this.rbOnToOff.TabStop = true;
+            this.rbOnToOff.Text = "OnToOff";
+            this.rbOnToOff.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // pbRevColor_2
             // 
-            this.label6.AutoSize = true;
-            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(166, 177);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 15);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Better for Even ";
+            this.pbRevColor_2.Location = new System.Drawing.Point(118, 298);
+            this.pbRevColor_2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pbRevColor_2.Name = "pbRevColor_2";
+            this.pbRevColor_2.Size = new System.Drawing.Size(128, 21);
+            this.pbRevColor_2.TabIndex = 45;
+            this.pbRevColor_2.TabStop = false;
+            // 
+            // lblOfflabel
+            // 
+            this.lblOfflabel.AutoSize = true;
+            this.lblOfflabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblOfflabel.Location = new System.Drawing.Point(16, 298);
+            this.lblOfflabel.Name = "lblOfflabel";
+            this.lblOfflabel.Size = new System.Drawing.Size(79, 15);
+            this.lblOfflabel.TabIndex = 44;
+            this.lblOfflabel.Text = "OffColor:";
+            // 
+            // btnSetRevColor_2
+            // 
+            this.btnSetRevColor_2.Enabled = false;
+            this.btnSetRevColor_2.Location = new System.Drawing.Point(269, 294);
+            this.btnSetRevColor_2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSetRevColor_2.Name = "btnSetRevColor_2";
+            this.btnSetRevColor_2.Size = new System.Drawing.Size(69, 27);
+            this.btnSetRevColor_2.TabIndex = 43;
+            this.btnSetRevColor_2.Text = "Set";
+            this.btnSetRevColor_2.UseVisualStyleBackColor = true;
+            this.btnSetRevColor_2.Click += new System.EventHandler(this.btnSetRevColor_2_Click);
+            // 
+            // pbRevColor1
+            // 
+            this.pbRevColor1.Location = new System.Drawing.Point(118, 267);
+            this.pbRevColor1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pbRevColor1.Name = "pbRevColor1";
+            this.pbRevColor1.Size = new System.Drawing.Size(128, 21);
+            this.pbRevColor1.TabIndex = 42;
+            this.pbRevColor1.TabStop = false;
+            // 
+            // lblOnLabel
+            // 
+            this.lblOnLabel.AutoSize = true;
+            this.lblOnLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblOnLabel.Location = new System.Drawing.Point(24, 267);
+            this.lblOnLabel.Name = "lblOnLabel";
+            this.lblOnLabel.Size = new System.Drawing.Size(71, 15);
+            this.lblOnLabel.TabIndex = 41;
+            this.lblOnLabel.Text = "OnColor:";
+            // 
+            // btnSetRevColor_1
+            // 
+            this.btnSetRevColor_1.Enabled = false;
+            this.btnSetRevColor_1.Location = new System.Drawing.Point(269, 261);
+            this.btnSetRevColor_1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSetRevColor_1.Name = "btnSetRevColor_1";
+            this.btnSetRevColor_1.Size = new System.Drawing.Size(69, 27);
+            this.btnSetRevColor_1.TabIndex = 40;
+            this.btnSetRevColor_1.Text = "Set";
+            this.btnSetRevColor_1.UseVisualStyleBackColor = true;
+            this.btnSetRevColor_1.Click += new System.EventHandler(this.btnSetRevColor_1_Click);
             // 
             // btnSpeedSwitch
             // 
-            this.btnSpeedSwitch.Location = new System.Drawing.Point(247, 122);
+            this.btnSpeedSwitch.Location = new System.Drawing.Point(269, 87);
             this.btnSpeedSwitch.Name = "btnSpeedSwitch";
-            this.btnSpeedSwitch.Size = new System.Drawing.Size(69, 23);
+            this.btnSpeedSwitch.Size = new System.Drawing.Size(65, 23);
             this.btnSpeedSwitch.TabIndex = 27;
             this.btnSpeedSwitch.Text = "Degree";
             this.btnSpeedSwitch.UseVisualStyleBackColor = true;
             this.btnSpeedSwitch.Click += new System.EventHandler(this.btnSpeedSwitch_Click);
             // 
-            // btnBarSizeSwitch
+            // lblStepSizeLimt
             // 
-            this.btnBarSizeSwitch.Location = new System.Drawing.Point(247, 40);
-            this.btnBarSizeSwitch.Name = "btnBarSizeSwitch";
-            this.btnBarSizeSwitch.Size = new System.Drawing.Size(69, 23);
-            this.btnBarSizeSwitch.TabIndex = 26;
-            this.btnBarSizeSwitch.Text = "Degree";
-            this.btnBarSizeSwitch.UseVisualStyleBackColor = true;
-            this.btnBarSizeSwitch.Click += new System.EventHandler(this.btnBarSizeSwitch_Click);
-            // 
-            // lblCircleTime
-            // 
-            this.lblCircleTime.AutoSize = true;
-            this.lblCircleTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCircleTime.Location = new System.Drawing.Point(109, 177);
-            this.lblCircleTime.Name = "lblCircleTime";
-            this.lblCircleTime.Size = new System.Drawing.Size(39, 15);
-            this.lblCircleTime.TabIndex = 25;
-            this.lblCircleTime.Text = "NULL";
+            this.lblStepSizeLimt.AutoSize = true;
+            this.lblStepSizeLimt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblStepSizeLimt.Location = new System.Drawing.Point(153, 140);
+            this.lblStepSizeLimt.Name = "lblStepSizeLimt";
+            this.lblStepSizeLimt.Size = new System.Drawing.Size(39, 15);
+            this.lblStepSizeLimt.TabIndex = 25;
+            this.lblStepSizeLimt.Text = "NULL";
+            this.lblStepSizeLimt.Click += new System.EventHandler(this.lblCircleTime_Click);
             // 
             // lblAverageBarNumber
             // 
             this.lblAverageBarNumber.AutoSize = true;
             this.lblAverageBarNumber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblAverageBarNumber.Location = new System.Drawing.Point(14, 177);
+            this.lblAverageBarNumber.Location = new System.Drawing.Point(16, 140);
             this.lblAverageBarNumber.Name = "lblAverageBarNumber";
-            this.lblAverageBarNumber.Size = new System.Drawing.Size(87, 15);
+            this.lblAverageBarNumber.Size = new System.Drawing.Size(119, 15);
             this.lblAverageBarNumber.TabIndex = 24;
-            this.lblAverageBarNumber.Text = "BarNumber:";
+            this.lblAverageBarNumber.Text = "StepSizeLimit:";
+            // 
+            // rbLeftToRight
+            // 
+            this.rbLeftToRight.AutoSize = true;
+            this.rbLeftToRight.Location = new System.Drawing.Point(174, 171);
+            this.rbLeftToRight.Name = "rbLeftToRight";
+            this.rbLeftToRight.Size = new System.Drawing.Size(116, 19);
+            this.rbLeftToRight.TabIndex = 23;
+            this.rbLeftToRight.Text = "LeftToRight";
+            this.rbLeftToRight.UseVisualStyleBackColor = true;
             // 
             // tbSpeed
             // 
-            this.tbSpeed.Location = new System.Drawing.Point(115, 120);
+            this.tbSpeed.Location = new System.Drawing.Point(156, 85);
             this.tbSpeed.Name = "tbSpeed";
-            this.tbSpeed.Size = new System.Drawing.Size(127, 25);
+            this.tbSpeed.Size = new System.Drawing.Size(86, 25);
             this.tbSpeed.TabIndex = 19;
             this.tbSpeed.Text = "2";
             // 
@@ -191,35 +259,35 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(21, 121);
+            this.label4.Location = new System.Drawing.Point(29, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 15);
             this.label4.TabIndex = 18;
             this.label4.Text = "StepSize:";
             // 
-            // tbBarSize
+            // tbSectorNumber
             // 
-            this.tbBarSize.Location = new System.Drawing.Point(115, 42);
-            this.tbBarSize.Name = "tbBarSize";
-            this.tbBarSize.Size = new System.Drawing.Size(127, 25);
-            this.tbBarSize.TabIndex = 16;
-            this.tbBarSize.Text = "30";
+            this.tbSectorNumber.Location = new System.Drawing.Point(156, 40);
+            this.tbSectorNumber.Name = "tbSectorNumber";
+            this.tbSectorNumber.Size = new System.Drawing.Size(87, 25);
+            this.tbSectorNumber.TabIndex = 16;
+            this.tbSectorNumber.Text = "2";
             // 
-            // label2
+            // lblDivide
             // 
-            this.label2.AutoSize = true;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(29, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 15);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "BarSize:";
+            this.lblDivide.AutoSize = true;
+            this.lblDivide.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblDivide.Location = new System.Drawing.Point(29, 42);
+            this.lblDivide.Name = "lblDivide";
+            this.lblDivide.Size = new System.Drawing.Size(111, 15);
+            this.lblDivide.TabIndex = 15;
+            this.lblDivide.Text = "SectorNumber:";
             // 
             // rbRightToLeft
             // 
             this.rbRightToLeft.AutoSize = true;
             this.rbRightToLeft.Checked = true;
-            this.rbRightToLeft.Location = new System.Drawing.Point(32, 225);
+            this.rbRightToLeft.Location = new System.Drawing.Point(27, 170);
             this.rbRightToLeft.Name = "rbRightToLeft";
             this.rbRightToLeft.Size = new System.Drawing.Size(116, 19);
             this.rbRightToLeft.TabIndex = 11;
@@ -230,7 +298,7 @@
             // btnGenerate
             // 
             this.btnGenerate.Enabled = false;
-            this.btnGenerate.Location = new System.Drawing.Point(579, 375);
+            this.btnGenerate.Location = new System.Drawing.Point(687, 387);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(135, 54);
             this.btnGenerate.TabIndex = 25;
@@ -241,7 +309,7 @@
             // btnStartDisplay
             // 
             this.btnStartDisplay.Enabled = false;
-            this.btnStartDisplay.Location = new System.Drawing.Point(379, 375);
+            this.btnStartDisplay.Location = new System.Drawing.Point(444, 388);
             this.btnStartDisplay.Name = "btnStartDisplay";
             this.btnStartDisplay.Size = new System.Drawing.Size(135, 54);
             this.btnStartDisplay.TabIndex = 24;
@@ -268,7 +336,7 @@
             this.gbGeneralSetting.Controls.Add(this.tbFrameRate);
             this.gbGeneralSetting.Controls.Add(this.tbTime);
             this.gbGeneralSetting.Controls.Add(this.lblTime);
-            this.gbGeneralSetting.Location = new System.Drawing.Point(36, 25);
+            this.gbGeneralSetting.Location = new System.Drawing.Point(77, 38);
             this.gbGeneralSetting.Name = "gbGeneralSetting";
             this.gbGeneralSetting.Size = new System.Drawing.Size(307, 427);
             this.gbGeneralSetting.TabIndex = 23;
@@ -431,27 +499,36 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblTime.Location = new System.Drawing.Point(19, 123);
+            this.lblTime.Location = new System.Drawing.Point(19, 124);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(79, 15);
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "Duration:";
             // 
-            // FormIndex5
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // FormIndex7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 498);
+            this.ClientSize = new System.Drawing.Size(881, 527);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.gbBasicSetting);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnStartDisplay);
             this.Controls.Add(this.gbGeneralSetting);
-            this.Name = "FormIndex5";
-            this.Text = "FormIndex5";
-            this.Load += new System.EventHandler(this.FormIndex5_Load);
+            this.Name = "FormIndex7";
+            this.Text = "Ediotr";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormIndex7_FormClosed);
+            this.Load += new System.EventHandler(this.FormIndex7_Load);
             this.gbBasicSetting.ResumeLayout(false);
             this.gbBasicSetting.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRevColor_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRevColor1)).EndInit();
             this.gbGeneralSetting.ResumeLayout(false);
             this.gbGeneralSetting.PerformLayout();
             this.ResumeLayout(false);
@@ -462,15 +539,20 @@
 
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.GroupBox gbBasicSetting;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pbRevColor_2;
+        private System.Windows.Forms.Label lblOfflabel;
+        private System.Windows.Forms.Button btnSetRevColor_2;
+        private System.Windows.Forms.PictureBox pbRevColor1;
+        private System.Windows.Forms.Label lblOnLabel;
+        private System.Windows.Forms.Button btnSetRevColor_1;
         private System.Windows.Forms.Button btnSpeedSwitch;
-        private System.Windows.Forms.Button btnBarSizeSwitch;
-        private System.Windows.Forms.Label lblCircleTime;
+        private System.Windows.Forms.Label lblStepSizeLimt;
         private System.Windows.Forms.Label lblAverageBarNumber;
+        private System.Windows.Forms.RadioButton rbLeftToRight;
         private System.Windows.Forms.TextBox tbSpeed;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbBarSize;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbSectorNumber;
+        private System.Windows.Forms.Label lblDivide;
         private System.Windows.Forms.RadioButton rbRightToLeft;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Button btnStartDisplay;
@@ -492,9 +574,10 @@
         private System.Windows.Forms.TextBox tbFrameRate;
         private System.Windows.Forms.TextBox tbTime;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Button btnPointSizeSwitch;
-        private System.Windows.Forms.TextBox tbPointSize;
-        private System.Windows.Forms.Label lblPointSizeLabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rbOffToOn;
+        private System.Windows.Forms.RadioButton rbOnToOff;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

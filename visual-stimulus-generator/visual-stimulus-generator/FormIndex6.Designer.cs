@@ -1,6 +1,6 @@
 ﻿namespace visual_stimulus_generator
 {
-    partial class FormIndex2
+    partial class FormIndex6
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.gbBasicSetting = new System.Windows.Forms.GroupBox();
+            this.pbStaticColor = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSetStaticColor = new System.Windows.Forms.Button();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnStartDisplay = new System.Windows.Forms.Button();
             this.gbGeneralSetting = new System.Windows.Forms.GroupBox();
             this.lblSet = new System.Windows.Forms.Button();
             this.btnChoicePath = new System.Windows.Forms.Button();
@@ -47,24 +54,87 @@
             this.tbFrameRate = new System.Windows.Forms.TextBox();
             this.tbTime = new System.Windows.Forms.TextBox();
             this.lblTime = new System.Windows.Forms.Label();
-            this.gbBasicSetting = new System.Windows.Forms.GroupBox();
-            this.btnSpeedSwitch = new System.Windows.Forms.Button();
-            this.btnBarSizeSwitch = new System.Windows.Forms.Button();
-            this.lblCircleTime = new System.Windows.Forms.Label();
-            this.lblCircleTimeLabel = new System.Windows.Forms.Label();
-            this.rbLeftToRight = new System.Windows.Forms.RadioButton();
-            this.tbSpeed = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbBarSize = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rbRightToLeft = new System.Windows.Forms.RadioButton();
-            this.btnGenerate = new System.Windows.Forms.Button();
-            this.btnStartDisplay = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.gbGeneralSetting.SuspendLayout();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.gbBasicSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStaticColor)).BeginInit();
+            this.gbGeneralSetting.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.progressBar1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.progressBar1.Location = new System.Drawing.Point(403, 457);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(333, 27);
+            this.progressBar1.TabIndex = 27;
+            // 
+            // gbBasicSetting
+            // 
+            this.gbBasicSetting.Controls.Add(this.pbStaticColor);
+            this.gbBasicSetting.Controls.Add(this.label1);
+            this.gbBasicSetting.Controls.Add(this.btnSetStaticColor);
+            this.gbBasicSetting.Location = new System.Drawing.Point(402, 34);
+            this.gbBasicSetting.Name = "gbBasicSetting";
+            this.gbBasicSetting.Size = new System.Drawing.Size(335, 295);
+            this.gbBasicSetting.TabIndex = 26;
+            this.gbBasicSetting.TabStop = false;
+            this.gbBasicSetting.Text = "Basic-Setting";
+            // 
+            // pbStaticColor
+            // 
+            this.pbStaticColor.Location = new System.Drawing.Point(139, 57);
+            this.pbStaticColor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pbStaticColor.Name = "pbStaticColor";
+            this.pbStaticColor.Size = new System.Drawing.Size(128, 22);
+            this.pbStaticColor.TabIndex = 39;
+            this.pbStaticColor.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(16, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 15);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "StaticColor:";
+            // 
+            // btnSetStaticColor
+            // 
+            this.btnSetStaticColor.Enabled = false;
+            this.btnSetStaticColor.Location = new System.Drawing.Point(139, 111);
+            this.btnSetStaticColor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSetStaticColor.Name = "btnSetStaticColor";
+            this.btnSetStaticColor.Size = new System.Drawing.Size(128, 27);
+            this.btnSetStaticColor.TabIndex = 37;
+            this.btnSetStaticColor.Text = "Set";
+            this.btnSetStaticColor.UseVisualStyleBackColor = true;
+            this.btnSetStaticColor.Click += new System.EventHandler(this.btnSetStaticColor_Click);
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Enabled = false;
+            this.btnGenerate.Location = new System.Drawing.Point(602, 384);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(135, 54);
+            this.btnGenerate.TabIndex = 25;
+            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // btnStartDisplay
+            // 
+            this.btnStartDisplay.Enabled = false;
+            this.btnStartDisplay.Location = new System.Drawing.Point(402, 384);
+            this.btnStartDisplay.Name = "btnStartDisplay";
+            this.btnStartDisplay.Size = new System.Drawing.Size(135, 54);
+            this.btnStartDisplay.TabIndex = 24;
+            this.btnStartDisplay.Text = "Preview";
+            this.btnStartDisplay.UseVisualStyleBackColor = true;
+            this.btnStartDisplay.Click += new System.EventHandler(this.btnStartDisplay_Click);
             // 
             // gbGeneralSetting
             // 
@@ -85,10 +155,10 @@
             this.gbGeneralSetting.Controls.Add(this.tbFrameRate);
             this.gbGeneralSetting.Controls.Add(this.tbTime);
             this.gbGeneralSetting.Controls.Add(this.lblTime);
-            this.gbGeneralSetting.Location = new System.Drawing.Point(12, 12);
+            this.gbGeneralSetting.Location = new System.Drawing.Point(59, 34);
             this.gbGeneralSetting.Name = "gbGeneralSetting";
             this.gbGeneralSetting.Size = new System.Drawing.Size(307, 427);
-            this.gbGeneralSetting.TabIndex = 8;
+            this.gbGeneralSetting.TabIndex = 23;
             this.gbGeneralSetting.TabStop = false;
             this.gbGeneralSetting.Text = "General-Setting";
             // 
@@ -248,189 +318,48 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblTime.Location = new System.Drawing.Point(20, 124);
+            this.lblTime.Location = new System.Drawing.Point(19, 124);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(79, 15);
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "Duration:";
             // 
-            // gbBasicSetting
-            // 
-            this.gbBasicSetting.Controls.Add(this.btnSpeedSwitch);
-            this.gbBasicSetting.Controls.Add(this.btnBarSizeSwitch);
-            this.gbBasicSetting.Controls.Add(this.lblCircleTime);
-            this.gbBasicSetting.Controls.Add(this.lblCircleTimeLabel);
-            this.gbBasicSetting.Controls.Add(this.rbLeftToRight);
-            this.gbBasicSetting.Controls.Add(this.tbSpeed);
-            this.gbBasicSetting.Controls.Add(this.label4);
-            this.gbBasicSetting.Controls.Add(this.tbBarSize);
-            this.gbBasicSetting.Controls.Add(this.label2);
-            this.gbBasicSetting.Controls.Add(this.rbRightToLeft);
-            this.gbBasicSetting.Location = new System.Drawing.Point(355, 12);
-            this.gbBasicSetting.Name = "gbBasicSetting";
-            this.gbBasicSetting.Size = new System.Drawing.Size(335, 294);
-            this.gbBasicSetting.TabIndex = 13;
-            this.gbBasicSetting.TabStop = false;
-            this.gbBasicSetting.Text = "Basic-Setting";
-            // 
-            // btnSpeedSwitch
-            // 
-            this.btnSpeedSwitch.Location = new System.Drawing.Point(247, 87);
-            this.btnSpeedSwitch.Name = "btnSpeedSwitch";
-            this.btnSpeedSwitch.Size = new System.Drawing.Size(69, 23);
-            this.btnSpeedSwitch.TabIndex = 27;
-            this.btnSpeedSwitch.Text = "Degree";
-            this.btnSpeedSwitch.UseVisualStyleBackColor = true;
-            this.btnSpeedSwitch.Click += new System.EventHandler(this.btnSpeedSwitch_Click);
-            // 
-            // btnBarSizeSwitch
-            // 
-            this.btnBarSizeSwitch.Location = new System.Drawing.Point(247, 40);
-            this.btnBarSizeSwitch.Name = "btnBarSizeSwitch";
-            this.btnBarSizeSwitch.Size = new System.Drawing.Size(69, 23);
-            this.btnBarSizeSwitch.TabIndex = 26;
-            this.btnBarSizeSwitch.Text = "Degree";
-            this.btnBarSizeSwitch.UseVisualStyleBackColor = true;
-            this.btnBarSizeSwitch.Click += new System.EventHandler(this.btnBarSizeSwitch_Click);
-            // 
-            // lblCircleTime
-            // 
-            this.lblCircleTime.AutoSize = true;
-            this.lblCircleTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCircleTime.Location = new System.Drawing.Point(107, 148);
-            this.lblCircleTime.Name = "lblCircleTime";
-            this.lblCircleTime.Size = new System.Drawing.Size(39, 15);
-            this.lblCircleTime.TabIndex = 25;
-            this.lblCircleTime.Text = "NULL";
-            // 
-            // lblCircleTimeLabel
-            // 
-            this.lblCircleTimeLabel.AutoSize = true;
-            this.lblCircleTimeLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCircleTimeLabel.Location = new System.Drawing.Point(5, 148);
-            this.lblCircleTimeLabel.Name = "lblCircleTimeLabel";
-            this.lblCircleTimeLabel.Size = new System.Drawing.Size(95, 15);
-            this.lblCircleTimeLabel.TabIndex = 24;
-            this.lblCircleTimeLabel.Text = "CircleTime:";
-            // 
-            // rbLeftToRight
-            // 
-            this.rbLeftToRight.AutoSize = true;
-            this.rbLeftToRight.Location = new System.Drawing.Point(169, 208);
-            this.rbLeftToRight.Name = "rbLeftToRight";
-            this.rbLeftToRight.Size = new System.Drawing.Size(116, 19);
-            this.rbLeftToRight.TabIndex = 23;
-            this.rbLeftToRight.Text = "LeftToRight";
-            this.rbLeftToRight.UseVisualStyleBackColor = true;
-            // 
-            // tbSpeed
-            // 
-            this.tbSpeed.Location = new System.Drawing.Point(115, 85);
-            this.tbSpeed.Name = "tbSpeed";
-            this.tbSpeed.Size = new System.Drawing.Size(127, 25);
-            this.tbSpeed.TabIndex = 19;
-            this.tbSpeed.Text = "2";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(45, 87);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 15);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "StepSize:";
-            // 
-            // tbBarSize
-            // 
-            this.tbBarSize.Location = new System.Drawing.Point(115, 40);
-            this.tbBarSize.Name = "tbBarSize";
-            this.tbBarSize.Size = new System.Drawing.Size(127, 25);
-            this.tbBarSize.TabIndex = 16;
-            this.tbBarSize.Text = "30";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(29, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 15);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "BarSize:";
-            // 
-            // rbRightToLeft
-            // 
-            this.rbRightToLeft.AutoSize = true;
-            this.rbRightToLeft.Checked = true;
-            this.rbRightToLeft.Location = new System.Drawing.Point(33, 208);
-            this.rbRightToLeft.Name = "rbRightToLeft";
-            this.rbRightToLeft.Size = new System.Drawing.Size(116, 19);
-            this.rbRightToLeft.TabIndex = 11;
-            this.rbRightToLeft.TabStop = true;
-            this.rbRightToLeft.Text = "RightToLeft";
-            this.rbRightToLeft.UseVisualStyleBackColor = true;
-            // 
-            // btnGenerate
-            // 
-            this.btnGenerate.Enabled = false;
-            this.btnGenerate.Location = new System.Drawing.Point(555, 361);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(135, 54);
-            this.btnGenerate.TabIndex = 12;
-            this.btnGenerate.Text = "Generate";
-            this.btnGenerate.UseVisualStyleBackColor = true;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // btnStartDisplay
-            // 
-            this.btnStartDisplay.Enabled = false;
-            this.btnStartDisplay.Location = new System.Drawing.Point(355, 361);
-            this.btnStartDisplay.Name = "btnStartDisplay";
-            this.btnStartDisplay.Size = new System.Drawing.Size(135, 54);
-            this.btnStartDisplay.TabIndex = 11;
-            this.btnStartDisplay.Text = "Preview";
-            this.btnStartDisplay.UseVisualStyleBackColor = true;
-            this.btnStartDisplay.Click += new System.EventHandler(this.btnStartDisplay_Click);
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.progressBar1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.progressBar1.Location = new System.Drawing.Point(355, 317);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(333, 27);
-            this.progressBar1.TabIndex = 23;
-            // 
-            // FormIndex2
+            // FormIndex6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 493);
+            this.ClientSize = new System.Drawing.Size(796, 518);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.gbBasicSetting);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnStartDisplay);
             this.Controls.Add(this.gbGeneralSetting);
-            this.Name = "FormIndex2";
+            this.Name = "FormIndex6";
             this.Text = "Editor";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormIndex2_FormClosed);
-            this.Load += new System.EventHandler(this.FormIndex2_Load);
-            this.gbGeneralSetting.ResumeLayout(false);
-            this.gbGeneralSetting.PerformLayout();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormIndex6_FormClosed);
+            this.Load += new System.EventHandler(this.Editor_Load);
             this.gbBasicSetting.ResumeLayout(false);
             this.gbBasicSetting.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStaticColor)).EndInit();
+            this.gbGeneralSetting.ResumeLayout(false);
+            this.gbGeneralSetting.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.GroupBox gbBasicSetting;
+        private System.Windows.Forms.PictureBox pbStaticColor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSetStaticColor;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button btnStartDisplay;
         private System.Windows.Forms.GroupBox gbGeneralSetting;
         private System.Windows.Forms.Button lblSet;
         private System.Windows.Forms.Button btnChoicePath;
@@ -449,20 +378,7 @@
         private System.Windows.Forms.TextBox tbFrameRate;
         private System.Windows.Forms.TextBox tbTime;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.GroupBox gbBasicSetting;
-        private System.Windows.Forms.Button btnSpeedSwitch;
-        private System.Windows.Forms.Button btnBarSizeSwitch;
-        private System.Windows.Forms.Label lblCircleTime;
-        private System.Windows.Forms.Label lblCircleTimeLabel;
-        private System.Windows.Forms.RadioButton rbLeftToRight;
-        private System.Windows.Forms.TextBox tbSpeed;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbBarSize;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton rbRightToLeft;
-        private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Button btnStartDisplay;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
