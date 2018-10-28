@@ -87,7 +87,9 @@ namespace visual_stimulus_generator
         private int center;
         Generator g;
 
-
+        private RandomPointGenerator rg;
+        private float pointSize;
+        private int randomRate;
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
             try
@@ -110,45 +112,8 @@ namespace visual_stimulus_generator
                 MessageBox.Show("Wrong with input!!");
 
             }
-
-
-
-            barSize = int.Parse(this.tbBarSize.Text);
-
-            speed = float.Parse(this.tbSpeed.Text);
-
             g = new Generator(width, height);
-            g.SetSimpleCanvas();
-
-            if (btnBarSizeSwitch.Text == "Degree")
-            {
-                barSize = g.DegreeToWidth(barSize);
-            }
-
-
-
-
-            bool ifWhite = true;
-
-            for (int i = 0; i != width; i++)
-            {
-                if (i % barSize == 0)
-                {
-                    ifWhite = !ifWhite;
-                }
-                if (ifWhite)
-                {
-                    g.simpleCanvas[i] = 1;
-                }
-                else
-                {
-                    g.simpleCanvas[i] = 0;
-                }
-
-            }
-
-
-
+            speed = int.Parse(tbSpeed.Text);
 
             if (btnSpeedSwitch.Text == "Degree")
             {
@@ -158,39 +123,40 @@ namespace visual_stimulus_generator
             {
                 step = (int)speed;
             }
-
-
-            this.lblCircleTime.Text = (width / (float)barSize).ToString();
             
+
+            pointSize = float.Parse(tbPointSize.Text);
+            
+            if (btnPointSizeSwitch.Text == "Degree")
+            {
+                pointSize = g.DegreeToWidth(pointSize);
+            }
+            else
+            {
+                pointSize = (int)pointSize;
+            }
+
+            this.lblPointNumber.Text = (width / (float)pointSize).ToString();
+            this.lblShowStepAverage.Text = (step / (float)pointSize).ToString();
+            rg = new RandomPointGenerator(width, height, (int)pointSize, 10);
+
+            randomRate = int.Parse(tbRandomRate.Text);
+
+            rg.setRandomPoint(randomRate);
+            
+
             timer1.Interval = 1000 / frameRate;
             timer1.Start();
         }
 
-        private void btnBarSizeSwitch_Click(object sender, EventArgs e)
-        {
-            if (btnBarSizeSwitch.Text == "Degree")
-            {
-                btnBarSizeSwitch.Text = "Pixel";
-            }
-            else
-            {
-                btnBarSizeSwitch.Text = "Degree";
-            }
-        }
+       
 
-        private void btnSpeedSwitch_Click(object sender, EventArgs e)
-        {
-            if (btnSpeedSwitch.Text == "Degree")
-            {
-                btnSpeedSwitch.Text = "Pixel";
-            }
-            else
-            {
-                btnSpeedSwitch.Text = "Degree";
-            }
-        }
 
-        private void button1_Click(object sender, EventArgs e)
+      
+       
+       
+
+        private void btnPointSizeSwitch_Click(object sender, EventArgs e)
         {
             if (btnPointSizeSwitch.Text == "Degree")
             {
@@ -202,10 +168,53 @@ namespace visual_stimulus_generator
             }
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        private void btnSpeedSwitch_Click_1(object sender, EventArgs e)
         {
-            RandomPointGenerator rpg = new RandomPointGenerator(100, 100);
-            rpg.GeneratePoint(10, 60);
+            if (btnSpeedSwitch.Text == "Degree")
+            {
+                btnSpeedSwitch.Text = "Pixel";
+            }
+            else
+            {
+                btnSpeedSwitch.Text = "Degree";
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            g1.Clear(Color.White);
+            for (int i = 0; i != width; i++)
+            {
+                for (int j = 0; j != height; j++)
+                {
+                    if (rg.randomCanvasBackground[i][j] == 0)
+                    {
+                        image1.SetPixel(i, j, Color.Black);
+
+                    }
+
+                }
+            }
+
+            if (rbLeftToRight.Checked)
+            {
+                rg.MoveRightForSimpleCanvas(step);
+            }
+            else if (rbRightToLeft.Checked)
+            {
+                rg.MoveLeftForSimpleCanvas(step);
+            }
+            else
+            {
+                ;
+            }
+
+            display.CreateGraphics().DrawImage(image1, 0, 0);
+        }
+
+        private void FormIndex5_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.display.Close();
         }
     }
 }

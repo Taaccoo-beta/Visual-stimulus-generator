@@ -31,18 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.gbBasicSetting = new System.Windows.Forms.GroupBox();
+            this.tbRandomRate = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnPointSizeSwitch = new System.Windows.Forms.Button();
             this.tbPointSize = new System.Windows.Forms.TextBox();
-            this.lblPointSizeLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblPointSize = new System.Windows.Forms.Label();
+            this.rbStatic = new System.Windows.Forms.RadioButton();
             this.btnSpeedSwitch = new System.Windows.Forms.Button();
-            this.btnBarSizeSwitch = new System.Windows.Forms.Button();
-            this.lblCircleTime = new System.Windows.Forms.Label();
+            this.lblPointNumber = new System.Windows.Forms.Label();
             this.lblAverageBarNumber = new System.Windows.Forms.Label();
+            this.rbLeftToRight = new System.Windows.Forms.RadioButton();
             this.tbSpeed = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbBarSize = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.rbRightToLeft = new System.Windows.Forms.RadioButton();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnStartDisplay = new System.Windows.Forms.Button();
@@ -65,6 +66,9 @@
             this.tbTime = new System.Windows.Forms.TextBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblShowStepAverage = new System.Windows.Forms.Label();
+            this.lblstepSizeAve = new System.Windows.Forms.Label();
             this.gbBasicSetting.SuspendLayout();
             this.gbGeneralSetting.SuspendLayout();
             this.SuspendLayout();
@@ -76,167 +80,180 @@
             this.progressBar1.Location = new System.Drawing.Point(380, 448);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(333, 27);
+            this.progressBar1.Size = new System.Drawing.Size(379, 27);
             this.progressBar1.TabIndex = 27;
             // 
             // gbBasicSetting
             // 
+            this.gbBasicSetting.Controls.Add(this.label2);
+            this.gbBasicSetting.Controls.Add(this.lblShowStepAverage);
+            this.gbBasicSetting.Controls.Add(this.lblstepSizeAve);
+            this.gbBasicSetting.Controls.Add(this.tbRandomRate);
+            this.gbBasicSetting.Controls.Add(this.label1);
+            this.gbBasicSetting.Controls.Add(this.label6);
             this.gbBasicSetting.Controls.Add(this.btnPointSizeSwitch);
             this.gbBasicSetting.Controls.Add(this.tbPointSize);
-            this.gbBasicSetting.Controls.Add(this.lblPointSizeLabel);
-            this.gbBasicSetting.Controls.Add(this.label6);
+            this.gbBasicSetting.Controls.Add(this.lblPointSize);
+            this.gbBasicSetting.Controls.Add(this.rbStatic);
             this.gbBasicSetting.Controls.Add(this.btnSpeedSwitch);
-            this.gbBasicSetting.Controls.Add(this.btnBarSizeSwitch);
-            this.gbBasicSetting.Controls.Add(this.lblCircleTime);
+            this.gbBasicSetting.Controls.Add(this.lblPointNumber);
             this.gbBasicSetting.Controls.Add(this.lblAverageBarNumber);
+            this.gbBasicSetting.Controls.Add(this.rbLeftToRight);
             this.gbBasicSetting.Controls.Add(this.tbSpeed);
             this.gbBasicSetting.Controls.Add(this.label4);
-            this.gbBasicSetting.Controls.Add(this.tbBarSize);
-            this.gbBasicSetting.Controls.Add(this.label2);
             this.gbBasicSetting.Controls.Add(this.rbRightToLeft);
             this.gbBasicSetting.Location = new System.Drawing.Point(379, 25);
             this.gbBasicSetting.Name = "gbBasicSetting";
-            this.gbBasicSetting.Size = new System.Drawing.Size(335, 333);
+            this.gbBasicSetting.Size = new System.Drawing.Size(380, 344);
             this.gbBasicSetting.TabIndex = 26;
             this.gbBasicSetting.TabStop = false;
             this.gbBasicSetting.Text = "Basic-Setting";
             // 
-            // btnPointSizeSwitch
+            // tbRandomRate
             // 
-            this.btnPointSizeSwitch.Location = new System.Drawing.Point(247, 83);
-            this.btnPointSizeSwitch.Name = "btnPointSizeSwitch";
-            this.btnPointSizeSwitch.Size = new System.Drawing.Size(69, 23);
-            this.btnPointSizeSwitch.TabIndex = 49;
-            this.btnPointSizeSwitch.Text = "Degree";
-            this.btnPointSizeSwitch.UseVisualStyleBackColor = true;
-            this.btnPointSizeSwitch.Click += new System.EventHandler(this.button1_Click);
+            this.tbRandomRate.Location = new System.Drawing.Point(119, 134);
+            this.tbRandomRate.Name = "tbRandomRate";
+            this.tbRandomRate.Size = new System.Drawing.Size(127, 25);
+            this.tbRandomRate.TabIndex = 63;
+            this.tbRandomRate.Text = "50";
             // 
-            // tbPointSize
+            // label1
             // 
-            this.tbPointSize.Location = new System.Drawing.Point(115, 83);
-            this.tbPointSize.Name = "tbPointSize";
-            this.tbPointSize.Size = new System.Drawing.Size(127, 25);
-            this.tbPointSize.TabIndex = 48;
-            this.tbPointSize.Text = "2";
-            // 
-            // lblPointSizeLabel
-            // 
-            this.lblPointSizeLabel.AutoSize = true;
-            this.lblPointSizeLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPointSizeLabel.Location = new System.Drawing.Point(13, 83);
-            this.lblPointSizeLabel.Name = "lblPointSizeLabel";
-            this.lblPointSizeLabel.Size = new System.Drawing.Size(87, 15);
-            this.lblPointSizeLabel.TabIndex = 47;
-            this.lblPointSizeLabel.Text = "PointSize:";
+            this.label1.AutoSize = true;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(6, 144);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 15);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "RandomRate:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(166, 177);
+            this.label6.Location = new System.Drawing.Point(228, 197);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 15);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Better for Even ";
+            this.label6.Size = new System.Drawing.Size(127, 15);
+            this.label6.TabIndex = 61;
+            this.label6.Text = "Better for Even";
+            // 
+            // btnPointSizeSwitch
+            // 
+            this.btnPointSizeSwitch.Location = new System.Drawing.Point(272, 85);
+            this.btnPointSizeSwitch.Name = "btnPointSizeSwitch";
+            this.btnPointSizeSwitch.Size = new System.Drawing.Size(69, 23);
+            this.btnPointSizeSwitch.TabIndex = 60;
+            this.btnPointSizeSwitch.Text = "Degree";
+            this.btnPointSizeSwitch.UseVisualStyleBackColor = true;
+            this.btnPointSizeSwitch.Click += new System.EventHandler(this.btnPointSizeSwitch_Click);
+            // 
+            // tbPointSize
+            // 
+            this.tbPointSize.Location = new System.Drawing.Point(119, 83);
+            this.tbPointSize.Name = "tbPointSize";
+            this.tbPointSize.Size = new System.Drawing.Size(127, 25);
+            this.tbPointSize.TabIndex = 59;
+            this.tbPointSize.Text = "2";
+            // 
+            // lblPointSize
+            // 
+            this.lblPointSize.AutoSize = true;
+            this.lblPointSize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblPointSize.Location = new System.Drawing.Point(15, 89);
+            this.lblPointSize.Name = "lblPointSize";
+            this.lblPointSize.Size = new System.Drawing.Size(87, 15);
+            this.lblPointSize.TabIndex = 58;
+            this.lblPointSize.Text = "PointSize:";
+            // 
+            // rbStatic
+            // 
+            this.rbStatic.AutoSize = true;
+            this.rbStatic.Checked = true;
+            this.rbStatic.Location = new System.Drawing.Point(50, 267);
+            this.rbStatic.Name = "rbStatic";
+            this.rbStatic.Size = new System.Drawing.Size(76, 19);
+            this.rbStatic.TabIndex = 57;
+            this.rbStatic.TabStop = true;
+            this.rbStatic.Text = "Static";
+            this.rbStatic.UseVisualStyleBackColor = true;
             // 
             // btnSpeedSwitch
             // 
-            this.btnSpeedSwitch.Location = new System.Drawing.Point(247, 122);
+            this.btnSpeedSwitch.Location = new System.Drawing.Point(272, 43);
             this.btnSpeedSwitch.Name = "btnSpeedSwitch";
             this.btnSpeedSwitch.Size = new System.Drawing.Size(69, 23);
-            this.btnSpeedSwitch.TabIndex = 27;
+            this.btnSpeedSwitch.TabIndex = 56;
             this.btnSpeedSwitch.Text = "Degree";
             this.btnSpeedSwitch.UseVisualStyleBackColor = true;
-            this.btnSpeedSwitch.Click += new System.EventHandler(this.btnSpeedSwitch_Click);
+            this.btnSpeedSwitch.Click += new System.EventHandler(this.btnSpeedSwitch_Click_1);
             // 
-            // btnBarSizeSwitch
+            // lblPointNumber
             // 
-            this.btnBarSizeSwitch.Location = new System.Drawing.Point(247, 40);
-            this.btnBarSizeSwitch.Name = "btnBarSizeSwitch";
-            this.btnBarSizeSwitch.Size = new System.Drawing.Size(69, 23);
-            this.btnBarSizeSwitch.TabIndex = 26;
-            this.btnBarSizeSwitch.Text = "Degree";
-            this.btnBarSizeSwitch.UseVisualStyleBackColor = true;
-            this.btnBarSizeSwitch.Click += new System.EventHandler(this.btnBarSizeSwitch_Click);
-            // 
-            // lblCircleTime
-            // 
-            this.lblCircleTime.AutoSize = true;
-            this.lblCircleTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCircleTime.Location = new System.Drawing.Point(109, 177);
-            this.lblCircleTime.Name = "lblCircleTime";
-            this.lblCircleTime.Size = new System.Drawing.Size(39, 15);
-            this.lblCircleTime.TabIndex = 25;
-            this.lblCircleTime.Text = "NULL";
+            this.lblPointNumber.AutoSize = true;
+            this.lblPointNumber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblPointNumber.Location = new System.Drawing.Point(130, 197);
+            this.lblPointNumber.Name = "lblPointNumber";
+            this.lblPointNumber.Size = new System.Drawing.Size(39, 15);
+            this.lblPointNumber.TabIndex = 55;
+            this.lblPointNumber.Text = "NULL";
             // 
             // lblAverageBarNumber
             // 
             this.lblAverageBarNumber.AutoSize = true;
             this.lblAverageBarNumber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblAverageBarNumber.Location = new System.Drawing.Point(14, 177);
+            this.lblAverageBarNumber.Location = new System.Drawing.Point(12, 197);
             this.lblAverageBarNumber.Name = "lblAverageBarNumber";
-            this.lblAverageBarNumber.Size = new System.Drawing.Size(87, 15);
-            this.lblAverageBarNumber.TabIndex = 24;
-            this.lblAverageBarNumber.Text = "BarNumber:";
+            this.lblAverageBarNumber.Size = new System.Drawing.Size(103, 15);
+            this.lblAverageBarNumber.TabIndex = 54;
+            this.lblAverageBarNumber.Text = "PointNumber:";
+            // 
+            // rbLeftToRight
+            // 
+            this.rbLeftToRight.AutoSize = true;
+            this.rbLeftToRight.Location = new System.Drawing.Point(184, 267);
+            this.rbLeftToRight.Name = "rbLeftToRight";
+            this.rbLeftToRight.Size = new System.Drawing.Size(116, 19);
+            this.rbLeftToRight.TabIndex = 53;
+            this.rbLeftToRight.Text = "LeftToRight";
+            this.rbLeftToRight.UseVisualStyleBackColor = true;
             // 
             // tbSpeed
             // 
-            this.tbSpeed.Location = new System.Drawing.Point(115, 120);
+            this.tbSpeed.Location = new System.Drawing.Point(119, 41);
             this.tbSpeed.Name = "tbSpeed";
             this.tbSpeed.Size = new System.Drawing.Size(127, 25);
-            this.tbSpeed.TabIndex = 19;
+            this.tbSpeed.TabIndex = 52;
             this.tbSpeed.Text = "2";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(21, 121);
+            this.label4.Location = new System.Drawing.Point(23, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 15);
-            this.label4.TabIndex = 18;
+            this.label4.TabIndex = 51;
             this.label4.Text = "StepSize:";
-            // 
-            // tbBarSize
-            // 
-            this.tbBarSize.Location = new System.Drawing.Point(115, 42);
-            this.tbBarSize.Name = "tbBarSize";
-            this.tbBarSize.Size = new System.Drawing.Size(127, 25);
-            this.tbBarSize.TabIndex = 16;
-            this.tbBarSize.Text = "30";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(29, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 15);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "BarSize:";
             // 
             // rbRightToLeft
             // 
             this.rbRightToLeft.AutoSize = true;
-            this.rbRightToLeft.Checked = true;
-            this.rbRightToLeft.Location = new System.Drawing.Point(32, 225);
+            this.rbRightToLeft.Location = new System.Drawing.Point(184, 306);
             this.rbRightToLeft.Name = "rbRightToLeft";
             this.rbRightToLeft.Size = new System.Drawing.Size(116, 19);
-            this.rbRightToLeft.TabIndex = 11;
-            this.rbRightToLeft.TabStop = true;
+            this.rbRightToLeft.TabIndex = 50;
             this.rbRightToLeft.Text = "RightToLeft";
             this.rbRightToLeft.UseVisualStyleBackColor = true;
             // 
             // btnGenerate
             // 
             this.btnGenerate.Enabled = false;
-            this.btnGenerate.Location = new System.Drawing.Point(579, 375);
+            this.btnGenerate.Location = new System.Drawing.Point(624, 375);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(135, 54);
             this.btnGenerate.TabIndex = 25;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // btnStartDisplay
             // 
@@ -437,6 +454,40 @@
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "Duration:";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(228, 229);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 15);
+            this.label2.TabIndex = 66;
+            this.label2.Text = "Better for Even";
+            // 
+            // lblShowStepAverage
+            // 
+            this.lblShowStepAverage.AutoSize = true;
+            this.lblShowStepAverage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblShowStepAverage.Location = new System.Drawing.Point(130, 229);
+            this.lblShowStepAverage.Name = "lblShowStepAverage";
+            this.lblShowStepAverage.Size = new System.Drawing.Size(39, 15);
+            this.lblShowStepAverage.TabIndex = 65;
+            this.lblShowStepAverage.Text = "NULL";
+            // 
+            // lblstepSizeAve
+            // 
+            this.lblstepSizeAve.AutoSize = true;
+            this.lblstepSizeAve.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblstepSizeAve.Location = new System.Drawing.Point(12, 229);
+            this.lblstepSizeAve.Name = "lblstepSizeAve";
+            this.lblstepSizeAve.Size = new System.Drawing.Size(103, 15);
+            this.lblstepSizeAve.TabIndex = 64;
+            this.lblstepSizeAve.Text = "StepAverage:";
+            // 
             // FormIndex5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -449,6 +500,7 @@
             this.Controls.Add(this.gbGeneralSetting);
             this.Name = "FormIndex5";
             this.Text = "FormIndex5";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormIndex5_FormClosed);
             this.Load += new System.EventHandler(this.FormIndex5_Load);
             this.gbBasicSetting.ResumeLayout(false);
             this.gbBasicSetting.PerformLayout();
@@ -462,16 +514,6 @@
 
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.GroupBox gbBasicSetting;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnSpeedSwitch;
-        private System.Windows.Forms.Button btnBarSizeSwitch;
-        private System.Windows.Forms.Label lblCircleTime;
-        private System.Windows.Forms.Label lblAverageBarNumber;
-        private System.Windows.Forms.TextBox tbSpeed;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbBarSize;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton rbRightToLeft;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Button btnStartDisplay;
         private System.Windows.Forms.GroupBox gbGeneralSetting;
@@ -492,9 +534,23 @@
         private System.Windows.Forms.TextBox tbFrameRate;
         private System.Windows.Forms.TextBox tbTime;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox tbRandomRate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPointSizeSwitch;
         private System.Windows.Forms.TextBox tbPointSize;
-        private System.Windows.Forms.Label lblPointSizeLabel;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblPointSize;
+        private System.Windows.Forms.RadioButton rbStatic;
+        private System.Windows.Forms.Button btnSpeedSwitch;
+        private System.Windows.Forms.Label lblPointNumber;
+        private System.Windows.Forms.Label lblAverageBarNumber;
+        private System.Windows.Forms.RadioButton rbLeftToRight;
+        private System.Windows.Forms.TextBox tbSpeed;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton rbRightToLeft;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblShowStepAverage;
+        private System.Windows.Forms.Label lblstepSizeAve;
     }
 }
