@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AForge.Video.FFMPEG;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -215,6 +216,66 @@ namespace visual_stimulus_generator
         private void FormIndex5_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.display.Close();
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            this.timer1.Stop();
+            rg = new RandomPointGenerator(width, height, (int)pointSize, 10);
+
+            
+            rg.setRandomPoint(randomRate);
+
+
+            progressBar1.Maximum = (int)(frameRate * time);
+            progressBar1.Value = progressBar1.Minimum = 0;//设置范围最小值
+
+
+            VideoFileWriter writer = new VideoFileWriter();
+            writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
+
+            for (int ii = 0; ii != (int)(frameRate * time); ii++)
+            {
+
+                Application.DoEvents();
+                g1.Clear(Color.White);
+                for (int i = 0; i != width; i++)
+                {
+                    for (int j = 0; j != height; j++)
+                    {
+                        if (rg.randomCanvasBackground[i][j] == 0)
+                        {
+                            image1.SetPixel(i, j, Color.Black);
+
+                        }
+
+                    }
+                }
+
+
+                if (rbLeftToRight.Checked)
+                {
+                    rg.MoveRightForSimpleCanvas(step);
+                }
+                else if (rbRightToLeft.Checked)
+                {
+                    rg.MoveLeftForSimpleCanvas(step);
+                }
+                else
+                {
+                    ;
+                }
+
+                writer.WriteVideoFrame(image1);
+
+
+                this.progressBar1.Value = ii;
+
+            }
+
+            writer.Close();
+            this.progressBar1.Value = (int)(frameRate * time);
+            MessageBox.Show("Saved!!");
         }
     }
 }

@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.gbBasicSetting = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblShowStepAverage = new System.Windows.Forms.Label();
+            this.lblstepSizeAve = new System.Windows.Forms.Label();
             this.tbRandomRate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,9 +69,6 @@
             this.tbTime = new System.Windows.Forms.TextBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblShowStepAverage = new System.Windows.Forms.Label();
-            this.lblstepSizeAve = new System.Windows.Forms.Label();
             this.gbBasicSetting.SuspendLayout();
             this.gbGeneralSetting.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +108,36 @@
             this.gbBasicSetting.TabIndex = 26;
             this.gbBasicSetting.TabStop = false;
             this.gbBasicSetting.Text = "Basic-Setting";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(228, 229);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 15);
+            this.label2.TabIndex = 66;
+            this.label2.Text = "Better for Even";
+            // 
+            // lblShowStepAverage
+            // 
+            this.lblShowStepAverage.AutoSize = true;
+            this.lblShowStepAverage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblShowStepAverage.Location = new System.Drawing.Point(130, 229);
+            this.lblShowStepAverage.Name = "lblShowStepAverage";
+            this.lblShowStepAverage.Size = new System.Drawing.Size(39, 15);
+            this.lblShowStepAverage.TabIndex = 65;
+            this.lblShowStepAverage.Text = "NULL";
+            // 
+            // lblstepSizeAve
+            // 
+            this.lblstepSizeAve.AutoSize = true;
+            this.lblstepSizeAve.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblstepSizeAve.Location = new System.Drawing.Point(12, 229);
+            this.lblstepSizeAve.Name = "lblstepSizeAve";
+            this.lblstepSizeAve.Size = new System.Drawing.Size(103, 15);
+            this.lblstepSizeAve.TabIndex = 64;
+            this.lblstepSizeAve.Text = "StepAverage:";
             // 
             // tbRandomRate
             // 
@@ -254,6 +284,7 @@
             this.btnGenerate.TabIndex = 25;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // btnStartDisplay
             // 
@@ -457,36 +488,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(228, 229);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 15);
-            this.label2.TabIndex = 66;
-            this.label2.Text = "Better for Even";
-            // 
-            // lblShowStepAverage
-            // 
-            this.lblShowStepAverage.AutoSize = true;
-            this.lblShowStepAverage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblShowStepAverage.Location = new System.Drawing.Point(130, 229);
-            this.lblShowStepAverage.Name = "lblShowStepAverage";
-            this.lblShowStepAverage.Size = new System.Drawing.Size(39, 15);
-            this.lblShowStepAverage.TabIndex = 65;
-            this.lblShowStepAverage.Text = "NULL";
-            // 
-            // lblstepSizeAve
-            // 
-            this.lblstepSizeAve.AutoSize = true;
-            this.lblstepSizeAve.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblstepSizeAve.Location = new System.Drawing.Point(12, 229);
-            this.lblstepSizeAve.Name = "lblstepSizeAve";
-            this.lblstepSizeAve.Size = new System.Drawing.Size(103, 15);
-            this.lblstepSizeAve.TabIndex = 64;
-            this.lblstepSizeAve.Text = "StepAverage:";
             // 
             // FormIndex5
             // 
