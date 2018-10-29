@@ -159,7 +159,8 @@ namespace visual_stimulus_generator
             VideoFileWriter writer = new VideoFileWriter();
             writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
             for (int i = 0; i != frameRate * time; i++)
-                {
+            {
+                Application.DoEvents();
                 writer.WriteVideoFrame(image1);
                 this.progressBar1.Value = i;
             }

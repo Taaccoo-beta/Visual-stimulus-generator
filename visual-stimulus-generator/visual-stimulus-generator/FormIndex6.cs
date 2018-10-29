@@ -153,7 +153,7 @@ namespace visual_stimulus_generator
             for (int ii = 0; ii != (int)(frameRate * time); ii++)
             {
 
-              
+                Application.DoEvents();
 
                 g1.Clear(Color.White);
                 g1.FillRectangle(new SolidBrush(staticColor), 0, 0, width, height);

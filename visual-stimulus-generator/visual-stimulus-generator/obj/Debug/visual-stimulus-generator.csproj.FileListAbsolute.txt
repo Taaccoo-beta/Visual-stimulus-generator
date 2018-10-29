@@ -78,3 +78,4 @@ E:\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator
 E:\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.csproj.GenerateResource.Cache
 E:\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.exe
 E:\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.pdb
+E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.csprojResolveAssemblyReference.cache

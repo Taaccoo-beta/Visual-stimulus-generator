@@ -284,7 +284,7 @@ namespace visual_stimulus_generator
             
             for (int i = 0; i != (int)(frameRate * time); i++)
             {
-
+                Application.DoEvents();
                 if (orientation == +1)
                 {
                     g.MoveRightForSimpleCanvas(step);

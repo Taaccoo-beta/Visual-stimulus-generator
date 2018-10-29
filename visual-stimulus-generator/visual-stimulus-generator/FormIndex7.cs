@@ -232,7 +232,7 @@ namespace visual_stimulus_generator
             int reIndex = sectorWidth - 1;
             for (int jj = 0; jj != (int)(frameRate * time); jj++)
             {
-
+                Application.DoEvents();
                 if (rbLeftToRight.Checked)
                 {
                     if (rbOnToOff.Checked)

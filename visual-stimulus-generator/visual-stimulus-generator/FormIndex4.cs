@@ -291,7 +291,7 @@ namespace visual_stimulus_generator
            
             for (int ii = 0; ii != (int)(frameRate * time); ii++)
             {
-
+                Application.DoEvents();
                 if (rbLeftToRight.Checked)
                 {
                     g.MoveRightForSimpleCanvas(step);
