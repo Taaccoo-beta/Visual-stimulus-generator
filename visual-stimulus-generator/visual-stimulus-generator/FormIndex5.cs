@@ -136,10 +136,14 @@ namespace visual_stimulus_generator
             {
                 pointSize = (int)pointSize;
             }
-
+            if (pointSize < 1)
+            {
+                MessageBox.Show("PointSize less than 1 !!!");
+            }
             this.lblPointNumber.Text = (width / (float)pointSize).ToString();
             this.lblShowStepAverage.Text = (step / (float)pointSize).ToString();
-            rg = new RandomPointGenerator(width, height, (int)pointSize, 10);
+            MessageBox.Show(((int)pointSize).ToString());
+            rg = new RandomPointGenerator(width, height, (int)pointSize);
 
             randomRate = int.Parse(tbRandomRate.Text);
 
@@ -221,7 +225,7 @@ namespace visual_stimulus_generator
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             this.timer1.Stop();
-            rg = new RandomPointGenerator(width, height, (int)pointSize, 10);
+            rg = new RandomPointGenerator(width, height, (int)pointSize);
 
             
             rg.setRandomPoint(randomRate);

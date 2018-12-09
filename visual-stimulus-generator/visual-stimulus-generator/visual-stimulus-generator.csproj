@@ -75,6 +75,12 @@
     <Compile Include="FormIndex0.Designer.cs">
       <DependentUpon>FormIndex0.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIndex10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIndex10.Designer.cs">
+      <DependentUpon>FormIndex10.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormIndex2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,18 @@
     <Compile Include="FormIndex7.Designer.cs">
       <DependentUpon>FormIndex7.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIndex8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIndex8.Designer.cs">
+      <DependentUpon>FormIndex8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIndex9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIndex9.Designer.cs">
+      <DependentUpon>FormIndex9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generator.cs" />
     <Compile Include="NameDetection.cs" />
     <Compile Include="Program.cs" />
@@ -127,6 +145,7 @@
     <Compile Include="Display.Designer.cs">
       <DependentUpon>Display.cs</DependentUpon>
     </Compile>
+    <Compile Include="RandomPointMoving.cs" />
     <Compile Include="VedioGenerator.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -136,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormIndex0.resx">
       <DependentUpon>FormIndex0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIndex10.resx">
+      <DependentUpon>FormIndex10.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormIndex2.resx">
       <DependentUpon>FormIndex2.cs</DependentUpon>
@@ -154,6 +176,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormIndex7.resx">
       <DependentUpon>FormIndex7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIndex8.resx">
+      <DependentUpon>FormIndex8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIndex9.resx">
+      <DependentUpon>FormIndex9.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

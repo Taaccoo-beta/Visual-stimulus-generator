@@ -145,6 +145,15 @@
   <data name="lbVisualStimulusType.Items7" xml:space="preserve">
     <value>OnOff</value>
   </data>
+  <data name="lbVisualStimulusType.Items8" xml:space="preserve">
+    <value>RandomPointBarMove</value>
+  </data>
+  <data name="lbVisualStimulusType.Items9" xml:space="preserve">
+    <value>RandomPointBackgroundMove</value>
+  </data>
+  <data name="lbVisualStimulusType.Items10" xml:space="preserve">
+    <value>RandomPointBarAndBackgroundMove</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbVisualStimulusType.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 52</value>

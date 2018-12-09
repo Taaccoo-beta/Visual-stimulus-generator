@@ -22,26 +22,23 @@ namespace visual_stimulus_generator
         private Bitmap bm;
         public List<List<int>> randomCanvasBackground;
 
-        public List<List<int>> barOne;
-        public List<List<int>> barTwo;
 
 
         private int randomSeed = 0;
 
-        public RandomPointGenerator(int width, int height, int pointSize, int barSize)
+        public RandomPointGenerator(int width, int height, int pointSize)
         {
             this.width = width;
             this.height = height;
             this.pointSize = pointSize;
-            this.barSize = barSize;
+           
 
             pointWidth = width / pointSize;
             pointHeight = height / pointSize;
 
 
             randomCanvasBackground = new List<List<int>>();
-            barOne = new List<List<int>>();
-            barTwo = new List<List<int>>();
+      
             for (int i = 0; i != width; i++)
             {
                 randomCanvasBackground.Add(new List<int>());
@@ -50,18 +47,7 @@ namespace visual_stimulus_generator
                     randomCanvasBackground[i].Add(0);
                 }
             }
-
-            for (int i = 0; i != barSize; i++)
-            {
-                barOne.Add(new List<int>());
-                barTwo.Add(new List<int>());
-                for (int j = 0; j != height; j++)
-                {
-                    barOne[i].Add(0);
-                    barTwo[i].Add(0);
-                }
-            }
-
+            
         }
 
         public void setRandomPoint(int rate)

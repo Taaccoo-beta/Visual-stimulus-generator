@@ -81,6 +81,21 @@ namespace visual_stimulus_generator
                         f7.Show();
                         f7.Location = new System.Drawing.Point(this.Location.X + this.Width, this.Location.Y);
                         break;
+                    case 8:
+                        FormIndex8 f8 = new FormIndex8();
+                        f8.Show();
+                        f8.Location = new System.Drawing.Point(this.Location.X + this.Width, this.Location.Y);
+                        break;
+                    case 9:
+                        FormIndex9 f9 = new FormIndex9();
+                        f9.Show();
+                        f9.Location = new System.Drawing.Point(this.Location.X + this.Width, this.Location.Y);
+                        break;
+                    case 10:
+                        FormIndex10 f10 = new FormIndex10();
+                        f10.Show();
+                        f10.Location = new System.Drawing.Point(this.Location.X + this.Width, this.Location.Y);
+                        break;
 
                     default:
                         break;
