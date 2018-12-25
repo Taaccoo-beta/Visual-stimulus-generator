@@ -119,6 +119,7 @@ namespace visual_stimulus_generator
         private int step;
         private int center;
         private float degree;
+        private int widthUp, widthDown;
         Generator g;
 
         private RandomPointMoving rg;
@@ -204,6 +205,9 @@ namespace visual_stimulus_generator
                
 
             }
+
+            widthUp = int.Parse(tbWUp.Text);
+            widthDown = int.Parse(tbWDown.Text);
             realRightpPosition = DegreeToWidth(degree);
             realLeftPosition = DegreeToWidth(-degree);
             timer1.Interval = 1000 / frameRate;
@@ -240,10 +244,21 @@ namespace visual_stimulus_generator
                 {
                     for (int j = 0; j != height; j++)
                     {
-                        if (rg.bar.randomCanvasBackground[i - startDegree][j] == 0)
+                        if (j >= widthUp & j <= widthDown)
                         {
-                            image1.SetPixel(i, j, Color.Black);
+                            if (rg.bar.randomCanvasBackground[i - startDegree][j] == 0)
+                            {
+                                image1.SetPixel(i, j, Color.Black);
 
+                            }
+                        }
+                        else
+                        {
+                            if (rg.background.randomCanvasBackground[i][j] == 0)
+                            {
+                                image1.SetPixel(i, j, Color.Black);
+
+                            }
                         }
 
                     }
@@ -340,10 +355,21 @@ namespace visual_stimulus_generator
                     {
                         for (int j = 0; j != height; j++)
                         {
-                            if (rg.bar.randomCanvasBackground[i - startDegree][j] == 0)
+                            if (j >= widthUp & j <= widthDown)
                             {
-                                image1.SetPixel(i, j, Color.Black);
+                                if (rg.bar.randomCanvasBackground[i - startDegree][j] == 0)
+                                {
+                                    image1.SetPixel(i, j, Color.Black);
 
+                                }
+                            }
+                            else
+                            {
+                                if (rg.background.randomCanvasBackground[i][j] == 0)
+                                {
+                                    image1.SetPixel(i, j, Color.Black);
+
+                                }
                             }
 
                         }

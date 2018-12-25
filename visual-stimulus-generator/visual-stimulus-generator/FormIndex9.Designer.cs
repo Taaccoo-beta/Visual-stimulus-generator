@@ -74,6 +74,12 @@
             this.tbTime = new System.Windows.Forms.TextBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tbWUp = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbWDown = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.rbCenterToRight = new System.Windows.Forms.RadioButton();
+            this.rbCenterToLeft = new System.Windows.Forms.RadioButton();
             this.gbBasicSetting.SuspendLayout();
             this.gbGeneralSetting.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +96,12 @@
             // 
             // gbBasicSetting
             // 
+            this.gbBasicSetting.Controls.Add(this.rbCenterToRight);
+            this.gbBasicSetting.Controls.Add(this.rbCenterToLeft);
+            this.gbBasicSetting.Controls.Add(this.tbWUp);
+            this.gbBasicSetting.Controls.Add(this.label8);
+            this.gbBasicSetting.Controls.Add(this.tbWDown);
+            this.gbBasicSetting.Controls.Add(this.label9);
             this.gbBasicSetting.Controls.Add(this.label7);
             this.gbBasicSetting.Controls.Add(this.rbLeftToRight);
             this.gbBasicSetting.Controls.Add(this.rbRightToLeft);
@@ -114,7 +126,7 @@
             this.gbBasicSetting.Controls.Add(this.label4);
             this.gbBasicSetting.Location = new System.Drawing.Point(421, 40);
             this.gbBasicSetting.Name = "gbBasicSetting";
-            this.gbBasicSetting.Size = new System.Drawing.Size(380, 411);
+            this.gbBasicSetting.Size = new System.Drawing.Size(380, 463);
             this.gbBasicSetting.TabIndex = 36;
             this.gbBasicSetting.TabStop = false;
             this.gbBasicSetting.Text = "Basic-Setting";
@@ -132,7 +144,7 @@
             // rbLeftToRight
             // 
             this.rbLeftToRight.AutoSize = true;
-            this.rbLeftToRight.Location = new System.Drawing.Point(189, 343);
+            this.rbLeftToRight.Location = new System.Drawing.Point(188, 383);
             this.rbLeftToRight.Name = "rbLeftToRight";
             this.rbLeftToRight.Size = new System.Drawing.Size(116, 19);
             this.rbLeftToRight.TabIndex = 76;
@@ -143,7 +155,7 @@
             // 
             this.rbRightToLeft.AutoSize = true;
             this.rbRightToLeft.Checked = true;
-            this.rbRightToLeft.Location = new System.Drawing.Point(53, 343);
+            this.rbRightToLeft.Location = new System.Drawing.Point(52, 383);
             this.rbRightToLeft.Name = "rbRightToLeft";
             this.rbRightToLeft.Size = new System.Drawing.Size(116, 19);
             this.rbRightToLeft.TabIndex = 73;
@@ -211,7 +223,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(227, 268);
+            this.label2.Location = new System.Drawing.Point(225, 348);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 15);
             this.label2.TabIndex = 66;
@@ -221,7 +233,7 @@
             // 
             this.lblShowStepAverage.AutoSize = true;
             this.lblShowStepAverage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblShowStepAverage.Location = new System.Drawing.Point(129, 268);
+            this.lblShowStepAverage.Location = new System.Drawing.Point(127, 348);
             this.lblShowStepAverage.Name = "lblShowStepAverage";
             this.lblShowStepAverage.Size = new System.Drawing.Size(39, 15);
             this.lblShowStepAverage.TabIndex = 65;
@@ -231,7 +243,7 @@
             // 
             this.lblstepSizeAve.AutoSize = true;
             this.lblstepSizeAve.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblstepSizeAve.Location = new System.Drawing.Point(11, 268);
+            this.lblstepSizeAve.Location = new System.Drawing.Point(9, 348);
             this.lblstepSizeAve.Name = "lblstepSizeAve";
             this.lblstepSizeAve.Size = new System.Drawing.Size(103, 15);
             this.lblstepSizeAve.TabIndex = 64;
@@ -259,7 +271,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(227, 236);
+            this.label6.Location = new System.Drawing.Point(225, 316);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 15);
             this.label6.TabIndex = 61;
@@ -297,7 +309,7 @@
             // 
             this.lblPointNumber.AutoSize = true;
             this.lblPointNumber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblPointNumber.Location = new System.Drawing.Point(129, 236);
+            this.lblPointNumber.Location = new System.Drawing.Point(127, 316);
             this.lblPointNumber.Name = "lblPointNumber";
             this.lblPointNumber.Size = new System.Drawing.Size(39, 15);
             this.lblPointNumber.TabIndex = 55;
@@ -307,7 +319,7 @@
             // 
             this.lblAverageBarNumber.AutoSize = true;
             this.lblAverageBarNumber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblAverageBarNumber.Location = new System.Drawing.Point(6, 236);
+            this.lblAverageBarNumber.Location = new System.Drawing.Point(4, 316);
             this.lblAverageBarNumber.Name = "lblAverageBarNumber";
             this.lblAverageBarNumber.Size = new System.Drawing.Size(103, 15);
             this.lblAverageBarNumber.TabIndex = 54;
@@ -334,7 +346,7 @@
             // btnGenerate
             // 
             this.btnGenerate.Enabled = false;
-            this.btnGenerate.Location = new System.Drawing.Point(666, 485);
+            this.btnGenerate.Location = new System.Drawing.Point(666, 509);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(135, 54);
             this.btnGenerate.TabIndex = 35;
@@ -345,7 +357,7 @@
             // btnStartDisplay
             // 
             this.btnStartDisplay.Enabled = false;
-            this.btnStartDisplay.Location = new System.Drawing.Point(421, 485);
+            this.btnStartDisplay.Location = new System.Drawing.Point(421, 509);
             this.btnStartDisplay.Name = "btnStartDisplay";
             this.btnStartDisplay.Size = new System.Drawing.Size(135, 54);
             this.btnStartDisplay.TabIndex = 34;
@@ -545,11 +557,67 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // tbWUp
+            // 
+            this.tbWUp.Location = new System.Drawing.Point(120, 232);
+            this.tbWUp.Name = "tbWUp";
+            this.tbWUp.Size = new System.Drawing.Size(127, 25);
+            this.tbWUp.TabIndex = 85;
+            this.tbWUp.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(31, 235);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 15);
+            this.label8.TabIndex = 84;
+            this.label8.Text = "WidthUp:";
+            // 
+            // tbWDown
+            // 
+            this.tbWDown.Location = new System.Drawing.Point(120, 264);
+            this.tbWDown.Name = "tbWDown";
+            this.tbWDown.Size = new System.Drawing.Size(127, 25);
+            this.tbWDown.TabIndex = 83;
+            this.tbWDown.Text = "330";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label9.Location = new System.Drawing.Point(15, 267);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 15);
+            this.label9.TabIndex = 82;
+            this.label9.Text = "WidthDown:";
+            // 
+            // rbCenterToRight
+            // 
+            this.rbCenterToRight.AutoSize = true;
+            this.rbCenterToRight.Location = new System.Drawing.Point(188, 423);
+            this.rbCenterToRight.Name = "rbCenterToRight";
+            this.rbCenterToRight.Size = new System.Drawing.Size(132, 19);
+            this.rbCenterToRight.TabIndex = 87;
+            this.rbCenterToRight.Text = "CenterToRight";
+            this.rbCenterToRight.UseVisualStyleBackColor = true;
+            // 
+            // rbCenterToLeft
+            // 
+            this.rbCenterToLeft.AutoSize = true;
+            this.rbCenterToLeft.Location = new System.Drawing.Point(52, 423);
+            this.rbCenterToLeft.Name = "rbCenterToLeft";
+            this.rbCenterToLeft.Size = new System.Drawing.Size(124, 19);
+            this.rbCenterToLeft.TabIndex = 86;
+            this.rbCenterToLeft.Text = "CenterToLeft";
+            this.rbCenterToLeft.UseVisualStyleBackColor = true;
+            // 
             // FormIndex9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 642);
+            this.ClientSize = new System.Drawing.Size(912, 642);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.gbBasicSetting);
             this.Controls.Add(this.btnGenerate);
@@ -614,5 +682,11 @@
         private System.Windows.Forms.TextBox tbTime;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox tbWUp;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbWDown;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RadioButton rbCenterToRight;
+        private System.Windows.Forms.RadioButton rbCenterToLeft;
     }
 }
