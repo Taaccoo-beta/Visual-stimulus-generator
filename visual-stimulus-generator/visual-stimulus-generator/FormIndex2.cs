@@ -32,6 +32,7 @@ namespace visual_stimulus_generator
         Bitmap image1;
 
         private Display display;
+        private int widthUp, widthDown;
         private void FormIndex2_Load(object sender, EventArgs e)
         {
             display = new Display();
@@ -191,7 +192,8 @@ namespace visual_stimulus_generator
             {
                 step = (int)speed;
             }
-
+            widthUp = int.Parse(this.tbWUp.Text);
+            widthDown = int.Parse(this.tbWDown.Text);
             float recCircleTime = CircleCalc(speed, frameRate);
             this.lblCircleTime.Text = recCircleTime.ToString();
 
@@ -220,7 +222,7 @@ namespace visual_stimulus_generator
             {
                 if (g.simpleCanvas[i] == 1)
                 {
-                    g1.DrawLine(Pens.Black, i, 0, i, height);
+                    g1.DrawLine(Pens.Black, i, widthUp, i, widthDown);
                 }
             }
             display.CreateGraphics().DrawImage(image1, 0, 0);
@@ -288,7 +290,7 @@ namespace visual_stimulus_generator
                 {
                     if (g.simpleCanvas[ii] == 1)
                     {
-                        g1.DrawLine(Pens.Black, ii, 0, ii, height);
+                        g1.DrawLine(Pens.Black, i, widthUp, i, widthDown);
                     }
                 }
 

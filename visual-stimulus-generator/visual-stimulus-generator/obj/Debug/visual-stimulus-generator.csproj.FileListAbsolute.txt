@@ -82,3 +82,7 @@ E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-ge
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex10.resources
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex8.resources
 E:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex9.resources
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual-stimulus-generator.csprojResolveAssemblyReference.cache
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex10.resources
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex8.resources
+H:\github\visual-stimulus-generator\visual-stimulus-generator\visual-stimulus-generator\obj\Debug\visual_stimulus_generator.FormIndex9.resources

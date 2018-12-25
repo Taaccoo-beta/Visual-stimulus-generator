@@ -96,6 +96,7 @@ namespace visual_stimulus_generator
         private int step;
         private int center;
         Generator g;
+        private int widthUp, widthDown;
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
             try
@@ -187,7 +188,8 @@ namespace visual_stimulus_generator
 
             float recCircleTime = CircleCalc(speed, frameRate, position);
             this.lblCircleTime.Text = recCircleTime.ToString();
-
+            widthUp = int.Parse(this.tbWUp.Text);
+            widthDown = int.Parse(this.tbWDown.Text);
             timer1.Interval = 1000/frameRate;
             timer1.Start();
 
@@ -228,7 +230,7 @@ namespace visual_stimulus_generator
             {
                 if (g.simpleCanvas[i] == 1)
                 {
-                    g1.DrawLine(Pens.Black, i, 0, i, height);
+                    g1.DrawLine(Pens.Black, i, widthUp, i, widthDown);
                 }
             }
             display.CreateGraphics().DrawImage(image1, 0, 0);
@@ -313,7 +315,7 @@ namespace visual_stimulus_generator
                 {
                     if (g.simpleCanvas[ii] == 1)
                     {
-                        g1.DrawLine(Pens.Black, ii, 0, ii, height);
+                        g1.DrawLine(Pens.Black, ii, widthUp, ii, widthDown);
                     }
                 }
 

@@ -50,7 +50,8 @@ namespace visual_stimulus_generator
         private int position;
         private Display display;
         private Generator g;
-        
+        private int widthUp, widthDown;
+
         private void btnStartDisplay_Click(object sender, EventArgs e)
         {
             try
@@ -93,7 +94,8 @@ namespace visual_stimulus_generator
                 
             }
 
-            
+            widthUp = int.Parse(this.tbWUp.Text);
+            widthDown = int.Parse(this.tbWDown.Text);
             g.SetSimpleCanvasPosition(position);
             //g.MoveLeftForSimpleCanvas(position);
 
@@ -121,7 +123,7 @@ namespace visual_stimulus_generator
             {
                 if (g.simpleCanvas[i] == 1)
                 {
-                    g1.DrawLine(Pens.Black, i, 0, i, height);
+                    g1.DrawLine(Pens.Black, i, widthUp, i, widthDown);
                 }
             }
             display.CreateGraphics().DrawImage(image1, 0, 0);
@@ -148,7 +150,7 @@ namespace visual_stimulus_generator
                 {
                     if (g.simpleCanvas[i] == 1)
                     {
-                        g1.DrawLine(Pens.Black, i, 0, i, height);
+                    g1.DrawLine(Pens.Black, i, widthUp, i, widthDown);
                     }
                 }
 
