@@ -148,7 +148,7 @@ namespace visual_stimulus_generator
 
 
             VideoFileWriter writer = new VideoFileWriter();
-            writer.Open(savePath, width, height, frameRate, VideoCodec.MPEG4);
+            writer.Open(savePath, width, height, frameRate, VideoCodec.MSMPEG4v2);
 
             for (int ii = 0; ii != (int)(frameRate * time); ii++)
             {

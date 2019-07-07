@@ -49,7 +49,8 @@
             resources.GetString("lbVisualStimulusType.Items7"),
             resources.GetString("lbVisualStimulusType.Items8"),
             resources.GetString("lbVisualStimulusType.Items9"),
-            resources.GetString("lbVisualStimulusType.Items10")});
+            resources.GetString("lbVisualStimulusType.Items10"),
+            resources.GetString("lbVisualStimulusType.Items11")});
             this.lbVisualStimulusType.Name = "lbVisualStimulusType";
             this.lbVisualStimulusType.SelectedIndexChanged += new System.EventHandler(this.lbVisualStimulusType_SelectedIndexChanged);
             // 
