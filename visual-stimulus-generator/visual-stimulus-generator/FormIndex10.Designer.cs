@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.gbBasicSetting = new System.Windows.Forms.GroupBox();
+            this.tbWUp = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbWDown = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.rbCenterToRight = new System.Windows.Forms.RadioButton();
             this.rbCenterToLeft = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,10 +78,8 @@
             this.tbTime = new System.Windows.Forms.TextBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tbWUp = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbWDown = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.rbLeftToRight = new System.Windows.Forms.RadioButton();
+            this.rbRightToLeft = new System.Windows.Forms.RadioButton();
             this.gbBasicSetting.SuspendLayout();
             this.gbGeneralSetting.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +88,7 @@
             // 
             this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.progressBar1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.progressBar1.Location = new System.Drawing.Point(427, 576);
+            this.progressBar1.Location = new System.Drawing.Point(428, 605);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(379, 27);
@@ -94,6 +96,8 @@
             // 
             // gbBasicSetting
             // 
+            this.gbBasicSetting.Controls.Add(this.rbLeftToRight);
+            this.gbBasicSetting.Controls.Add(this.rbRightToLeft);
             this.gbBasicSetting.Controls.Add(this.tbWUp);
             this.gbBasicSetting.Controls.Add(this.label8);
             this.gbBasicSetting.Controls.Add(this.tbWDown);
@@ -122,10 +126,46 @@
             this.gbBasicSetting.Controls.Add(this.label4);
             this.gbBasicSetting.Location = new System.Drawing.Point(427, 38);
             this.gbBasicSetting.Name = "gbBasicSetting";
-            this.gbBasicSetting.Size = new System.Drawing.Size(380, 411);
+            this.gbBasicSetting.Size = new System.Drawing.Size(380, 471);
             this.gbBasicSetting.TabIndex = 41;
             this.gbBasicSetting.TabStop = false;
             this.gbBasicSetting.Text = "Basic-Setting";
+            // 
+            // tbWUp
+            // 
+            this.tbWUp.Location = new System.Drawing.Point(119, 232);
+            this.tbWUp.Name = "tbWUp";
+            this.tbWUp.Size = new System.Drawing.Size(127, 25);
+            this.tbWUp.TabIndex = 89;
+            this.tbWUp.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(30, 235);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 15);
+            this.label8.TabIndex = 88;
+            this.label8.Text = "WidthUp:";
+            // 
+            // tbWDown
+            // 
+            this.tbWDown.Location = new System.Drawing.Point(119, 264);
+            this.tbWDown.Name = "tbWDown";
+            this.tbWDown.Size = new System.Drawing.Size(127, 25);
+            this.tbWDown.TabIndex = 87;
+            this.tbWDown.Text = "330";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label9.Location = new System.Drawing.Point(14, 267);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 15);
+            this.label9.TabIndex = 86;
+            this.label9.Text = "WidthDown:";
             // 
             // rbCenterToRight
             // 
@@ -342,7 +382,7 @@
             // btnGenerate
             // 
             this.btnGenerate.Enabled = false;
-            this.btnGenerate.Location = new System.Drawing.Point(672, 483);
+            this.btnGenerate.Location = new System.Drawing.Point(672, 528);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(135, 54);
             this.btnGenerate.TabIndex = 40;
@@ -353,7 +393,7 @@
             // btnStartDisplay
             // 
             this.btnStartDisplay.Enabled = false;
-            this.btnStartDisplay.Location = new System.Drawing.Point(427, 483);
+            this.btnStartDisplay.Location = new System.Drawing.Point(427, 528);
             this.btnStartDisplay.Name = "btnStartDisplay";
             this.btnStartDisplay.Size = new System.Drawing.Size(135, 54);
             this.btnStartDisplay.TabIndex = 39;
@@ -553,41 +593,25 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // tbWUp
+            // rbLeftToRight
             // 
-            this.tbWUp.Location = new System.Drawing.Point(119, 232);
-            this.tbWUp.Name = "tbWUp";
-            this.tbWUp.Size = new System.Drawing.Size(127, 25);
-            this.tbWUp.TabIndex = 89;
-            this.tbWUp.Text = "0";
+            this.rbLeftToRight.AutoSize = true;
+            this.rbLeftToRight.Location = new System.Drawing.Point(183, 419);
+            this.rbLeftToRight.Name = "rbLeftToRight";
+            this.rbLeftToRight.Size = new System.Drawing.Size(116, 19);
+            this.rbLeftToRight.TabIndex = 91;
+            this.rbLeftToRight.Text = "LeftToRight";
+            this.rbLeftToRight.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // rbRightToLeft
             // 
-            this.label8.AutoSize = true;
-            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(30, 235);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 15);
-            this.label8.TabIndex = 88;
-            this.label8.Text = "WidthUp:";
-            // 
-            // tbWDown
-            // 
-            this.tbWDown.Location = new System.Drawing.Point(119, 264);
-            this.tbWDown.Name = "tbWDown";
-            this.tbWDown.Size = new System.Drawing.Size(127, 25);
-            this.tbWDown.TabIndex = 87;
-            this.tbWDown.Text = "330";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(14, 267);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 15);
-            this.label9.TabIndex = 86;
-            this.label9.Text = "WidthDown:";
+            this.rbRightToLeft.AutoSize = true;
+            this.rbRightToLeft.Location = new System.Drawing.Point(47, 419);
+            this.rbRightToLeft.Name = "rbRightToLeft";
+            this.rbRightToLeft.Size = new System.Drawing.Size(116, 19);
+            this.rbRightToLeft.TabIndex = 90;
+            this.rbRightToLeft.Text = "RightToLeft";
+            this.rbRightToLeft.UseVisualStyleBackColor = true;
             // 
             // FormIndex10
             // 
@@ -662,5 +686,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbWDown;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RadioButton rbLeftToRight;
+        private System.Windows.Forms.RadioButton rbRightToLeft;
     }
 }

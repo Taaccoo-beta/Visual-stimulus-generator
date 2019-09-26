@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.gbBasicSetting = new System.Windows.Forms.GroupBox();
+            this.rbCenterToRight = new System.Windows.Forms.RadioButton();
+            this.rbCenterToLeft = new System.Windows.Forms.RadioButton();
+            this.tbWUp = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbWDown = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.rbLeftToRight = new System.Windows.Forms.RadioButton();
             this.rbRightToLeft = new System.Windows.Forms.RadioButton();
@@ -74,12 +80,6 @@
             this.tbTime = new System.Windows.Forms.TextBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tbWUp = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbWDown = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.rbCenterToRight = new System.Windows.Forms.RadioButton();
-            this.rbCenterToLeft = new System.Windows.Forms.RadioButton();
             this.gbBasicSetting.SuspendLayout();
             this.gbGeneralSetting.SuspendLayout();
             this.SuspendLayout();
@@ -131,6 +131,62 @@
             this.gbBasicSetting.TabStop = false;
             this.gbBasicSetting.Text = "Basic-Setting";
             // 
+            // rbCenterToRight
+            // 
+            this.rbCenterToRight.AutoSize = true;
+            this.rbCenterToRight.Location = new System.Drawing.Point(188, 423);
+            this.rbCenterToRight.Name = "rbCenterToRight";
+            this.rbCenterToRight.Size = new System.Drawing.Size(132, 19);
+            this.rbCenterToRight.TabIndex = 87;
+            this.rbCenterToRight.Text = "CenterToRight";
+            this.rbCenterToRight.UseVisualStyleBackColor = true;
+            // 
+            // rbCenterToLeft
+            // 
+            this.rbCenterToLeft.AutoSize = true;
+            this.rbCenterToLeft.Location = new System.Drawing.Point(52, 423);
+            this.rbCenterToLeft.Name = "rbCenterToLeft";
+            this.rbCenterToLeft.Size = new System.Drawing.Size(124, 19);
+            this.rbCenterToLeft.TabIndex = 86;
+            this.rbCenterToLeft.Text = "CenterToLeft";
+            this.rbCenterToLeft.UseVisualStyleBackColor = true;
+            // 
+            // tbWUp
+            // 
+            this.tbWUp.Location = new System.Drawing.Point(120, 232);
+            this.tbWUp.Name = "tbWUp";
+            this.tbWUp.Size = new System.Drawing.Size(127, 25);
+            this.tbWUp.TabIndex = 85;
+            this.tbWUp.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(31, 235);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 15);
+            this.label8.TabIndex = 84;
+            this.label8.Text = "WidthUp:";
+            // 
+            // tbWDown
+            // 
+            this.tbWDown.Location = new System.Drawing.Point(120, 264);
+            this.tbWDown.Name = "tbWDown";
+            this.tbWDown.Size = new System.Drawing.Size(127, 25);
+            this.tbWDown.TabIndex = 83;
+            this.tbWDown.Text = "330";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label9.Location = new System.Drawing.Point(15, 267);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 15);
+            this.label9.TabIndex = 82;
+            this.label9.Text = "WidthDown:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -162,6 +218,7 @@
             this.rbRightToLeft.TabStop = true;
             this.rbRightToLeft.Text = "RightToLeft";
             this.rbRightToLeft.UseVisualStyleBackColor = true;
+            this.rbRightToLeft.CheckedChanged += new System.EventHandler(this.rbRightToLeft_CheckedChanged);
             // 
             // lblShowDegreeRange
             // 
@@ -556,62 +613,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // tbWUp
-            // 
-            this.tbWUp.Location = new System.Drawing.Point(120, 232);
-            this.tbWUp.Name = "tbWUp";
-            this.tbWUp.Size = new System.Drawing.Size(127, 25);
-            this.tbWUp.TabIndex = 85;
-            this.tbWUp.Text = "0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(31, 235);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 15);
-            this.label8.TabIndex = 84;
-            this.label8.Text = "WidthUp:";
-            // 
-            // tbWDown
-            // 
-            this.tbWDown.Location = new System.Drawing.Point(120, 264);
-            this.tbWDown.Name = "tbWDown";
-            this.tbWDown.Size = new System.Drawing.Size(127, 25);
-            this.tbWDown.TabIndex = 83;
-            this.tbWDown.Text = "330";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(15, 267);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 15);
-            this.label9.TabIndex = 82;
-            this.label9.Text = "WidthDown:";
-            // 
-            // rbCenterToRight
-            // 
-            this.rbCenterToRight.AutoSize = true;
-            this.rbCenterToRight.Location = new System.Drawing.Point(188, 423);
-            this.rbCenterToRight.Name = "rbCenterToRight";
-            this.rbCenterToRight.Size = new System.Drawing.Size(132, 19);
-            this.rbCenterToRight.TabIndex = 87;
-            this.rbCenterToRight.Text = "CenterToRight";
-            this.rbCenterToRight.UseVisualStyleBackColor = true;
-            // 
-            // rbCenterToLeft
-            // 
-            this.rbCenterToLeft.AutoSize = true;
-            this.rbCenterToLeft.Location = new System.Drawing.Point(52, 423);
-            this.rbCenterToLeft.Name = "rbCenterToLeft";
-            this.rbCenterToLeft.Size = new System.Drawing.Size(124, 19);
-            this.rbCenterToLeft.TabIndex = 86;
-            this.rbCenterToLeft.Text = "CenterToLeft";
-            this.rbCenterToLeft.UseVisualStyleBackColor = true;
             // 
             // FormIndex9
             // 

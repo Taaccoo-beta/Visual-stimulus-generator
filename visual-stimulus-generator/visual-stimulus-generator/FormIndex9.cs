@@ -98,6 +98,7 @@ namespace visual_stimulus_generator
         private int barSize;
         private float speed;
         private int step;
+        int stepForBackGround;
         private int center;
         private float degree;
         Generator g;
@@ -131,7 +132,7 @@ namespace visual_stimulus_generator
             speed = int.Parse(tbSpeed.Text);
 
             step = (int)speed;
-
+            stepForBackGround = (int)g.DegreeToWidth(speed);
             pointSize = float.Parse(tbPointSize.Text);
 
             if (btnPointSizeSwitch.Text == "Degree")
@@ -245,18 +246,18 @@ namespace visual_stimulus_generator
             }
             if (rbLeftToRight.Checked)
             {
-                rg.background.MoveRightForSimpleCanvas(step);
+                rg.background.MoveRightForSimpleCanvas(stepForBackGround);
             }
             else if (rbRightToLeft.Checked)
             {
-                rg.background.MoveLeftForSimpleCanvas(step);
+                rg.background.MoveLeftForSimpleCanvas(stepForBackGround);
             }
             else
             {
                 if (orientation == 1)
                 {
                     positiondegree += step;
-                    rg.background.MoveLeftForSimpleCanvas(step);
+                    rg.background.MoveLeftForSimpleCanvas(stepForBackGround);
                     if (positiondegree > degree)
                     {
                         orientation = -1;
@@ -267,7 +268,7 @@ namespace visual_stimulus_generator
                 if (orientation == -1)
                 {
                     positiondegree -= step;
-                    rg.background.MoveRightForSimpleCanvas(step);
+                    rg.background.MoveRightForSimpleCanvas(stepForBackGround);
                     if (positiondegree < -degree)
                     {
                         orientation = 1;
@@ -373,18 +374,18 @@ namespace visual_stimulus_generator
 
                 if (rbLeftToRight.Checked)
                 {
-                    rg.background.MoveRightForSimpleCanvas(step);
+                    rg.background.MoveRightForSimpleCanvas(stepForBackGround);
                 }
                 else if (rbRightToLeft.Checked)
                 {
-                    rg.background.MoveLeftForSimpleCanvas(step);
+                    rg.background.MoveLeftForSimpleCanvas(stepForBackGround);
                 }
                 else
                 {
                     if (orientation == 1)
                     {
                         positiondegree += step;
-                        rg.background.MoveLeftForSimpleCanvas(step);
+                        rg.background.MoveLeftForSimpleCanvas(stepForBackGround);
                         if (positiondegree > degree)
                         {
                             orientation = -1;
@@ -395,7 +396,7 @@ namespace visual_stimulus_generator
                     if (orientation == -1)
                     {
                         positiondegree -= step;
-                        rg.background.MoveRightForSimpleCanvas(step);
+                        rg.background.MoveRightForSimpleCanvas(stepForBackGround);
                         if (positiondegree < -degree)
                         {
                             orientation = 1;
@@ -422,6 +423,11 @@ namespace visual_stimulus_generator
             {
                 btnPointSizeSwitch.Text = "Degree";
             }
+        }
+
+        private void rbRightToLeft_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnBarSizeSwitch_Click(object sender, EventArgs e)
